@@ -34,6 +34,7 @@ class TradeBookingResultDiffblueTest {
 
     Position p = new Position();
     p.setAccountId(1);
+    p.setPositionID(new PositionID());
     p.setQuantity(1);
     p.setSecurity("Security");
     p.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));

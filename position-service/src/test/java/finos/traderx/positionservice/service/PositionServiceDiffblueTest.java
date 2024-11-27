@@ -7,6 +7,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import finos.traderx.positionservice.model.Position;
+import finos.traderx.positionservice.model.PositionID;
 import finos.traderx.positionservice.repository.PositionRepository;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
@@ -48,6 +49,7 @@ class PositionServiceDiffblueTest {
     // Arrange
     Position position = new Position();
     position.setAccountId(1);
+    position.setPositionID(new PositionID());
     position.setQuantity(1);
     position.setSecurity("Security");
     position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
@@ -83,12 +85,14 @@ class PositionServiceDiffblueTest {
     // Arrange
     Position position = new Position();
     position.setAccountId(1);
+    position.setPositionID(new PositionID());
     position.setQuantity(1);
     position.setSecurity("Security");
     position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
+    position2.setPositionID(new PositionID());
     position2.setQuantity(0);
     position2.setSecurity("42");
     position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));

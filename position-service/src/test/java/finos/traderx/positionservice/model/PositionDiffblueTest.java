@@ -16,10 +16,12 @@ class PositionDiffblueTest {
    * <ul>
    *   <li>default or parameterless constructor of {@link Position}
    *   <li>{@link Position#setAccountId(Integer)}
+   *   <li>{@link Position#setPositionID(PositionID)}
    *   <li>{@link Position#setQuantity(Integer)}
    *   <li>{@link Position#setSecurity(String)}
    *   <li>{@link Position#setUpdated(Date)}
    *   <li>{@link Position#getAccountId()}
+   *   <li>{@link Position#getPositionID()}
    *   <li>{@link Position#getQuantity()}
    *   <li>{@link Position#getSecurity()}
    *   <li>{@link Position#getUpdated()}
@@ -31,11 +33,14 @@ class PositionDiffblueTest {
     // Arrange and Act
     Position actualPosition = new Position();
     actualPosition.setAccountId(1);
+    PositionID positionID = new PositionID();
+    actualPosition.setPositionID(positionID);
     actualPosition.setQuantity(1);
     actualPosition.setSecurity("Security");
     Date u = Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant());
     actualPosition.setUpdated(u);
     Integer actualAccountId = actualPosition.getAccountId();
+    PositionID actualPositionID = actualPosition.getPositionID();
     Integer actualQuantity = actualPosition.getQuantity();
     String actualSecurity = actualPosition.getSecurity();
     Date actualUpdated = actualPosition.getUpdated();
@@ -44,6 +49,7 @@ class PositionDiffblueTest {
     assertEquals("Security", actualSecurity);
     assertEquals(1, actualAccountId.intValue());
     assertEquals(1, actualQuantity.intValue());
+    assertSame(positionID, actualPositionID);
     assertSame(u, actualUpdated);
   }
 }

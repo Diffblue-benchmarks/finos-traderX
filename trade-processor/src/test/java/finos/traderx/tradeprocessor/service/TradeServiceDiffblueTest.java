@@ -12,6 +12,7 @@ import static org.mockito.Mockito.when;
 import finos.traderx.messaging.PubSubException;
 import finos.traderx.messaging.Publisher;
 import finos.traderx.tradeprocessor.model.Position;
+import finos.traderx.tradeprocessor.model.PositionID;
 import finos.traderx.tradeprocessor.model.Trade;
 import finos.traderx.tradeprocessor.model.TradeBookingResult;
 import finos.traderx.tradeprocessor.model.TradeOrder;
@@ -67,12 +68,14 @@ class TradeServiceDiffblueTest {
 
     Position position = new Position();
     position.setAccountId(1);
+    position.setPositionID(new PositionID());
     position.setQuantity(1);
     position.setSecurity("Security");
     position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(1);
+    position2.setPositionID(new PositionID());
     position2.setQuantity(1);
     position2.setSecurity("Security");
     position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
@@ -127,12 +130,14 @@ class TradeServiceDiffblueTest {
 
     Position position = new Position();
     position.setAccountId(1);
+    position.setPositionID(new PositionID());
     position.setQuantity(1);
     position.setSecurity("Security");
     position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(1);
+    position2.setPositionID(new PositionID());
     position2.setQuantity(1);
     position2.setSecurity("Security");
     position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));

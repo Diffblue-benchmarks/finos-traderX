@@ -33,6 +33,7 @@ public class Trade implements Serializable {
 	@Column(name = "ACCOUNTID")
 	private Integer accountId;
 
+	@Id
 	public Integer getAccountId() {
 		return this.accountId;
 	}

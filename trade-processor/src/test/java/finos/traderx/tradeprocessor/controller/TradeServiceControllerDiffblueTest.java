@@ -58,8 +58,8 @@ class TradeServiceControllerDiffblueTest {
         .andExpect(MockMvcResultMatchers.content().contentType("application/json"))
         .andExpect(MockMvcResultMatchers.content()
             .string(
-                "{\"trade\":{\"id\":null,\"accountId\":null,\"security\":null,\"side\":null,\"state\":\"New\",\"quantity\":null,"
-                    + "\"updated\":null,\"created\":null},\"position\":{\"accountId\":null,\"security\":null,\"quantity\":null,\"updated"
-                    + "\":null}}"));
+                "{\"trade\":{\"id\":null,\"accountId\":null,\"security\":null,\"side\":null,\"state\":\"New\",\"quantity\":null,\"updated"
+                    + "\":null,\"created\":null},\"position\":{\"accountId\":null,\"security\":null,\"quantity\":null,\"updated\":null,"
+                    + "\"positionID\":null}}"));
   }
 }

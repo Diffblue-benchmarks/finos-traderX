@@ -8,9 +8,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
+import finos.traderx.tradeprocessor.model.PositionID;
 
 @Entity
-@IdClass(PositionID.class)
 @Table(name = "POSITIONS")
 public class Position implements Serializable {
 
@@ -61,5 +61,16 @@ public class Position implements Serializable {
 
 	public Date getUpdated(){
 		return this.updated;
+	}
+
+	private PositionID positionID;
+
+	@Id
+	public PositionID getPositionID() {
+		return this.positionID;
+	}
+
+	public void setPositionID(PositionID positionID) {
+		this.positionID = positionID;
 	}
 }

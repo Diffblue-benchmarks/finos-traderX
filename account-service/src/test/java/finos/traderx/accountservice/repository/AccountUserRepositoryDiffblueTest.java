@@ -3,10 +3,12 @@ package finos.traderx.accountservice.repository;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
 import finos.traderx.accountservice.model.AccountUser;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -16,9 +18,9 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration(classes = {AccountUserRepository.class})
+@DataJpaTest
 @EnableAutoConfiguration
 @EntityScan(basePackages = {"finos.traderx.accountservice.model"})
-@DataJpaTest
 class AccountUserRepositoryDiffblueTest {
   @Autowired
   private AccountUserRepository accountUserRepository;
@@ -30,6 +32,8 @@ class AccountUserRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test count()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"long AccountUserRepository.count()"})
   void testCount() {
     // Arrange
     AccountUser accountUser = new AccountUser();
@@ -53,6 +57,8 @@ class AccountUserRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test delete(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void AccountUserRepository.delete(Object)"})
   void testDelete() {
     // Arrange
     AccountUser accountUser = new AccountUser();
@@ -89,6 +95,8 @@ class AccountUserRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAll()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void AccountUserRepository.deleteAll()"})
   void testDeleteAll() {
     // Arrange
     AccountUser accountUser = new AccountUser();
@@ -117,6 +125,8 @@ class AccountUserRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAll(Iterable) with 'Iterable'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void AccountUserRepository.deleteAll(Iterable)"})
   void testDeleteAllWithIterable() {
     // Arrange
     AccountUser accountUser = new AccountUser();
@@ -164,6 +174,8 @@ class AccountUserRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findAll()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Iterable AccountUserRepository.findAll()"})
   void testFindAll() {
     // Arrange
     AccountUser accountUser = new AccountUser();
@@ -197,6 +209,8 @@ class AccountUserRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test save(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Object AccountUserRepository.save(Object)"})
   void testSave() {
     // Arrange
     AccountUser accountUser = new AccountUser();
@@ -218,6 +232,8 @@ class AccountUserRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test saveAll(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Iterable AccountUserRepository.saveAll(Iterable)"})
   void testSaveAll() {
     // Arrange
     AccountUser accountUser = new AccountUser();

@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
 import finos.traderx.tradeprocessor.model.Position;
 import finos.traderx.tradeprocessor.model.PositionID;
 import java.time.LocalDate;
@@ -15,6 +16,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -34,9 +36,9 @@ import org.springframework.data.repository.query.QueryByExampleExecutor;
 import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration(classes = {PositionRepository.class})
+@DataJpaTest
 @EnableAutoConfiguration
 @EntityScan(basePackages = {"finos.traderx.tradeprocessor.model"})
-@DataJpaTest
 class PositionRepositoryDiffblueTest {
   @Autowired
   private PositionRepository positionRepository;
@@ -48,6 +50,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findByAccountId(Integer)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List PositionRepository.findByAccountId(Integer)"})
   void testFindByAccountId() {
     // Arrange
     Position position = new Position();
@@ -73,11 +77,12 @@ class PositionRepositoryDiffblueTest {
   /**
    * Test {@link PositionRepository#findByAccountIdAndSecurity(Integer, String)}.
    * <p>
-   * Method under test:
-   * {@link PositionRepository#findByAccountIdAndSecurity(Integer, String)}
+   * Method under test: {@link PositionRepository#findByAccountIdAndSecurity(Integer, String)}
    */
   @Test
   @DisplayName("Test findByAccountIdAndSecurity(Integer, String)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Position PositionRepository.findByAccountIdAndSecurity(Integer, String)"})
   void testFindByAccountIdAndSecurity() {
     // Arrange
     Position position = new Position();
@@ -107,6 +112,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test count()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"long PositionRepository.count()"})
   void testCount() {
     // Arrange
     Position position = new Position();
@@ -136,6 +143,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test count(Example) with 'Example'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"long PositionRepository.count(Example)"})
   void testCountWithExample() {
     // Arrange
     Position position = new Position();
@@ -173,6 +182,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test delete(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void PositionRepository.delete(Object)"})
   void testDelete() {
     // Arrange
     Position position = new Position();
@@ -213,6 +224,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAll()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void PositionRepository.deleteAll()"})
   void testDeleteAll() {
     // Arrange
     Position position = new Position();
@@ -245,6 +258,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAllById(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void PositionRepository.deleteAllById(Iterable)"})
   void testDeleteAllById() {
     // Arrange
     Position position = new Position();
@@ -304,6 +319,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAllByIdInBatch(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void PositionRepository.deleteAllByIdInBatch(Iterable)"})
   void testDeleteAllByIdInBatch() {
     // Arrange
     Position position = new Position();
@@ -344,6 +361,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAllInBatch()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void PositionRepository.deleteAllInBatch()"})
   void testDeleteAllInBatch() {
     // Arrange
     Position position = new Position();
@@ -376,6 +395,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAllInBatch(Iterable) with 'Iterable'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void PositionRepository.deleteAllInBatch(Iterable)"})
   void testDeleteAllInBatchWithIterable() {
     // Arrange
     Position position = new Position();
@@ -433,6 +454,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAll(Iterable) with 'Iterable'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void PositionRepository.deleteAll(Iterable)"})
   void testDeleteAllWithIterable() {
     // Arrange
     Position position = new Position();
@@ -490,6 +513,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteById(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void PositionRepository.deleteById(Object)"})
   void testDeleteById() {
     // Arrange
     Position position = new Position();
@@ -531,6 +556,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteInBatch(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void PositionRepository.deleteInBatch(Iterable)"})
   void testDeleteInBatch() {
     // Arrange
     Position position = new Position();
@@ -588,6 +615,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test existsById(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean PositionRepository.existsById(Object)"})
   void testExistsById() {
     // Arrange
     Position position = new Position();
@@ -629,6 +658,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test exists(Example); then return 'false'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean PositionRepository.exists(Example)"})
   void testExists_thenReturnFalse() {
     // Arrange
     Position position = new Position();
@@ -669,6 +700,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test exists(Example); then return 'true'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean PositionRepository.exists(Example)"})
   void testExists_thenReturnTrue() {
     // Arrange
     Position position = new Position();
@@ -706,6 +739,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findAll()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List PositionRepository.findAll()"})
   void testFindAll() {
     // Arrange
     Position position = new Position();
@@ -745,6 +780,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findAllById(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List PositionRepository.findAllById(Iterable)"})
   void testFindAllById() {
     // Arrange
     Position position = new Position();
@@ -811,6 +848,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findAll(Example) with 'example'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List PositionRepository.findAll(Example)"})
   void testFindAllWithExample() {
     // Arrange
     Position position = new Position();
@@ -842,13 +881,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link QueryByExampleExecutor#findAll(Example, Pageable)} with
-   * {@code example}, {@code pageable}.
+   * Test {@link QueryByExampleExecutor#findAll(Example, Pageable)} with {@code example}, {@code pageable}.
    * <p>
    * Method under test: {@link PositionRepository#findAll(Example, Pageable)}
    */
   @Test
   @DisplayName("Test findAll(Example, Pageable) with 'example', 'pageable'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Page PositionRepository.findAll(Example, Pageable)"})
   void testFindAllWithExamplePageable() {
     // Arrange
     Position position = new Position();
@@ -884,13 +924,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link JpaRepository#findAll(Example, Sort)} with {@code example},
-   * {@code sort}.
+   * Test {@link JpaRepository#findAll(Example, Sort)} with {@code example}, {@code sort}.
    * <p>
    * Method under test: {@link PositionRepository#findAll(Example, Sort)}
    */
   @Test
   @DisplayName("Test findAll(Example, Sort) with 'example', 'sort'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List PositionRepository.findAll(Example, Sort)"})
   void testFindAllWithExampleSort() {
     // Arrange
     Position position = new Position();
@@ -922,13 +963,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link PagingAndSortingRepository#findAll(Pageable)} with
-   * {@code pageable}.
+   * Test {@link PagingAndSortingRepository#findAll(Pageable)} with {@code pageable}.
    * <p>
    * Method under test: {@link PositionRepository#findAll(Pageable)}
    */
   @Test
   @DisplayName("Test findAll(Pageable) with 'pageable'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Page PositionRepository.findAll(Pageable)"})
   void testFindAllWithPageable() {
     // Arrange
     Position position = new Position();
@@ -965,12 +1007,19 @@ class PositionRepositoryDiffblueTest {
 
   /**
    * Test {@link ListPagingAndSortingRepository#findAll(Sort)} with {@code sort}.
+   * <ul>
+   *   <li>Given {@link Position} (default constructor) AccountId is one.</li>
+   *   <li>When unsorted.</li>
+   *   <li>Then return size is one.</li>
+   * </ul>
    * <p>
    * Method under test: {@link PositionRepository#findAll(Sort)}
    */
   @Test
-  @DisplayName("Test findAll(Sort) with 'sort'")
-  void testFindAllWithSort() {
+  @DisplayName("Test findAll(Sort) with 'sort'; given Position (default constructor) AccountId is one; when unsorted; then return size is one")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List PositionRepository.findAll(Sort)"})
+  void testFindAllWithSort_givenPositionAccountIdIsOne_whenUnsorted_thenReturnSizeIsOne() {
     // Arrange
     Position position = new Position();
     position.setAccountId(1);
@@ -1009,6 +1058,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findById(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Optional PositionRepository.findById(Object)"})
   void testFindById() {
     // Arrange
     Position position = new Position();
@@ -1057,6 +1108,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findOne(Example)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Optional PositionRepository.findOne(Example)"})
   void testFindOne() {
     // Arrange
     Position position = new Position();
@@ -1094,6 +1147,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test flush()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void PositionRepository.flush()"})
   void testFlush() {
     // Arrange
     Position position = new Position();
@@ -1134,6 +1189,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test getById(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Object PositionRepository.getById(Object)"})
   void testGetById() {
     // Arrange
     Position position = new Position();
@@ -1180,6 +1237,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test getOne(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Object PositionRepository.getOne(Object)"})
   void testGetOne() {
     // Arrange
     Position position = new Position();
@@ -1217,6 +1276,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test getReferenceById(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Object PositionRepository.getReferenceById(Object)"})
   void testGetReferenceById() {
     // Arrange
     Position position = new Position();
@@ -1263,6 +1324,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test save(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Object PositionRepository.save(Object)"})
   void testSave() {
     // Arrange
     Position position = new Position();
@@ -1291,6 +1354,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test saveAll(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List PositionRepository.saveAll(Iterable)"})
   void testSaveAll() {
     // Arrange
     Position position = new Position();
@@ -1338,6 +1403,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test saveAllAndFlush(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List PositionRepository.saveAllAndFlush(Iterable)"})
   void testSaveAllAndFlush() {
     // Arrange
     Position position = new Position();
@@ -1385,6 +1452,8 @@ class PositionRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test saveAndFlush(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Object PositionRepository.saveAndFlush(Object)"})
   void testSaveAndFlush() {
     // Arrange
     Position position = new Position();

@@ -2,7 +2,9 @@ package finos.traderx.tradeprocessor.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import com.diffblue.cover.annotations.MethodsUnderTest;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 class PositionIDDiffblueTest {
@@ -21,6 +23,9 @@ class PositionIDDiffblueTest {
    */
   @Test
   @DisplayName("Test getters and setters; then return AccountId is 'null'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void PositionID.<init>()", "void PositionID.<init>(Integer, String)",
+      "Integer PositionID.getAccountId()", "String PositionID.getSecurity()"})
   void testGettersAndSetters_thenReturnAccountIdIsNull() {
     // Arrange and Act
     PositionID actualPositionID = new PositionID();
@@ -47,6 +52,9 @@ class PositionIDDiffblueTest {
    */
   @Test
   @DisplayName("Test getters and setters; when one; then return 'Security'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void PositionID.<init>()", "void PositionID.<init>(Integer, String)",
+      "Integer PositionID.getAccountId()", "String PositionID.getSecurity()"})
   void testGettersAndSetters_whenOne_thenReturnSecurity() {
     // Arrange and Act
     PositionID actualPositionID = new PositionID(1, "Security");

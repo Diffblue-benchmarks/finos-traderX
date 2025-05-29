@@ -2,7 +2,9 @@ package finos.traderx.accountservice.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import com.diffblue.cover.annotations.MethodsUnderTest;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 class AccountUserIDDiffblueTest {
@@ -21,6 +23,9 @@ class AccountUserIDDiffblueTest {
    */
   @Test
   @DisplayName("Test getters and setters; then return AccountId is 'null'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void AccountUserID.<init>()", "void AccountUserID.<init>(Integer, String)",
+      "Integer AccountUserID.getAccountId()", "String AccountUserID.getUsername()"})
   void testGettersAndSetters_thenReturnAccountIdIsNull() {
     // Arrange and Act
     AccountUserID actualAccountUserID = new AccountUserID();
@@ -47,6 +52,9 @@ class AccountUserIDDiffblueTest {
    */
   @Test
   @DisplayName("Test getters and setters; when one; then return Username is 'janedoe'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void AccountUserID.<init>()", "void AccountUserID.<init>(Integer, String)",
+      "Integer AccountUserID.getAccountId()", "String AccountUserID.getUsername()"})
   void testGettersAndSetters_whenOne_thenReturnUsernameIsJanedoe() {
     // Arrange and Act
     AccountUserID actualAccountUserID = new AccountUserID(1, "janedoe");

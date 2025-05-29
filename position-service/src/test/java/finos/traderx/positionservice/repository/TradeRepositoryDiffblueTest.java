@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
 import finos.traderx.positionservice.model.Trade;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
@@ -13,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -32,9 +34,9 @@ import org.springframework.data.repository.query.QueryByExampleExecutor;
 import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration(classes = {TradeRepository.class})
+@DataJpaTest
 @EnableAutoConfiguration
 @EntityScan(basePackages = {"finos.traderx.positionservice.model"})
-@DataJpaTest
 class TradeRepositoryDiffblueTest {
   @Autowired
   private TradeRepository tradeRepository;
@@ -46,6 +48,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findByAccountId(Integer)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List TradeRepository.findByAccountId(Integer)"})
   void testFindByAccountId() {
     // Arrange
     Trade trade = new Trade();
@@ -64,7 +68,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -91,6 +95,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test count()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"long TradeRepository.count()"})
   void testCount() {
     // Arrange
     Trade trade = new Trade();
@@ -109,7 +115,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -126,6 +132,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test count(Example) with 'Example'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"long TradeRepository.count(Example)"})
   void testCountWithExample() {
     // Arrange
     Trade trade = new Trade();
@@ -144,7 +152,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -172,6 +180,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test delete(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void TradeRepository.delete(Object)"})
   void testDelete() {
     // Arrange
     Trade trade = new Trade();
@@ -190,7 +200,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
@@ -214,10 +224,10 @@ class TradeRepositoryDiffblueTest {
     List<Trade> findAllResult = tradeRepository.findAll();
     assertEquals(1, findAllResult.size());
     Trade getResult = findAllResult.get(0);
+    assertEquals("42", getResult.getSide());
     assertEquals("Id", getResult.getId());
     assertEquals("State", getResult.getState());
     assertEquals("UNSET", getResult.getSecurity());
-    assertEquals("UNSET", getResult.getSide());
     assertEquals(-1, getResult.getQuantity().intValue());
     assertEquals(2, getResult.getAccountId().intValue());
   }
@@ -229,6 +239,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAll()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void TradeRepository.deleteAll()"})
   void testDeleteAll() {
     // Arrange
     Trade trade = new Trade();
@@ -247,7 +259,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -267,6 +279,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAllById(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void TradeRepository.deleteAllById(Iterable)"})
   void testDeleteAllById() {
     // Arrange
     Trade trade = new Trade();
@@ -285,7 +299,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
@@ -334,10 +348,10 @@ class TradeRepositoryDiffblueTest {
     List<Trade> findAllResult = tradeRepository.findAll();
     assertEquals(1, findAllResult.size());
     Trade getResult = findAllResult.get(0);
+    assertEquals("42", getResult.getSide());
     assertEquals("Id", getResult.getId());
     assertEquals("State", getResult.getState());
     assertEquals("UNSET", getResult.getSecurity());
-    assertEquals("UNSET", getResult.getSide());
     assertEquals(-1, getResult.getQuantity().intValue());
     assertEquals(2, getResult.getAccountId().intValue());
   }
@@ -349,6 +363,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAllByIdInBatch(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void TradeRepository.deleteAllByIdInBatch(Iterable)"})
   void testDeleteAllByIdInBatch() {
     // Arrange
     Trade trade = new Trade();
@@ -367,7 +383,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -382,13 +398,13 @@ class TradeRepositoryDiffblueTest {
     Trade getResult = findAllResult.get(0);
     assertEquals("42", getResult.getId());
     Trade getResult2 = findAllResult.get(1);
+    assertEquals("42", getResult2.getSide());
     assertEquals("Id", getResult2.getId());
     assertEquals("MD", getResult.getState());
     assertEquals("Security", getResult.getSecurity());
     assertEquals("Side", getResult.getSide());
     assertEquals("State", getResult2.getState());
     assertEquals("UNSET", getResult2.getSecurity());
-    assertEquals("UNSET", getResult2.getSide());
     assertEquals(-1, getResult2.getQuantity().intValue());
     assertEquals(1, getResult.getAccountId().intValue());
     assertEquals(1, getResult.getQuantity().intValue());
@@ -402,6 +418,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAllInBatch()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void TradeRepository.deleteAllInBatch()"})
   void testDeleteAllInBatch() {
     // Arrange
     Trade trade = new Trade();
@@ -420,7 +438,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -440,6 +458,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAllInBatch(Iterable) with 'Iterable'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void TradeRepository.deleteAllInBatch(Iterable)"})
   void testDeleteAllInBatchWithIterable() {
     // Arrange
     Trade trade = new Trade();
@@ -458,7 +478,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
@@ -505,10 +525,10 @@ class TradeRepositoryDiffblueTest {
     List<Trade> findAllResult = tradeRepository.findAll();
     assertEquals(1, findAllResult.size());
     Trade getResult = findAllResult.get(0);
+    assertEquals("42", getResult.getSide());
     assertEquals("Id", getResult.getId());
     assertEquals("State", getResult.getState());
     assertEquals("UNSET", getResult.getSecurity());
-    assertEquals("UNSET", getResult.getSide());
     assertEquals(-1, getResult.getQuantity().intValue());
     assertEquals(2, getResult.getAccountId().intValue());
   }
@@ -520,6 +540,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteAll(Iterable) with 'Iterable'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void TradeRepository.deleteAll(Iterable)"})
   void testDeleteAllWithIterable() {
     // Arrange
     Trade trade = new Trade();
@@ -538,7 +560,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
@@ -585,10 +607,10 @@ class TradeRepositoryDiffblueTest {
     List<Trade> findAllResult = tradeRepository.findAll();
     assertEquals(1, findAllResult.size());
     Trade getResult = findAllResult.get(0);
+    assertEquals("42", getResult.getSide());
     assertEquals("Id", getResult.getId());
     assertEquals("State", getResult.getState());
     assertEquals("UNSET", getResult.getSecurity());
-    assertEquals("UNSET", getResult.getSide());
     assertEquals(-1, getResult.getQuantity().intValue());
     assertEquals(2, getResult.getAccountId().intValue());
   }
@@ -600,6 +622,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteById(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void TradeRepository.deleteById(Object)"})
   void testDeleteById() {
     // Arrange
     Trade trade = new Trade();
@@ -618,7 +642,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
@@ -643,10 +667,10 @@ class TradeRepositoryDiffblueTest {
     List<Trade> findAllResult = tradeRepository.findAll();
     assertEquals(1, findAllResult.size());
     Trade getResult = findAllResult.get(0);
+    assertEquals("42", getResult.getSide());
     assertEquals("Id", getResult.getId());
     assertEquals("State", getResult.getState());
     assertEquals("UNSET", getResult.getSecurity());
-    assertEquals("UNSET", getResult.getSide());
     assertEquals(-1, getResult.getQuantity().intValue());
     assertEquals(2, getResult.getAccountId().intValue());
   }
@@ -658,6 +682,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test deleteInBatch(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void TradeRepository.deleteInBatch(Iterable)"})
   void testDeleteInBatch() {
     // Arrange
     Trade trade = new Trade();
@@ -676,7 +702,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
@@ -723,10 +749,10 @@ class TradeRepositoryDiffblueTest {
     List<Trade> findAllResult = tradeRepository.findAll();
     assertEquals(1, findAllResult.size());
     Trade getResult = findAllResult.get(0);
+    assertEquals("42", getResult.getSide());
     assertEquals("Id", getResult.getId());
     assertEquals("State", getResult.getState());
     assertEquals("UNSET", getResult.getSecurity());
-    assertEquals("UNSET", getResult.getSide());
     assertEquals(-1, getResult.getQuantity().intValue());
     assertEquals(2, getResult.getAccountId().intValue());
   }
@@ -738,6 +764,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test existsById(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean TradeRepository.existsById(Object)"})
   void testExistsById() {
     // Arrange
     Trade trade = new Trade();
@@ -756,7 +784,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
@@ -789,6 +817,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test exists(Example); given Trade (default constructor) AccountId is one; then return 'true'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean TradeRepository.exists(Example)"})
   void testExists_givenTradeAccountIdIsOne_thenReturnTrue() {
     // Arrange
     Trade trade = new Trade();
@@ -807,7 +837,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -838,6 +868,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test exists(Example); then return 'false'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"boolean TradeRepository.exists(Example)"})
   void testExists_thenReturnFalse() {
     // Arrange
     Trade trade = new Trade();
@@ -856,7 +888,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -884,6 +916,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findAll()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List TradeRepository.findAll()"})
   void testFindAll() {
     // Arrange
     Trade trade = new Trade();
@@ -902,7 +936,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -916,13 +950,13 @@ class TradeRepositoryDiffblueTest {
     Trade getResult = actualFindAllResult.get(0);
     assertEquals("42", getResult.getId());
     Trade getResult2 = actualFindAllResult.get(1);
+    assertEquals("42", getResult2.getSide());
     assertEquals("Id", getResult2.getId());
     assertEquals("MD", getResult.getState());
     assertEquals("Security", getResult.getSecurity());
     assertEquals("Side", getResult.getSide());
     assertEquals("State", getResult2.getState());
     assertEquals("UNSET", getResult2.getSecurity());
-    assertEquals("UNSET", getResult2.getSide());
     assertEquals(-1, getResult2.getQuantity().intValue());
     assertEquals(1, getResult.getAccountId().intValue());
     assertEquals(1, getResult.getQuantity().intValue());
@@ -936,6 +970,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findAllById(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List TradeRepository.findAllById(Iterable)"})
   void testFindAllById() {
     // Arrange
     Trade trade = new Trade();
@@ -954,7 +990,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
@@ -1017,6 +1053,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findAll(Example) with 'example'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List TradeRepository.findAll(Example)"})
   void testFindAllWithExample() {
     // Arrange
     Trade trade = new Trade();
@@ -1035,7 +1073,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -1067,13 +1105,14 @@ class TradeRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link QueryByExampleExecutor#findAll(Example, Pageable)} with
-   * {@code example}, {@code pageable}.
+   * Test {@link QueryByExampleExecutor#findAll(Example, Pageable)} with {@code example}, {@code pageable}.
    * <p>
    * Method under test: {@link TradeRepository#findAll(Example, Pageable)}
    */
   @Test
   @DisplayName("Test findAll(Example, Pageable) with 'example', 'pageable'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Page TradeRepository.findAll(Example, Pageable)"})
   void testFindAllWithExamplePageable() {
     // Arrange
     Trade trade = new Trade();
@@ -1092,7 +1131,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -1126,13 +1165,14 @@ class TradeRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link JpaRepository#findAll(Example, Sort)} with {@code example},
-   * {@code sort}.
+   * Test {@link JpaRepository#findAll(Example, Sort)} with {@code example}, {@code sort}.
    * <p>
    * Method under test: {@link TradeRepository#findAll(Example, Sort)}
    */
   @Test
   @DisplayName("Test findAll(Example, Sort) with 'example', 'sort'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List TradeRepository.findAll(Example, Sort)"})
   void testFindAllWithExampleSort() {
     // Arrange
     Trade trade = new Trade();
@@ -1151,7 +1191,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -1183,13 +1223,14 @@ class TradeRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link PagingAndSortingRepository#findAll(Pageable)} with
-   * {@code pageable}.
+   * Test {@link PagingAndSortingRepository#findAll(Pageable)} with {@code pageable}.
    * <p>
    * Method under test: {@link TradeRepository#findAll(Pageable)}
    */
   @Test
   @DisplayName("Test findAll(Pageable) with 'pageable'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Page TradeRepository.findAll(Pageable)"})
   void testFindAllWithPageable() {
     // Arrange
     Trade trade = new Trade();
@@ -1208,7 +1249,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -1224,13 +1265,13 @@ class TradeRepositoryDiffblueTest {
     Trade getResult = toListResult.get(0);
     assertEquals("42", getResult.getId());
     Trade getResult2 = toListResult.get(1);
+    assertEquals("42", getResult2.getSide());
     assertEquals("Id", getResult2.getId());
     assertEquals("MD", getResult.getState());
     assertEquals("Security", getResult.getSecurity());
     assertEquals("Side", getResult.getSide());
     assertEquals("State", getResult2.getState());
     assertEquals("UNSET", getResult2.getSecurity());
-    assertEquals("UNSET", getResult2.getSide());
     assertEquals(-1, getResult2.getQuantity().intValue());
     assertEquals(1, getResult.getAccountId().intValue());
     assertEquals(1, getResult.getQuantity().intValue());
@@ -1244,6 +1285,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findAll(Sort) with 'sort'")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List TradeRepository.findAll(Sort)"})
   void testFindAllWithSort() {
     // Arrange
     Trade trade = new Trade();
@@ -1262,7 +1305,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -1276,13 +1319,13 @@ class TradeRepositoryDiffblueTest {
     Trade getResult = actualFindAllResult.get(0);
     assertEquals("42", getResult.getId());
     Trade getResult2 = actualFindAllResult.get(1);
+    assertEquals("42", getResult2.getSide());
     assertEquals("Id", getResult2.getId());
     assertEquals("MD", getResult.getState());
     assertEquals("Security", getResult.getSecurity());
     assertEquals("Side", getResult.getSide());
     assertEquals("State", getResult2.getState());
     assertEquals("UNSET", getResult2.getSecurity());
-    assertEquals("UNSET", getResult2.getSide());
     assertEquals(-1, getResult2.getQuantity().intValue());
     assertEquals(1, getResult.getAccountId().intValue());
     assertEquals(1, getResult.getQuantity().intValue());
@@ -1296,6 +1339,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findById(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Optional TradeRepository.findById(Object)"})
   void testFindById() {
     // Arrange
     Trade trade = new Trade();
@@ -1314,7 +1359,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
@@ -1353,6 +1398,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test findOne(Example)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Optional TradeRepository.findOne(Example)"})
   void testFindOne() {
     // Arrange
     Trade trade = new Trade();
@@ -1371,7 +1418,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -1409,6 +1456,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test flush()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"void TradeRepository.flush()"})
   void testFlush() {
     // Arrange
     Trade trade = new Trade();
@@ -1427,7 +1476,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -1442,13 +1491,13 @@ class TradeRepositoryDiffblueTest {
     Trade getResult = findAllResult.get(0);
     assertEquals("42", getResult.getId());
     Trade getResult2 = findAllResult.get(1);
+    assertEquals("42", getResult2.getSide());
     assertEquals("Id", getResult2.getId());
     assertEquals("MD", getResult.getState());
     assertEquals("Security", getResult.getSecurity());
     assertEquals("Side", getResult.getSide());
     assertEquals("State", getResult2.getState());
     assertEquals("UNSET", getResult2.getSecurity());
-    assertEquals("UNSET", getResult2.getSide());
     assertEquals(-1, getResult2.getQuantity().intValue());
     assertEquals(1, getResult.getAccountId().intValue());
     assertEquals(1, getResult.getQuantity().intValue());
@@ -1462,6 +1511,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test getById(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Object TradeRepository.getById(Object)"})
   void testGetById() {
     // Arrange
     Trade trade = new Trade();
@@ -1480,7 +1531,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
@@ -1517,6 +1568,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test getOne(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Object TradeRepository.getOne(Object)"})
   void testGetOne() {
     // Arrange
     Trade trade = new Trade();
@@ -1535,7 +1588,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     tradeRepository.save(trade);
@@ -1560,6 +1613,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test getReferenceById(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Object TradeRepository.getReferenceById(Object)"})
   void testGetReferenceById() {
     // Arrange
     Trade trade = new Trade();
@@ -1578,7 +1633,7 @@ class TradeRepositoryDiffblueTest {
     trade2.setId("Id");
     trade2.setQuantity(-1);
     trade2.setSecurity("UNSET");
-    trade2.setSide("UNSET");
+    trade2.setSide("42");
     trade2.setState("State");
     trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
@@ -1615,6 +1670,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test save(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Object TradeRepository.save(Object)"})
   void testSave() {
     // Arrange
     Trade trade = new Trade();
@@ -1646,6 +1703,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test saveAll(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List TradeRepository.saveAll(Iterable)"})
   void testSaveAll() {
     // Arrange
     Trade trade = new Trade();
@@ -1702,6 +1761,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test saveAllAndFlush(Iterable)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List TradeRepository.saveAllAndFlush(Iterable)"})
   void testSaveAllAndFlush() {
     // Arrange
     Trade trade = new Trade();
@@ -1758,6 +1819,8 @@ class TradeRepositoryDiffblueTest {
    */
   @Test
   @DisplayName("Test saveAndFlush(Object)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"Object TradeRepository.saveAndFlush(Object)"})
   void testSaveAndFlush() {
     // Arrange
     Trade trade = new Trade();

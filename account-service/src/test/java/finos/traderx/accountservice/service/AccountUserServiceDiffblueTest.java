@@ -8,6 +8,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import com.diffblue.cover.annotations.MethodsUnderTest;
 import finos.traderx.accountservice.exceptions.ResourceNotFoundException;
 import finos.traderx.accountservice.model.Account;
 import finos.traderx.accountservice.model.AccountUser;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -28,8 +30,8 @@ import org.springframework.test.context.aot.DisabledInAotMode;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ContextConfiguration(classes = {AccountUserService.class})
-@ExtendWith(SpringExtension.class)
 @DisabledInAotMode
+@ExtendWith(SpringExtension.class)
 class AccountUserServiceDiffblueTest {
   @MockBean
   private AccountRepository accountRepository;
@@ -51,6 +53,8 @@ class AccountUserServiceDiffblueTest {
    */
   @Test
   @DisplayName("Test getAllAccountUsers(); given AccountUser (default constructor) AccountId is one; then return ArrayList()")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List AccountUserService.getAllAccountUsers()"})
   void testGetAllAccountUsers_givenAccountUserAccountIdIsOne_thenReturnArrayList() {
     // Arrange
     AccountUser accountUser = new AccountUser();
@@ -80,6 +84,8 @@ class AccountUserServiceDiffblueTest {
    */
   @Test
   @DisplayName("Test getAllAccountUsers(); given AccountUser (default constructor) AccountId is two; then return size is two")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List AccountUserService.getAllAccountUsers()"})
   void testGetAllAccountUsers_givenAccountUserAccountIdIsTwo_thenReturnSizeIsTwo() {
     // Arrange
     AccountUser accountUser = new AccountUser();
@@ -117,6 +123,8 @@ class AccountUserServiceDiffblueTest {
    */
   @Test
   @DisplayName("Test getAllAccountUsers(); then return Empty")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List AccountUserService.getAllAccountUsers()"})
   void testGetAllAccountUsers_thenReturnEmpty() {
     // Arrange
     when(accountUserRepository.findAll()).thenReturn(new ArrayList<>());
@@ -139,6 +147,8 @@ class AccountUserServiceDiffblueTest {
    */
   @Test
   @DisplayName("Test getAllAccountUsers(); then throw ResourceNotFoundException")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"List AccountUserService.getAllAccountUsers()"})
   void testGetAllAccountUsers_thenThrowResourceNotFoundException() {
     // Arrange
     when(accountUserRepository.findAll()).thenThrow(new ResourceNotFoundException("An error occurred"));
@@ -155,6 +165,8 @@ class AccountUserServiceDiffblueTest {
    */
   @Test
   @DisplayName("Test getAccountUserById(int)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"AccountUser AccountUserService.getAccountUserById(int)"})
   void testGetAccountUserById() throws ResourceNotFoundException {
     // Arrange
     when(accountUserRepository.findById(Mockito.<Integer>any()))
@@ -176,6 +188,8 @@ class AccountUserServiceDiffblueTest {
    */
   @Test
   @DisplayName("Test getAccountUserById(int); given AccountUser (default constructor) AccountId is one; then return AccountUser (default constructor)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"AccountUser AccountUserService.getAccountUserById(int)"})
   void testGetAccountUserById_givenAccountUserAccountIdIsOne_thenReturnAccountUser() throws ResourceNotFoundException {
     // Arrange
     AccountUser accountUser = new AccountUser();
@@ -195,14 +209,15 @@ class AccountUserServiceDiffblueTest {
   /**
    * Test {@link AccountUserService#getAccountUserById(int)}.
    * <ul>
-   *   <li>Given {@link AccountUserRepository}
-   * {@link CrudRepository#findById(Object)} return empty.</li>
+   *   <li>Given {@link AccountUserRepository} {@link CrudRepository#findById(Object)} return empty.</li>
    * </ul>
    * <p>
    * Method under test: {@link AccountUserService#getAccountUserById(int)}
    */
   @Test
   @DisplayName("Test getAccountUserById(int); given AccountUserRepository findById(Object) return empty")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"AccountUser AccountUserService.getAccountUserById(int)"})
   void testGetAccountUserById_givenAccountUserRepositoryFindByIdReturnEmpty() throws ResourceNotFoundException {
     // Arrange
     Optional<AccountUser> emptyResult = Optional.empty();
@@ -220,6 +235,8 @@ class AccountUserServiceDiffblueTest {
    */
   @Test
   @DisplayName("Test upsertAccountUser(AccountUser)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"AccountUser AccountUserService.upsertAccountUser(AccountUser)"})
   void testUpsertAccountUser() {
     // Arrange
     Account account = new Account();
@@ -243,14 +260,15 @@ class AccountUserServiceDiffblueTest {
   /**
    * Test {@link AccountUserService#upsertAccountUser(AccountUser)}.
    * <ul>
-   *   <li>Given {@link AccountRepository} {@link CrudRepository#findById(Object)}
-   * return empty.</li>
+   *   <li>Given {@link AccountRepository} {@link CrudRepository#findById(Object)} return empty.</li>
    * </ul>
    * <p>
    * Method under test: {@link AccountUserService#upsertAccountUser(AccountUser)}
    */
   @Test
   @DisplayName("Test upsertAccountUser(AccountUser); given AccountRepository findById(Object) return empty")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"AccountUser AccountUserService.upsertAccountUser(AccountUser)"})
   void testUpsertAccountUser_givenAccountRepositoryFindByIdReturnEmpty() {
     // Arrange
     Optional<Account> emptyResult = Optional.empty();
@@ -276,6 +294,8 @@ class AccountUserServiceDiffblueTest {
    */
   @Test
   @DisplayName("Test upsertAccountUser(AccountUser); given AccountUser (default constructor) AccountId is one; then return AccountUser (default constructor)")
+  @Tag("MaintainedByDiffblue")
+  @MethodsUnderTest({"AccountUser AccountUserService.upsertAccountUser(AccountUser)"})
   void testUpsertAccountUser_givenAccountUserAccountIdIsOne_thenReturnAccountUser() {
     // Arrange
     Account account = new Account();

@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import finos.traderx.accountservice.exceptions.ResourceNotFoundException;
 import finos.traderx.accountservice.model.Account;
@@ -24,7 +24,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.aot.DisabledInAotMode;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -33,27 +32,27 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @DisabledInAotMode
 @ExtendWith(SpringExtension.class)
 class AccountUserServiceDiffblueTest {
-  @MockBean
-  private AccountRepository accountRepository;
+  @MockBean private AccountRepository accountRepository;
 
-  @MockBean
-  private AccountUserRepository accountUserRepository;
+  @MockBean private AccountUserRepository accountUserRepository;
 
-  @Autowired
-  private AccountUserService accountUserService;
+  @Autowired private AccountUserService accountUserService;
 
   /**
    * Test {@link AccountUserService#getAllAccountUsers()}.
+   *
    * <ul>
-   *   <li>Given {@link AccountUser} (default constructor) AccountId is one.</li>
-   *   <li>Then return {@link ArrayList#ArrayList()}.</li>
+   *   <li>Given {@link AccountUser} (default constructor) AccountId is one.
+   *   <li>Then return {@link ArrayList#ArrayList()}.
    * </ul>
-   * <p>
-   * Method under test: {@link AccountUserService#getAllAccountUsers()}
+   *
+   * <p>Method under test: {@link AccountUserService#getAllAccountUsers()}
    */
   @Test
-  @DisplayName("Test getAllAccountUsers(); given AccountUser (default constructor) AccountId is one; then return ArrayList()")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test getAllAccountUsers(); given AccountUser (default constructor) AccountId is one; then return ArrayList()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List AccountUserService.getAllAccountUsers()"})
   void testGetAllAccountUsers_givenAccountUserAccountIdIsOne_thenReturnArrayList() {
     // Arrange
@@ -75,16 +74,19 @@ class AccountUserServiceDiffblueTest {
 
   /**
    * Test {@link AccountUserService#getAllAccountUsers()}.
+   *
    * <ul>
-   *   <li>Given {@link AccountUser} (default constructor) AccountId is two.</li>
-   *   <li>Then return size is two.</li>
+   *   <li>Given {@link AccountUser} (default constructor) AccountId is two.
+   *   <li>Then return size is two.
    * </ul>
-   * <p>
-   * Method under test: {@link AccountUserService#getAllAccountUsers()}
+   *
+   * <p>Method under test: {@link AccountUserService#getAllAccountUsers()}
    */
   @Test
-  @DisplayName("Test getAllAccountUsers(); given AccountUser (default constructor) AccountId is two; then return size is two")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test getAllAccountUsers(); given AccountUser (default constructor) AccountId is two; then return size is two")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List AccountUserService.getAllAccountUsers()"})
   void testGetAllAccountUsers_givenAccountUserAccountIdIsTwo_thenReturnSizeIsTwo() {
     // Arrange
@@ -115,15 +117,17 @@ class AccountUserServiceDiffblueTest {
 
   /**
    * Test {@link AccountUserService#getAllAccountUsers()}.
+   *
    * <ul>
-   *   <li>Then return Empty.</li>
+   *   <li>Then return Empty.
    * </ul>
-   * <p>
-   * Method under test: {@link AccountUserService#getAllAccountUsers()}
+   *
+   * <p>Method under test: {@link AccountUserService#getAllAccountUsers()}
    */
   @Test
   @DisplayName("Test getAllAccountUsers(); then return Empty")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List AccountUserService.getAllAccountUsers()"})
   void testGetAllAccountUsers_thenReturnEmpty() {
     // Arrange
@@ -139,19 +143,22 @@ class AccountUserServiceDiffblueTest {
 
   /**
    * Test {@link AccountUserService#getAllAccountUsers()}.
+   *
    * <ul>
-   *   <li>Then throw {@link ResourceNotFoundException}.</li>
+   *   <li>Then throw {@link ResourceNotFoundException}.
    * </ul>
-   * <p>
-   * Method under test: {@link AccountUserService#getAllAccountUsers()}
+   *
+   * <p>Method under test: {@link AccountUserService#getAllAccountUsers()}
    */
   @Test
   @DisplayName("Test getAllAccountUsers(); then throw ResourceNotFoundException")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List AccountUserService.getAllAccountUsers()"})
   void testGetAllAccountUsers_thenThrowResourceNotFoundException() {
     // Arrange
-    when(accountUserRepository.findAll()).thenThrow(new ResourceNotFoundException("An error occurred"));
+    when(accountUserRepository.findAll())
+        .thenThrow(new ResourceNotFoundException("An error occurred"));
 
     // Act and Assert
     assertThrows(ResourceNotFoundException.class, () -> accountUserService.getAllAccountUsers());
@@ -160,12 +167,13 @@ class AccountUserServiceDiffblueTest {
 
   /**
    * Test {@link AccountUserService#getAccountUserById(int)}.
-   * <p>
-   * Method under test: {@link AccountUserService#getAccountUserById(int)}
+   *
+   * <p>Method under test: {@link AccountUserService#getAccountUserById(int)}
    */
   @Test
   @DisplayName("Test getAccountUserById(int)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"AccountUser AccountUserService.getAccountUserById(int)"})
   void testGetAccountUserById() throws ResourceNotFoundException {
     // Arrange
@@ -174,23 +182,27 @@ class AccountUserServiceDiffblueTest {
 
     // Act and Assert
     assertThrows(ResourceNotFoundException.class, () -> accountUserService.getAccountUserById(1));
-    verify(accountUserRepository).findByAccountId(eq(1));
+    verify(accountUserRepository).findByAccountId(1);
   }
 
   /**
    * Test {@link AccountUserService#getAccountUserById(int)}.
+   *
    * <ul>
-   *   <li>Given {@link AccountUser} (default constructor) AccountId is one.</li>
-   *   <li>Then return {@link AccountUser} (default constructor).</li>
+   *   <li>Given {@link AccountUser} (default constructor) AccountId is one.
+   *   <li>Then return {@link AccountUser} (default constructor).
    * </ul>
-   * <p>
-   * Method under test: {@link AccountUserService#getAccountUserById(int)}
+   *
+   * <p>Method under test: {@link AccountUserService#getAccountUserById(int)}
    */
   @Test
-  @DisplayName("Test getAccountUserById(int); given AccountUser (default constructor) AccountId is one; then return AccountUser (default constructor)")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test getAccountUserById(int); given AccountUser (default constructor) AccountId is one; then return AccountUser (default constructor)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"AccountUser AccountUserService.getAccountUserById(int)"})
-  void testGetAccountUserById_givenAccountUserAccountIdIsOne_thenReturnAccountUser() throws ResourceNotFoundException {
+  void testGetAccountUserById_givenAccountUserAccountIdIsOne_thenReturnAccountUser()
+      throws ResourceNotFoundException {
     // Arrange
     AccountUser accountUser = new AccountUser();
     accountUser.setAccountId(1);
@@ -202,42 +214,73 @@ class AccountUserServiceDiffblueTest {
     AccountUser actualAccountUserById = accountUserService.getAccountUserById(1);
 
     // Assert
-    verify(accountUserRepository).findByAccountId(eq(1));
+    verify(accountUserRepository).findByAccountId(1);
     assertSame(accountUser, actualAccountUserById);
   }
 
   /**
    * Test {@link AccountUserService#getAccountUserById(int)}.
+   *
    * <ul>
-   *   <li>Given {@link AccountUserRepository} {@link AccountUserRepository#findByAccountId(Integer)} return empty.</li>
+   *   <li>Given {@link AccountUserRepository} {@link
+   *       AccountUserRepository#findByAccountId(Integer)} return empty.
    * </ul>
-   * <p>
-   * Method under test: {@link AccountUserService#getAccountUserById(int)}
+   *
+   * <p>Method under test: {@link AccountUserService#getAccountUserById(int)}
    */
   @Test
-  @DisplayName("Test getAccountUserById(int); given AccountUserRepository findByAccountId(Integer) return empty")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test getAccountUserById(int); given AccountUserRepository findByAccountId(Integer) return empty")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"AccountUser AccountUserService.getAccountUserById(int)"})
-  void testGetAccountUserById_givenAccountUserRepositoryFindByAccountIdReturnEmpty() throws ResourceNotFoundException {
+  void testGetAccountUserById_givenAccountUserRepositoryFindByAccountIdReturnEmpty()
+      throws ResourceNotFoundException {
     // Arrange
     Optional<AccountUser> emptyResult = Optional.empty();
     when(accountUserRepository.findByAccountId(Mockito.<Integer>any())).thenReturn(emptyResult);
 
     // Act and Assert
     assertThrows(ResourceNotFoundException.class, () -> accountUserService.getAccountUserById(1));
-    verify(accountUserRepository).findByAccountId(eq(1));
+    verify(accountUserRepository).findByAccountId(1);
   }
 
   /**
    * Test {@link AccountUserService#upsertAccountUser(AccountUser)}.
-   * <p>
-   * Method under test: {@link AccountUserService#upsertAccountUser(AccountUser)}
+   *
+   * <p>Method under test: {@link AccountUserService#upsertAccountUser(AccountUser)}
    */
   @Test
   @DisplayName("Test upsertAccountUser(AccountUser)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"AccountUser AccountUserService.upsertAccountUser(AccountUser)"})
   void testUpsertAccountUser() {
+    // Arrange
+    when(accountRepository.findById(Mockito.<Integer>any()))
+        .thenThrow(new ResourceNotFoundException("An error occurred"));
+
+    AccountUser accountUser = new AccountUser();
+    accountUser.setAccountId(1);
+    accountUser.setUsername("janedoe");
+
+    // Act and Assert
+    assertThrows(
+        ResourceNotFoundException.class, () -> accountUserService.upsertAccountUser(accountUser));
+    verify(accountRepository).findById(1);
+  }
+
+  /**
+   * Test {@link AccountUserService#upsertAccountUser(AccountUser)}.
+   *
+   * <p>Method under test: {@link AccountUserService#upsertAccountUser(AccountUser)}
+   */
+  @Test
+  @DisplayName("Test upsertAccountUser(AccountUser)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"AccountUser AccountUserService.upsertAccountUser(AccountUser)"})
+  void testUpsertAccountUser2() {
     // Arrange
     Account account = new Account();
     account.setDisplayName("Display Name");
@@ -252,22 +295,26 @@ class AccountUserServiceDiffblueTest {
     accountUser.setUsername("janedoe");
 
     // Act and Assert
-    assertThrows(ResourceNotFoundException.class, () -> accountUserService.upsertAccountUser(accountUser));
-    verify(accountRepository).findById(eq(1));
+    assertThrows(
+        ResourceNotFoundException.class, () -> accountUserService.upsertAccountUser(accountUser));
+    verify(accountRepository).findById(1);
     verify(accountUserRepository).save(isA(AccountUser.class));
   }
 
   /**
    * Test {@link AccountUserService#upsertAccountUser(AccountUser)}.
+   *
    * <ul>
-   *   <li>Given {@link AccountRepository} {@link CrudRepository#findById(Object)} return empty.</li>
+   *   <li>Given {@link AccountRepository} {@link AccountRepository#findById(Object)} return empty.
    * </ul>
-   * <p>
-   * Method under test: {@link AccountUserService#upsertAccountUser(AccountUser)}
+   *
+   * <p>Method under test: {@link AccountUserService#upsertAccountUser(AccountUser)}
    */
   @Test
-  @DisplayName("Test upsertAccountUser(AccountUser); given AccountRepository findById(Object) return empty")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test upsertAccountUser(AccountUser); given AccountRepository findById(Object) return empty")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"AccountUser AccountUserService.upsertAccountUser(AccountUser)"})
   void testUpsertAccountUser_givenAccountRepositoryFindByIdReturnEmpty() {
     // Arrange
@@ -279,22 +326,26 @@ class AccountUserServiceDiffblueTest {
     accountUser.setUsername("janedoe");
 
     // Act and Assert
-    assertThrows(ResourceNotFoundException.class, () -> accountUserService.upsertAccountUser(accountUser));
-    verify(accountRepository).findById(eq(1));
+    assertThrows(
+        ResourceNotFoundException.class, () -> accountUserService.upsertAccountUser(accountUser));
+    verify(accountRepository).findById(1);
   }
 
   /**
    * Test {@link AccountUserService#upsertAccountUser(AccountUser)}.
+   *
    * <ul>
-   *   <li>Given {@link AccountUser} (default constructor) AccountId is one.</li>
-   *   <li>Then return {@link AccountUser} (default constructor).</li>
+   *   <li>Given {@link AccountUser} (default constructor) AccountId is one.
+   *   <li>Then return {@link AccountUser} (default constructor).
    * </ul>
-   * <p>
-   * Method under test: {@link AccountUserService#upsertAccountUser(AccountUser)}
+   *
+   * <p>Method under test: {@link AccountUserService#upsertAccountUser(AccountUser)}
    */
   @Test
-  @DisplayName("Test upsertAccountUser(AccountUser); given AccountUser (default constructor) AccountId is one; then return AccountUser (default constructor)")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test upsertAccountUser(AccountUser); given AccountUser (default constructor) AccountId is one; then return AccountUser (default constructor)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"AccountUser AccountUserService.upsertAccountUser(AccountUser)"})
   void testUpsertAccountUser_givenAccountUserAccountIdIsOne_thenReturnAccountUser() {
     // Arrange
@@ -317,7 +368,7 @@ class AccountUserServiceDiffblueTest {
     AccountUser actualUpsertAccountUserResult = accountUserService.upsertAccountUser(accountUser2);
 
     // Assert
-    verify(accountRepository).findById(eq(1));
+    verify(accountRepository).findById(1);
     verify(accountUserRepository).save(isA(AccountUser.class));
     assertSame(accountUser, actualUpsertAccountUserResult);
   }

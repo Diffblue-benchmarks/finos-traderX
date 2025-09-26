@@ -3,6 +3,7 @@ package finos.traderx.tradeprocessor.model;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
@@ -18,13 +19,13 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ContextConfiguration(classes = {Trade.class})
 @ExtendWith(SpringExtension.class)
 class TradeDiffblueTest {
-  @Autowired
-  private Trade trade;
+  @Autowired private Trade trade;
 
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link Trade#setAccountId(Integer)}
    *   <li>{@link Trade#setCreated(Date)}
@@ -46,13 +47,26 @@ class TradeDiffblueTest {
    */
   @Test
   @DisplayName("Test getters and setters")
-  @Tag("MaintainedByDiffblue")
-  @MethodsUnderTest({"Integer Trade.getAccountId()", "Date Trade.getCreated()", "String Trade.getId()",
-      "Integer Trade.getQuantity()", "String Trade.getSecurity()", "TradeSide Trade.getSide()",
-      "TradeState Trade.getState()", "Date Trade.getUpdated()", "void Trade.setAccountId(Integer)",
-      "void Trade.setCreated(Date)", "void Trade.setId(String)", "void Trade.setQuantity(Integer)",
-      "void Trade.setSecurity(String)", "void Trade.setSide(TradeSide)", "void Trade.setState(TradeState)",
-      "void Trade.setUpdated(Date)"})
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "Integer Trade.getAccountId()",
+    "Date Trade.getCreated()",
+    "String Trade.getId()",
+    "Integer Trade.getQuantity()",
+    "String Trade.getSecurity()",
+    "TradeSide Trade.getSide()",
+    "TradeState Trade.getState()",
+    "Date Trade.getUpdated()",
+    "void Trade.setAccountId(Integer)",
+    "void Trade.setCreated(Date)",
+    "void Trade.setId(String)",
+    "void Trade.setQuantity(Integer)",
+    "void Trade.setSecurity(String)",
+    "void Trade.setSide(TradeSide)",
+    "void Trade.setState(TradeState)",
+    "void Trade.setUpdated(Date)"
+  })
   void testGettersAndSetters() {
     // Arrange
     Trade trade = new Trade();
@@ -90,12 +104,13 @@ class TradeDiffblueTest {
 
   /**
    * Test new {@link Trade} (default constructor).
-   * <p>
-   * Method under test: default or parameterless constructor of {@link Trade}
+   *
+   * <p>Method under test: default or parameterless constructor of {@link Trade}
    */
   @Test
   @DisplayName("Test new Trade (default constructor)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void Trade.<init>()"})
   void testNewTrade() {
     // Arrange and Act

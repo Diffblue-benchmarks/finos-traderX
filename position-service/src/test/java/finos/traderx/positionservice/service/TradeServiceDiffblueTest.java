@@ -3,9 +3,9 @@ package finos.traderx.positionservice.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import finos.traderx.positionservice.model.Trade;
 import finos.traderx.positionservice.repository.TradeRepository;
@@ -29,36 +29,39 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @DisabledInAotMode
 @ExtendWith(SpringExtension.class)
 class TradeServiceDiffblueTest {
-  @MockBean
-  private TradeRepository tradeRepository;
+  @MockBean private TradeRepository tradeRepository;
 
-  @Autowired
-  private TradeService tradeService;
+  @Autowired private TradeService tradeService;
 
   /**
    * Test {@link TradeService#getAllTrades()}.
+   *
    * <ul>
-   *   <li>Given {@link Trade} (default constructor) AccountId is one.</li>
-   *   <li>Then return size is one.</li>
+   *   <li>Given {@link Trade} (default constructor) AccountId is one.
+   *   <li>Then return size is one.
    * </ul>
-   * <p>
-   * Method under test: {@link TradeService#getAllTrades()}
+   *
+   * <p>Method under test: {@link TradeService#getAllTrades()}
    */
   @Test
-  @DisplayName("Test getAllTrades(); given Trade (default constructor) AccountId is one; then return size is one")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test getAllTrades(); given Trade (default constructor) AccountId is one; then return size is one")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List TradeService.getAllTrades()"})
   void testGetAllTrades_givenTradeAccountIdIsOne_thenReturnSizeIsOne() {
     // Arrange
     Trade trade = new Trade();
     trade.setAccountId(1);
-    trade.setCreated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    trade.setCreated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     trade.setId("42");
     trade.setQuantity(1);
     trade.setSecurity("Security");
     trade.setSide("Side");
     trade.setState("MD");
-    trade.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    trade.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     ArrayList<Trade> tradeList = new ArrayList<>();
     tradeList.add(trade);
@@ -81,38 +84,45 @@ class TradeServiceDiffblueTest {
 
   /**
    * Test {@link TradeService#getAllTrades()}.
+   *
    * <ul>
-   *   <li>Given {@link Trade} (default constructor) AccountId is two.</li>
-   *   <li>Then return size is two.</li>
+   *   <li>Given {@link Trade} (default constructor) AccountId is two.
+   *   <li>Then return size is two.
    * </ul>
-   * <p>
-   * Method under test: {@link TradeService#getAllTrades()}
+   *
+   * <p>Method under test: {@link TradeService#getAllTrades()}
    */
   @Test
-  @DisplayName("Test getAllTrades(); given Trade (default constructor) AccountId is two; then return size is two")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test getAllTrades(); given Trade (default constructor) AccountId is two; then return size is two")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List TradeService.getAllTrades()"})
   void testGetAllTrades_givenTradeAccountIdIsTwo_thenReturnSizeIsTwo() {
     // Arrange
     Trade trade = new Trade();
     trade.setAccountId(1);
-    trade.setCreated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    trade.setCreated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     trade.setId("42");
     trade.setQuantity(1);
     trade.setSecurity("Security");
     trade.setSide("Side");
     trade.setState("MD");
-    trade.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    trade.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Trade trade2 = new Trade();
     trade2.setAccountId(2);
-    trade2.setCreated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    trade2.setCreated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     trade2.setId("Id");
     trade2.setQuantity(0);
     trade2.setSecurity("UNSET");
     trade2.setSide("42");
     trade2.setState("State");
-    trade2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    trade2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     ArrayList<Trade> tradeList = new ArrayList<>();
     tradeList.add(trade2);
@@ -137,15 +147,17 @@ class TradeServiceDiffblueTest {
 
   /**
    * Test {@link TradeService#getAllTrades()}.
+   *
    * <ul>
-   *   <li>Then return Empty.</li>
+   *   <li>Then return Empty.
    * </ul>
-   * <p>
-   * Method under test: {@link TradeService#getAllTrades()}
+   *
+   * <p>Method under test: {@link TradeService#getAllTrades()}
    */
   @Test
   @DisplayName("Test getAllTrades(); then return Empty")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List TradeService.getAllTrades()"})
   void testGetAllTrades_thenReturnEmpty() {
     // Arrange
@@ -161,12 +173,13 @@ class TradeServiceDiffblueTest {
 
   /**
    * Test {@link TradeService#getTradesByAccountID(int)}.
-   * <p>
-   * Method under test: {@link TradeService#getTradesByAccountID(int)}
+   *
+   * <p>Method under test: {@link TradeService#getTradesByAccountID(int)}
    */
   @Test
   @DisplayName("Test getTradesByAccountID(int)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List TradeService.getTradesByAccountID(int)"})
   void testGetTradesByAccountID() {
     // Arrange
@@ -176,7 +189,7 @@ class TradeServiceDiffblueTest {
     List<Trade> actualTradesByAccountID = tradeService.getTradesByAccountID(1);
 
     // Assert
-    verify(tradeRepository).findByAccountId(eq(1));
+    verify(tradeRepository).findByAccountId(1);
     assertTrue(actualTradesByAccountID.isEmpty());
   }
 }

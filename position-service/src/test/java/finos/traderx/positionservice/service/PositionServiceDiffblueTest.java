@@ -3,9 +3,9 @@ package finos.traderx.positionservice.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import finos.traderx.positionservice.model.Position;
 import finos.traderx.positionservice.repository.PositionRepository;
@@ -29,24 +29,25 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @DisabledInAotMode
 @ExtendWith(SpringExtension.class)
 class PositionServiceDiffblueTest {
-  @MockBean
-  private PositionRepository positionRepository;
+  @MockBean private PositionRepository positionRepository;
 
-  @Autowired
-  private PositionService positionService;
+  @Autowired private PositionService positionService;
 
   /**
    * Test {@link PositionService#getAllPositions()}.
+   *
    * <ul>
-   *   <li>Given {@link Position} (default constructor) AccountId is one.</li>
-   *   <li>Then return size is one.</li>
+   *   <li>Given {@link Position} (default constructor) AccountId is one.
+   *   <li>Then return size is one.
    * </ul>
-   * <p>
-   * Method under test: {@link PositionService#getAllPositions()}
+   *
+   * <p>Method under test: {@link PositionService#getAllPositions()}
    */
   @Test
-  @DisplayName("Test getAllPositions(); given Position (default constructor) AccountId is one; then return size is one")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test getAllPositions(); given Position (default constructor) AccountId is one; then return size is one")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List PositionService.getAllPositions()"})
   void testGetAllPositions_givenPositionAccountIdIsOne_thenReturnSizeIsOne() {
     // Arrange
@@ -54,7 +55,8 @@ class PositionServiceDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     ArrayList<Position> positionList = new ArrayList<>();
     positionList.add(position);
@@ -74,16 +76,19 @@ class PositionServiceDiffblueTest {
 
   /**
    * Test {@link PositionService#getAllPositions()}.
+   *
    * <ul>
-   *   <li>Given {@link Position} (default constructor) AccountId is two.</li>
-   *   <li>Then return size is two.</li>
+   *   <li>Given {@link Position} (default constructor) AccountId is two.
+   *   <li>Then return size is two.
    * </ul>
-   * <p>
-   * Method under test: {@link PositionService#getAllPositions()}
+   *
+   * <p>Method under test: {@link PositionService#getAllPositions()}
    */
   @Test
-  @DisplayName("Test getAllPositions(); given Position (default constructor) AccountId is two; then return size is two")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test getAllPositions(); given Position (default constructor) AccountId is two; then return size is two")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List PositionService.getAllPositions()"})
   void testGetAllPositions_givenPositionAccountIdIsTwo_thenReturnSizeIsTwo() {
     // Arrange
@@ -91,13 +96,15 @@ class PositionServiceDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(0);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     ArrayList<Position> positionList = new ArrayList<>();
     positionList.add(position2);
@@ -119,15 +126,17 @@ class PositionServiceDiffblueTest {
 
   /**
    * Test {@link PositionService#getAllPositions()}.
+   *
    * <ul>
-   *   <li>Then return Empty.</li>
+   *   <li>Then return Empty.
    * </ul>
-   * <p>
-   * Method under test: {@link PositionService#getAllPositions()}
+   *
+   * <p>Method under test: {@link PositionService#getAllPositions()}
    */
   @Test
   @DisplayName("Test getAllPositions(); then return Empty")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List PositionService.getAllPositions()"})
   void testGetAllPositions_thenReturnEmpty() {
     // Arrange
@@ -143,12 +152,13 @@ class PositionServiceDiffblueTest {
 
   /**
    * Test {@link PositionService#getPositionsByAccountID(int)}.
-   * <p>
-   * Method under test: {@link PositionService#getPositionsByAccountID(int)}
+   *
+   * <p>Method under test: {@link PositionService#getPositionsByAccountID(int)}
    */
   @Test
   @DisplayName("Test getPositionsByAccountID(int)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List PositionService.getPositionsByAccountID(int)"})
   void testGetPositionsByAccountID() {
     // Arrange
@@ -158,7 +168,7 @@ class PositionServiceDiffblueTest {
     List<Position> actualPositionsByAccountID = positionService.getPositionsByAccountID(1);
 
     // Assert
-    verify(positionRepository).findByAccountId(eq(1));
+    verify(positionRepository).findByAccountId(1);
     assertTrue(actualPositionsByAccountID.isEmpty());
   }
 }

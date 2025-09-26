@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import finos.traderx.messaging.PubSubException;
 import finos.traderx.tradeprocessor.TradeFeedHandler;
@@ -13,23 +14,30 @@ import io.socket.client.IO.Options;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
+@ExtendWith(MockitoExtension.class)
 class SocketIOJSONSubscriberDiffblueTest {
+  @InjectMocks private TradeFeedHandler tradeFeedHandler;
+
   /**
    * Test {@link SocketIOJSONSubscriber#getIOOptions()}.
-   * <p>
-   * Method under test: {@link SocketIOJSONSubscriber#getIOOptions()}
+   *
+   * <p>Method under test: {@link SocketIOJSONSubscriber#getIOOptions()}
    */
   @Test
   @DisplayName("Test getIOOptions()")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Options SocketIOJSONSubscriber.getIOOptions()"})
   void testGetIOOptions() {
     // Arrange and Act
-    Options actualIOOptions = (new TradeFeedHandler()).getIOOptions();
+    Options actualIOOptions = new TradeFeedHandler().getIOOptions();
 
     // Assert
     assertNull(actualIOOptions.decoder);
@@ -63,29 +71,33 @@ class SocketIOJSONSubscriberDiffblueTest {
 
   /**
    * Test {@link SocketIOJSONSubscriber#isConnected()}.
-   * <p>
-   * Method under test: {@link SocketIOJSONSubscriber#isConnected()}
+   *
+   * <p>Method under test: {@link SocketIOJSONSubscriber#isConnected()}
    */
   @Test
   @DisplayName("Test isConnected()")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"boolean SocketIOJSONSubscriber.isConnected()"})
   void testIsConnected() {
     // Arrange, Act and Assert
-    assertFalse((new TradeFeedHandler()).isConnected());
+    assertFalse(new TradeFeedHandler().isConnected());
   }
 
   /**
    * Test {@link SocketIOJSONSubscriber#connect()}.
+   *
    * <ul>
-   *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code 42 Main St}.</li>
+   *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code 42 Main St}.
    * </ul>
-   * <p>
-   * Method under test: {@link SocketIOJSONSubscriber#connect()}
+   *
+   * <p>Method under test: {@link SocketIOJSONSubscriber#connect()}
    */
   @Test
-  @DisplayName("Test connect(); given TradeFeedHandler (default constructor) SocketAddress is '42 Main St'")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test connect(); given TradeFeedHandler (default constructor) SocketAddress is '42 Main St'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void SocketIOJSONSubscriber.connect()"})
   void testConnect_givenTradeFeedHandlerSocketAddressIs42MainSt() throws PubSubException {
     // Arrange
@@ -98,15 +110,18 @@ class SocketIOJSONSubscriberDiffblueTest {
 
   /**
    * Test {@link SocketIOJSONSubscriber#connect()}.
+   *
    * <ul>
-   *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code Addr}.</li>
+   *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code Addr}.
    * </ul>
-   * <p>
-   * Method under test: {@link SocketIOJSONSubscriber#connect()}
+   *
+   * <p>Method under test: {@link SocketIOJSONSubscriber#connect()}
    */
   @Test
-  @DisplayName("Test connect(); given TradeFeedHandler (default constructor) SocketAddress is 'Addr'")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test connect(); given TradeFeedHandler (default constructor) SocketAddress is 'Addr'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void SocketIOJSONSubscriber.connect()"})
   void testConnect_givenTradeFeedHandlerSocketAddressIsAddr() throws PubSubException {
     // Arrange
@@ -119,15 +134,114 @@ class SocketIOJSONSubscriberDiffblueTest {
 
   /**
    * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
+   *
    * <ul>
-   *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code 42 Main St}.</li>
+   *   <li>Given {@link TradeFeedHandler} (default constructor) DefaultTopic is {@code null}.
    * </ul>
-   * <p>
-   * Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
+   *
+   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
    */
   @Test
-  @DisplayName("Test afterPropertiesSet(); given TradeFeedHandler (default constructor) SocketAddress is '42 Main St'")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test afterPropertiesSet(); given TradeFeedHandler (default constructor) DefaultTopic is 'null'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
+  void testAfterPropertiesSet_givenTradeFeedHandlerDefaultTopicIsNull() throws Exception {
+    // Arrange
+    TradeFeedHandler tradeFeedHandler = new TradeFeedHandler();
+    tradeFeedHandler.setDefaultTopic(null);
+    tradeFeedHandler.setSocketAddress("Addr");
+
+    // Act and Assert
+    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
+  }
+
+  /**
+   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
+   *
+   * <ul>
+   *   <li>Given {@link TradeFeedHandler} DefaultTopic is {@code null}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
+   */
+  @Test
+  @DisplayName("Test afterPropertiesSet(); given TradeFeedHandler DefaultTopic is 'null'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
+  void testAfterPropertiesSet_givenTradeFeedHandlerDefaultTopicIsNull2() throws Exception {
+    // Arrange
+    tradeFeedHandler.setDefaultTopic(null);
+    tradeFeedHandler.setSocketAddress("topic");
+
+    // Act and Assert
+    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
+  }
+
+  /**
+   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
+   *
+   * <ul>
+   *   <li>Given {@link TradeFeedHandler} DefaultTopic is {@code Topic/default}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
+   */
+  @Test
+  @DisplayName("Test afterPropertiesSet(); given TradeFeedHandler DefaultTopic is 'Topic/default'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
+  void testAfterPropertiesSet_givenTradeFeedHandlerDefaultTopicIsTopicDefault() throws Exception {
+    // Arrange
+    tradeFeedHandler.setDefaultTopic("Topic/default");
+    tradeFeedHandler.setSocketAddress("");
+
+    // Act and Assert
+    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
+  }
+
+  /**
+   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
+   *
+   * <ul>
+   *   <li>Given {@link TradeFeedHandler} DefaultTopic is {@code Topicdisconnect}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
+   */
+  @Test
+  @DisplayName(
+      "Test afterPropertiesSet(); given TradeFeedHandler DefaultTopic is 'Topicdisconnect'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
+  void testAfterPropertiesSet_givenTradeFeedHandlerDefaultTopicIsTopicdisconnect()
+      throws Exception {
+    // Arrange
+    tradeFeedHandler.setDefaultTopic("Topicdisconnect");
+    tradeFeedHandler.setSocketAddress("");
+
+    // Act and Assert
+    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
+  }
+
+  /**
+   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
+   *
+   * <ul>
+   *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code 42 Main St}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
+   */
+  @Test
+  @DisplayName(
+      "Test afterPropertiesSet(); given TradeFeedHandler (default constructor) SocketAddress is '42 Main St'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
   void testAfterPropertiesSet_givenTradeFeedHandlerSocketAddressIs42MainSt() throws Exception {
     // Arrange
@@ -140,15 +254,18 @@ class SocketIOJSONSubscriberDiffblueTest {
 
   /**
    * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
+   *
    * <ul>
-   *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code Addr}.</li>
+   *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code Addr}.
    * </ul>
-   * <p>
-   * Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
+   *
+   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
    */
   @Test
-  @DisplayName("Test afterPropertiesSet(); given TradeFeedHandler (default constructor) SocketAddress is 'Addr'")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test afterPropertiesSet(); given TradeFeedHandler (default constructor) SocketAddress is 'Addr'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
   void testAfterPropertiesSet_givenTradeFeedHandlerSocketAddressIsAddr() throws Exception {
     // Arrange

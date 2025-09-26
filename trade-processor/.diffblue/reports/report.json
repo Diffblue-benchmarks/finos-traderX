@@ -1,0 +1,2855 @@
+{
+  "meta" : {
+    "reportVersion" : "2.7"
+  },
+  "run" : {
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-09-26T15:16:07.418819673Z",
+    "command" : "dcover create --exclude-modules=database --coverage-reports --upload http://localhost:8080 --project-name finos-traderX --name with-diffblue-tests",
+    "totalTime" : 642.495,
+    "environmentDetectionTime" : 0.485,
+    "indexingTime" : 0.354,
+    "entryPointsTime" : 0.373,
+    "generationTime" : 502.534,
+    "timeToFirstTest" : 74.937,
+    "timeToLastTest" : 581.209,
+    "indexQueryTime" : 10.116,
+    "verificationTime" : 26.202,
+    "validationTime" : 26.864
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R004" : "No meaningful assertions found",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R026" : "Failed to create Spring context",
+    "R028" : "Incomplete repository information",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T002" : "Trivial setter",
+    "T003" : "Private method",
+    "T004" : "In anonymous inner class",
+    "T005" : "Trivial constructor",
+    "T006" : "Main method",
+    "T009" : "No implementation for abstract class",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "W001" : "Test did not compile",
+    "W002" : "Test compiled, but did not pass"
+  },
+  "summary" : {
+    "classesCount" : 34,
+    "methodsCount" : 223,
+    "cumulativeDiffblueTestCount" : 66,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 66,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 791,
+    "perMethodTestability" : {
+      "T000" : 89,
+      "T001" : 32,
+      "T002" : 23,
+      "T003" : 3,
+      "T004" : 16,
+      "T005" : 17,
+      "T006" : 1,
+      "T009" : 10,
+      "T010" : 19,
+      "T012" : 7,
+      "T023" : 6
+    },
+    "perMethodOutcome" : {
+      "R000" : 109,
+      "R002" : 2,
+      "R004" : 3,
+      "R013" : 1,
+      "R026" : 7,
+      "R028" : 32,
+      "T003" : 3,
+      "T004" : 16,
+      "T005" : 6,
+      "T006" : 1,
+      "T009" : 10,
+      "T010" : 19,
+      "T012" : 7,
+      "T023" : 6,
+      "W001" : 1
+    },
+    "perTestOutcome" : {
+      "R000" : 66
+    },
+    "perTestValidation" : {
+      "V000" : 66
+    },
+    "warnings" : {
+      "W001" : 1,
+      "W002" : 6
+    }
+  },
+  "classes" : {
+    "finos.traderx.messaging.Envelope" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 5
+      },
+      "perMethodOutcome" : {
+        "T010" : 5
+      }
+    },
+    "finos.traderx.messaging.PubSubException" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "finos.traderx.messaging.Publisher" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 5
+      },
+      "perMethodOutcome" : {
+        "T010" : 5
+      }
+    },
+    "finos.traderx.messaging.Subscriber" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 6
+      },
+      "perMethodOutcome" : {
+        "T010" : 6
+      }
+    },
+    "finos.traderx.messaging.socketio.SocketIOEnvelope" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T001" : 5,
+        "T002" : 4,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 11
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher" : {
+      "methodsCount" : 12,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T009" : 10,
+        "T010" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "T009" : 10,
+        "T010" : 1,
+        "T023" : 1
+      }
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher$1" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 2
+      }
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher$2" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 2
+      }
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher$3" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 2
+      }
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber" : {
+      "methodsCount" : 13,
+      "completeTestCount" : 10,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 10,
+        "T010" : 2,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "R026" : 5,
+        "T010" : 2,
+        "T023" : 1,
+        "W001" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 10
+      },
+      "warnings" : {
+        "W001" : 1,
+        "W002" : 6
+      }
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$1" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 2
+      }
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$2" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 2
+      }
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$3" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 2
+      }
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$4" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 2
+      }
+    },
+    "finos.traderx.tradeprocessor.OpenApiConfig" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "T003" : 1,
+        "T005" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.PubSubConfig" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R026" : 2,
+        "T005" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.PubSubConfig$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 1
+      },
+      "perMethodOutcome" : {
+        "T004" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.PubSubConfig$2" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 1
+      },
+      "perMethodOutcome" : {
+        "T004" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.TradeFeedHandler" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T012" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "finos.traderx.tradeprocessor.TradeProcessorApplication" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 1,
+        "T006" : 1
+      },
+      "perMethodOutcome" : {
+        "T005" : 1,
+        "T006" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.controller.DocsController" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "T005" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.controller.TradeServiceController" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "T005" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.model.Position" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T001" : 4,
+        "T002" : 4,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.model.PositionID" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 2
+      },
+      "perMethodOutcome" : {
+        "R002" : 2
+      }
+    },
+    "finos.traderx.tradeprocessor.model.Trade" : {
+      "methodsCount" : 17,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T001" : 8,
+        "T002" : 8
+      },
+      "perMethodOutcome" : {
+        "R000" : 17
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "finos.traderx.tradeprocessor.model.TradeBookingResult" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T001" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.model.TradeOrder" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T001" : 6,
+        "T005" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 8
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "finos.traderx.tradeprocessor.model.TradeRequest" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T001" : 4,
+        "T002" : 4,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.model.TradeResponse" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T001" : 3,
+        "T002" : 3,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "finos.traderx.tradeprocessor.model.TradeSide" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 3,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 3,
+        "T023" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.model.TradeState" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 3,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 3,
+        "T023" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository" : {
+      "methodsCount" : 33,
+      "completeTestCount" : 31,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 33
+      },
+      "perMethodOutcome" : {
+        "R000" : 29,
+        "R004" : 3,
+        "R013" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 31
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository" : {
+      "methodsCount" : 32,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 32
+      },
+      "perMethodOutcome" : {
+        "R028" : 32
+      }
+    },
+    "finos.traderx.tradeprocessor.service.TradeService" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "T005" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    }
+  },
+  "methods" : {
+    "finos.traderx.messaging.Envelope.getDate:()Ljava/util/Date;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Envelope.getFrom:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Envelope.getPayload:()Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Envelope.getTopic:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Envelope.getType:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.PubSubException.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        5
+      ]
+    },
+    "finos.traderx.messaging.PubSubException.<init>:(Ljava/lang/String;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        6
+      ]
+    },
+    "finos.traderx.messaging.PubSubException.<init>:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        7
+      ]
+    },
+    "finos.traderx.messaging.Publisher.connect:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Publisher.disconnect:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Publisher.isConnected:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Publisher.publish:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Publisher.publish:(Ljava/lang/String;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Subscriber.connect:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Subscriber.disconnect:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Subscriber.isConnected:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Subscriber.onMessage:(Lfinos/traderx/messaging/Envelope;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Subscriber.subscribe:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.Subscriber.unsubscribe:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.socketio.SocketIOEnvelope.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        14,
+        10,
+        14
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOEnvelope.<init>:(Ljava/lang/String;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        15,
+        10,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOEnvelope.getDate:()Ljava/util/Date;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        50
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOEnvelope.getFrom:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        54
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOEnvelope.getPayload:()Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOEnvelope.getTopic:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        42
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOEnvelope.getType:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOEnvelope.setFrom:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        34,
+        35
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOEnvelope.setPayload:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        26,
+        27
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOEnvelope.setTopic:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        30,
+        31
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOEnvelope.setType:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        22,
+        23
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher$1.<init>:(Lfinos/traderx/messaging/socketio/SocketIOJSONPublisher;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        99
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher$1.call:([Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        102,
+        103,
+        104
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher$2.<init>:(Lfinos/traderx/messaging/socketio/SocketIOJSONPublisher;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        107
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher$2.call:([Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        110,
+        111,
+        112
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher$3.<init>:(Lfinos/traderx/messaging/socketio/SocketIOJSONPublisher;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        115
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher$3.call:([Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        118,
+        119,
+        120
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        22,
+        30,
+        32,
+        41,
+        47
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher.afterPropertiesSet:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        98,
+        99,
+        107,
+        115,
+        122,
+        123
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher.connect:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        83,
+        84,
+        86,
+        89,
+        87,
+        88,
+        90
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher.disconnect:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        76,
+        77,
+        78,
+        79
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher.getIOOptions:()Lio/socket/client/IO$Options;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher.internalConnect:(Ljava/net/URI;)Lio/socket/client/Socket;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        93
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher.isConnected:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        36
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher.publish:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        55,
+        56
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher.publish:(Ljava/lang/String;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        60,
+        61,
+        64,
+        65,
+        66,
+        67,
+        68,
+        71,
+        69,
+        70,
+        72
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher.setSocketAddress:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        44,
+        45
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONPublisher.setTopic:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        50,
+        51
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$1.<init>:(Lfinos/traderx/messaging/socketio/SocketIOJSONSubscriber;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        97
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$1.call:([Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        100,
+        101,
+        102
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$2.<init>:(Lfinos/traderx/messaging/socketio/SocketIOJSONSubscriber;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        105
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$2.call:([Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        108,
+        109,
+        110
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$3.<init>:(Lfinos/traderx/messaging/socketio/SocketIOJSONSubscriber;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        113
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$3.call:([Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        116,
+        117,
+        118
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$4.<init>:(Lfinos/traderx/messaging/socketio/SocketIOJSONSubscriber;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        121
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$4.call:([Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        125,
+        126,
+        127,
+        128,
+        130,
+        131,
+        132,
+        138,
+        136,
+        137,
+        139,
+        140
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.<init>:(Ljava/lang/Class;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        29,
+        42,
+        44,
+        53,
+        59,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.afterPropertiesSet:()V" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "warnings" : {
+        "W002" : 4
+      },
+      "lineNumbers" : [
+        148,
+        149,
+        150
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.connect:()V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "warnings" : {
+        "W002" : 2
+      },
+      "lineNumbers" : [
+        86,
+        87,
+        89,
+        92,
+        90,
+        91,
+        93
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.disconnect:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R026",
+      "lineNumbers" : [
+        79,
+        80,
+        81,
+        82
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.getIOOptions:()Lio/socket/client/IO$Options;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        36
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.internalConnect:(Ljava/net/URI;)Lio/socket/client/Socket;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R026",
+      "lineNumbers" : [
+        96,
+        97,
+        105,
+        113,
+        121,
+        142,
+        143
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.isConnected:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        48
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.onMessage:(Lfinos/traderx/messaging/Envelope;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.setDefaultTopic:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R026",
+      "lineNumbers" : [
+        61,
+        62
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.setSocketAddress:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "W001",
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        56,
+        57
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.subscribe:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R026",
+      "lineNumbers" : [
+        68,
+        69,
+        70
+      ]
+    },
+    "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.unsubscribe:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R026",
+      "lineNumbers" : [
+        74,
+        75
+      ]
+    },
+    "finos.traderx.tradeprocessor.OpenApiConfig.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        12,
+        14
+      ]
+    },
+    "finos.traderx.tradeprocessor.OpenApiConfig.config:()Lio/swagger/v3/oas/models/OpenAPI;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        19,
+        20,
+        21,
+        22,
+        24,
+        25,
+        26,
+        28,
+        29
+      ]
+    },
+    "finos.traderx.tradeprocessor.OpenApiConfig.serverInfo:(Ljava/lang/String;Ljava/lang/String;)Lio/swagger/v3/oas/models/servers/Server;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        33,
+        34,
+        35,
+        33
+      ]
+    },
+    "finos.traderx.tradeprocessor.PubSubConfig$1.<init>:(Lfinos/traderx/tradeprocessor/PubSubConfig;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        21
+      ]
+    },
+    "finos.traderx.tradeprocessor.PubSubConfig$2.<init>:(Lfinos/traderx/tradeprocessor/PubSubConfig;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "finos.traderx.tradeprocessor.PubSubConfig.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        15
+      ]
+    },
+    "finos.traderx.tradeprocessor.PubSubConfig.positionPublisher:()Lfinos/traderx/messaging/Publisher;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R026",
+      "lineNumbers" : [
+        21,
+        22,
+        23
+      ]
+    },
+    "finos.traderx.tradeprocessor.PubSubConfig.tradeFeedHandler:()Lfinos/traderx/messaging/Subscriber;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        36,
+        37,
+        38,
+        39
+      ]
+    },
+    "finos.traderx.tradeprocessor.PubSubConfig.tradePublisher:()Lfinos/traderx/messaging/Publisher;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R026",
+      "lineNumbers" : [
+        28,
+        29,
+        30
+      ]
+    },
+    "finos.traderx.tradeprocessor.TradeFeedHandler.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "finos.traderx.tradeprocessor.TradeFeedHandler.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        15,
+        16
+      ]
+    },
+    "finos.traderx.tradeprocessor.TradeFeedHandler.onMessage:(Lfinos/traderx/messaging/Envelope;Lfinos/traderx/tradeprocessor/model/TradeOrder;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        23,
+        27,
+        24,
+        25,
+        26,
+        29
+      ]
+    },
+    "finos.traderx.tradeprocessor.TradeFeedHandler.onMessage:(Lfinos/traderx/messaging/Envelope;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        11
+      ]
+    },
+    "finos.traderx.tradeprocessor.TradeProcessorApplication.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        7
+      ]
+    },
+    "finos.traderx.tradeprocessor.TradeProcessorApplication.main:([Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T006",
+      "perMethodOutcome" : "T006",
+      "lineNumbers" : [
+        11,
+        12
+      ]
+    },
+    "finos.traderx.tradeprocessor.controller.DocsController.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        7
+      ]
+    },
+    "finos.traderx.tradeprocessor.controller.DocsController.index:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        11
+      ]
+    },
+    "finos.traderx.tradeprocessor.controller.TradeServiceController.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "finos.traderx.tradeprocessor.controller.TradeServiceController.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "finos.traderx.tradeprocessor.controller.TradeServiceController.processOrder:(Lfinos/traderx/tradeprocessor/model/TradeOrder;)Lorg/springframework/http/ResponseEntity;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        30,
+        31
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Position.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        15
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Position.getAccountId:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Position.getQuantity:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        48
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Position.getSecurity:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Position.getUpdated:()Ljava/util/Date;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        63
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Position.setAccountId:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        29,
+        30
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Position.setQuantity:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        52,
+        53
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Position.setSecurity:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        41,
+        42
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Position.setUpdated:(Ljava/util/Date;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        59,
+        60
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.PositionID.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        9,
+        11
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.PositionID.<init>:(Ljava/lang/Integer;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        17,
+        69
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.getAccountId:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.getCreated:()Ljava/util/Date;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        112
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.getId:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        26
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.getQuantity:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        85
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.getSecurity:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        50
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.getSide:()Lfinos/traderx/tradeprocessor/model/TradeSide;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.getState:()Lfinos/traderx/tradeprocessor/model/TradeState;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        74
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.getUpdated:()Ljava/util/Date;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        100
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.setAccountId:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        41,
+        42
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.setCreated:(Ljava/util/Date;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        108,
+        109
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.setId:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        30,
+        31
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.setQuantity:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        89,
+        90
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.setSecurity:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        54,
+        55
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.setSide:(Lfinos/traderx/tradeprocessor/model/TradeSide;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        66,
+        67
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.setState:(Lfinos/traderx/tradeprocessor/model/TradeState;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        78,
+        79
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.Trade.setUpdated:(Ljava/util/Date;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        96,
+        97
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeBookingResult.<init>:(Lfinos/traderx/tradeprocessor/model/Trade;Lfinos/traderx/tradeprocessor/model/Position;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeBookingResult.getPosition:()Lfinos/traderx/tradeprocessor/model/Position;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        14
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeBookingResult.getTrade:()Lfinos/traderx/tradeprocessor/model/Trade;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        11
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeOrder.<init>:()V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        12
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeOrder.<init>:(Ljava/lang/String;ILjava/lang/String;Lfinos/traderx/tradeprocessor/model/TradeSide;I)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeOrder.getAccountId:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeOrder.getId:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        23
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeOrder.getQuantity:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeOrder.getSecurity:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeOrder.getSide:()Lfinos/traderx/tradeprocessor/model/TradeSide;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeOrder.getState:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeRequest.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        6
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeRequest.getAccountId:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        21
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeRequest.getQuantity:()Ljava/lang/Integer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        45
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeRequest.getSecurity:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeRequest.getSide:()Lfinos/traderx/tradeprocessor/model/TradeSide;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeRequest.setAccountId:(I)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        25,
+        26
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeRequest.setQuantity:(Ljava/lang/Integer;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        49,
+        50
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeRequest.setSecurity:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        33,
+        34
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeRequest.setSide:(Lfinos/traderx/tradeprocessor/model/TradeSide;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        41,
+        42
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeResponse.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        6
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeResponse.error:(Ljava/lang/String;)Lfinos/traderx/tradeprocessor/model/TradeResponse;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeResponse.getErrorMessage:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        26
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeResponse.getId:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        18
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeResponse.isSuccess:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeResponse.setErrorMessage:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        38,
+        39
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeResponse.setId:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        22,
+        23
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeResponse.setSuccess:(Z)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        34,
+        35
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeResponse.success:(Ljava/lang/String;)Lfinos/traderx/tradeprocessor/model/TradeResponse;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeSide.$values:()[Lfinos/traderx/tradeprocessor/model/TradeSide;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        5
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeSide.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "finos.traderx.tradeprocessor.model.TradeSide.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        6
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeSide.valueOf:(Ljava/lang/String;)Lfinos/traderx/tradeprocessor/model/TradeSide;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        5
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeSide.values:()[Lfinos/traderx/tradeprocessor/model/TradeSide;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        5
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeState.$values:()[Lfinos/traderx/tradeprocessor/model/TradeState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        4
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeState.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "finos.traderx.tradeprocessor.model.TradeState.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        5
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeState.valueOf:(Ljava/lang/String;)Lfinos/traderx/tradeprocessor/model/TradeState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        4
+      ]
+    },
+    "finos.traderx.tradeprocessor.model.TradeState.values:()[Lfinos/traderx/tradeprocessor/model/TradeState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        4
+      ]
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.count:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.count:(Lorg/springframework/data/domain/Example;)J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.delete:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.deleteAll:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.deleteAll:(Ljava/lang/Iterable;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.deleteAllById:(Ljava/lang/Iterable;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.deleteAllByIdInBatch:(Ljava/lang/Iterable;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.deleteAllInBatch:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.deleteAllInBatch:(Ljava/lang/Iterable;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.deleteById:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.deleteInBatch:(Ljava/lang/Iterable;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.exists:(Lorg/springframework/data/domain/Example;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.existsById:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.findAll:()Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.findAll:(Lorg/springframework/data/domain/Example;)Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.findAll:(Lorg/springframework/data/domain/Example;Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.findAll:(Lorg/springframework/data/domain/Example;Lorg/springframework/data/domain/Sort;)Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.findAll:(Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.findAll:(Lorg/springframework/data/domain/Sort;)Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.findAllById:(Ljava/lang/Iterable;)Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.findBy:(Lorg/springframework/data/domain/Example;Ljava/util/function/Function;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013"
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.findByAccountId:(Ljava/lang/Integer;)Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.findByAccountIdAndSecurity:(Ljava/lang/Integer;Ljava/lang/String;)Lfinos/traderx/tradeprocessor/model/Position;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.findById:(Ljava/lang/Object;)Ljava/util/Optional;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.findOne:(Lorg/springframework/data/domain/Example;)Ljava/util/Optional;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.flush:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.getById:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004"
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.getOne:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004"
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.getReferenceById:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004"
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.save:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.saveAll:(Ljava/lang/Iterable;)Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.saveAllAndFlush:(Ljava/lang/Iterable;)Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.PositionRepository.saveAndFlush:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.count:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.count:(Lorg/springframework/data/domain/Example;)J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.delete:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.deleteAll:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.deleteAll:(Ljava/lang/Iterable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.deleteAllById:(Ljava/lang/Iterable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.deleteAllByIdInBatch:(Ljava/lang/Iterable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.deleteAllInBatch:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.deleteAllInBatch:(Ljava/lang/Iterable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.deleteById:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.deleteInBatch:(Ljava/lang/Iterable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.exists:(Lorg/springframework/data/domain/Example;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.existsById:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.findAll:()Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;Lorg/springframework/data/domain/Sort;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Sort;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.findAllById:(Ljava/lang/Iterable;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.findBy:(Lorg/springframework/data/domain/Example;Ljava/util/function/Function;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.findByAccountId:(Ljava/lang/Integer;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.findById:(Ljava/lang/Object;)Ljava/util/Optional;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.findOne:(Lorg/springframework/data/domain/Example;)Ljava/util/Optional;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.flush:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.getById:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.getOne:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.getReferenceById:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.save:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.saveAll:(Ljava/lang/Iterable;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.saveAllAndFlush:(Ljava/lang/Iterable;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.repository.TradeRepository.saveAndFlush:(Ljava/lang/Object;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R028"
+    },
+    "finos.traderx.tradeprocessor.service.TradeService.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        20,
+        21
+      ]
+    },
+    "finos.traderx.tradeprocessor.service.TradeService.processTrade:(Lfinos/traderx/tradeprocessor/model/TradeOrder;)Lfinos/traderx/tradeprocessor/model/TradeBookingResult;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        36,
+        37,
+        38,
+        40,
+        41,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        59,
+        60,
+        61,
+        62,
+        63,
+        66,
+        67,
+        69,
+        70,
+        71,
+        74,
+        75,
+        77,
+        78,
+        79,
+        82,
+        80,
+        81,
+        84
+      ]
+    }
+  },
+  "validationMetrics" : { }
+}

@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import finos.traderx.messaging.Envelope;
 import finos.traderx.messaging.socketio.SocketIOEnvelope;
@@ -28,57 +29,93 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class TradeFeedHandlerDiffblueTest {
-  @InjectMocks
-  private TradeFeedHandler tradeFeedHandler;
+  @InjectMocks private TradeFeedHandler tradeFeedHandler;
 
-  @Mock
-  private TradeService tradeService;
+  @Mock private TradeService tradeService;
 
   /**
    * Test new {@link TradeFeedHandler} (default constructor).
-   * <p>
-   * Method under test: default or parameterless constructor of {@link TradeFeedHandler}
+   *
+   * <p>Method under test: default or parameterless constructor of {@link TradeFeedHandler}
    */
   @Test
   @DisplayName("Test new TradeFeedHandler (default constructor)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void TradeFeedHandler.<init>()"})
   void testNewTradeFeedHandler() {
     // Arrange, Act and Assert
-    assertFalse((new TradeFeedHandler()).isConnected());
+    assertFalse(new TradeFeedHandler().isConnected());
   }
 
   /**
-   * Test {@link TradeFeedHandler#onMessage(Envelope, TradeOrder)} with {@code Envelope}, {@code TradeOrder}.
-   * <p>
-   * Method under test: {@link TradeFeedHandler#onMessage(Envelope, TradeOrder)}
+   * Test {@link TradeFeedHandler#onMessage(Envelope, TradeOrder)} with {@code Envelope}, {@code
+   * TradeOrder}.
+   *
+   * <p>Method under test: {@link TradeFeedHandler#onMessage(Envelope, TradeOrder)}
    */
   @Test
   @DisplayName("Test onMessage(Envelope, TradeOrder) with 'Envelope', 'TradeOrder'")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void TradeFeedHandler.onMessage(Envelope, TradeOrder)"})
   void testOnMessageWithEnvelopeTradeOrder() {
     // Arrange
+    when(tradeService.processTrade(Mockito.<TradeOrder>any())).thenThrow(new RuntimeException());
+    SocketIOEnvelope<?> envelope = new SocketIOEnvelope<>();
+    TradeOrder order = new TradeOrder("42", 1, "Security", TradeSide.Buy, 1);
+
+    // Act
+    tradeFeedHandler.onMessage(envelope, order);
+
+    // Assert
+    verify(tradeService).processTrade(isA(TradeOrder.class));
+  }
+
+  /**
+   * Test {@link TradeFeedHandler#onMessage(Envelope, TradeOrder)} with {@code Envelope}, {@code
+   * TradeOrder}.
+   *
+   * <ul>
+   *   <li>Given {@link Trade} (default constructor) AccountId is one.
+   * </ul>
+   *
+   * <p>Method under test: {@link TradeFeedHandler#onMessage(Envelope, TradeOrder)}
+   */
+  @Test
+  @DisplayName(
+      "Test onMessage(Envelope, TradeOrder) with 'Envelope', 'TradeOrder'; given Trade (default constructor) AccountId is one")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void TradeFeedHandler.onMessage(Envelope, TradeOrder)"})
+  void testOnMessageWithEnvelopeTradeOrder_givenTradeAccountIdIsOne() {
+    // Arrange
     Trade t = new Trade();
     t.setAccountId(1);
-    t.setCreated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    t.setCreated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     t.setId("42");
     t.setQuantity(1);
     t.setSecurity("Security");
     t.setSide(TradeSide.Buy);
     t.setState(TradeState.New);
-    t.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    t.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position p = new Position();
     p.setAccountId(1);
     p.setQuantity(1);
     p.setSecurity("Security");
-    p.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
-    when(tradeService.processTrade(Mockito.<TradeOrder>any())).thenReturn(new TradeBookingResult(t, p));
+    p.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+
+    TradeBookingResult tradeBookingResult = new TradeBookingResult(t, p);
+    when(tradeService.processTrade(Mockito.<TradeOrder>any())).thenReturn(tradeBookingResult);
     SocketIOEnvelope<?> envelope = new SocketIOEnvelope<>();
+    TradeOrder order = new TradeOrder("42", 1, "Security", TradeSide.Buy, 1);
 
     // Act
-    tradeFeedHandler.onMessage(envelope, new TradeOrder("42", 1, "Security", TradeSide.Buy, 1));
+    tradeFeedHandler.onMessage(envelope, order);
 
     // Assert
     verify(tradeService).processTrade(isA(TradeOrder.class));

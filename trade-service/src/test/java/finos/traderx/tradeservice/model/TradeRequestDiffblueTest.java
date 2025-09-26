@@ -1,6 +1,7 @@
 package finos.traderx.tradeservice.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -9,8 +10,9 @@ import org.junit.jupiter.api.Test;
 class TradeRequestDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>default or parameterless constructor of {@link TradeRequest}
    *   <li>{@link TradeRequest#setAccountId(int)}
@@ -25,11 +27,19 @@ class TradeRequestDiffblueTest {
    */
   @Test
   @DisplayName("Test getters and setters")
-  @Tag("MaintainedByDiffblue")
-  @MethodsUnderTest({"void TradeRequest.<init>()", "int TradeRequest.getAccountId()",
-      "Integer TradeRequest.getQuantity()", "String TradeRequest.getSecurity()", "TradeSide TradeRequest.getSide()",
-      "void TradeRequest.setAccountId(int)", "void TradeRequest.setQuantity(Integer)",
-      "void TradeRequest.setSecurity(String)", "void TradeRequest.setSide(TradeSide)"})
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void TradeRequest.<init>()",
+    "int TradeRequest.getAccountId()",
+    "Integer TradeRequest.getQuantity()",
+    "String TradeRequest.getSecurity()",
+    "TradeSide TradeRequest.getSide()",
+    "void TradeRequest.setAccountId(int)",
+    "void TradeRequest.setQuantity(Integer)",
+    "void TradeRequest.setSecurity(String)",
+    "void TradeRequest.setSide(TradeSide)"
+  })
   void testGettersAndSetters() {
     // Arrange and Act
     TradeRequest actualTradeRequest = new TradeRequest();

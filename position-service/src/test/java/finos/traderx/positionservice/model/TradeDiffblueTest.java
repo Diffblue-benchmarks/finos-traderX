@@ -2,6 +2,7 @@ package finos.traderx.positionservice.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
@@ -13,8 +14,9 @@ import org.junit.jupiter.api.Test;
 class TradeDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>default or parameterless constructor of {@link Trade}
    *   <li>{@link Trade#setAccountId(Integer)}
@@ -37,13 +39,27 @@ class TradeDiffblueTest {
    */
   @Test
   @DisplayName("Test getters and setters")
-  @Tag("MaintainedByDiffblue")
-  @MethodsUnderTest({"void Trade.<init>()", "Integer Trade.getAccountId()", "Date Trade.getCreated()",
-      "String Trade.getId()", "Integer Trade.getQuantity()", "String Trade.getSecurity()", "String Trade.getSide()",
-      "String Trade.getState()", "Date Trade.getUpdated()", "void Trade.setAccountId(Integer)",
-      "void Trade.setCreated(Date)", "void Trade.setId(String)", "void Trade.setQuantity(Integer)",
-      "void Trade.setSecurity(String)", "void Trade.setSide(String)", "void Trade.setState(String)",
-      "void Trade.setUpdated(Date)"})
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void Trade.<init>()",
+    "Integer Trade.getAccountId()",
+    "Date Trade.getCreated()",
+    "String Trade.getId()",
+    "Integer Trade.getQuantity()",
+    "String Trade.getSecurity()",
+    "String Trade.getSide()",
+    "String Trade.getState()",
+    "Date Trade.getUpdated()",
+    "void Trade.setAccountId(Integer)",
+    "void Trade.setCreated(Date)",
+    "void Trade.setId(String)",
+    "void Trade.setQuantity(Integer)",
+    "void Trade.setSecurity(String)",
+    "void Trade.setSide(String)",
+    "void Trade.setState(String)",
+    "void Trade.setUpdated(Date)"
+  })
   void testGettersAndSetters() {
     // Arrange and Act
     Trade actualTrade = new Trade();

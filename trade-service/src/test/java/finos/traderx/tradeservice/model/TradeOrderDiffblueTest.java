@@ -2,6 +2,7 @@ package finos.traderx.tradeservice.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -10,11 +11,13 @@ import org.junit.jupiter.api.Test;
 class TradeOrderDiffblueTest {
   /**
    * Test getters and setters.
+   *
    * <ul>
-   *   <li>Then return Side is {@code null}.</li>
+   *   <li>Then return Side is {@code null}.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link TradeOrder#TradeOrder()}
    *   <li>{@link TradeOrder#getAccountId()}
@@ -27,10 +30,18 @@ class TradeOrderDiffblueTest {
    */
   @Test
   @DisplayName("Test getters and setters; then return Side is 'null'")
-  @Tag("MaintainedByDiffblue")
-  @MethodsUnderTest({"void TradeOrder.<init>()", "void TradeOrder.<init>(String, int, String, TradeSide, int)",
-      "Integer TradeOrder.getAccountId()", "String TradeOrder.getId()", "Integer TradeOrder.getQuantity()",
-      "String TradeOrder.getSecurity()", "TradeSide TradeOrder.getSide()", "String TradeOrder.getState()"})
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void TradeOrder.<init>()",
+    "void TradeOrder.<init>(String, int, String, TradeSide, int)",
+    "Integer TradeOrder.getAccountId()",
+    "String TradeOrder.getId()",
+    "Integer TradeOrder.getQuantity()",
+    "String TradeOrder.getSecurity()",
+    "TradeSide TradeOrder.getSide()",
+    "String TradeOrder.getState()"
+  })
   void testGettersAndSetters_thenReturnSideIsNull() {
     // Arrange and Act
     TradeOrder actualTradeOrder = new TradeOrder();
@@ -51,12 +62,14 @@ class TradeOrderDiffblueTest {
 
   /**
    * Test getters and setters.
+   *
    * <ul>
-   *   <li>When {@code 42}.</li>
-   *   <li>Then return Id is {@code 42}.</li>
+   *   <li>When {@code 42}.
+   *   <li>Then return Id is {@code 42}.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link TradeOrder#TradeOrder(String, int, String, TradeSide, int)}
    *   <li>{@link TradeOrder#getAccountId()}
@@ -69,10 +82,18 @@ class TradeOrderDiffblueTest {
    */
   @Test
   @DisplayName("Test getters and setters; when '42'; then return Id is '42'")
-  @Tag("MaintainedByDiffblue")
-  @MethodsUnderTest({"void TradeOrder.<init>()", "void TradeOrder.<init>(String, int, String, TradeSide, int)",
-      "Integer TradeOrder.getAccountId()", "String TradeOrder.getId()", "Integer TradeOrder.getQuantity()",
-      "String TradeOrder.getSecurity()", "TradeSide TradeOrder.getSide()", "String TradeOrder.getState()"})
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void TradeOrder.<init>()",
+    "void TradeOrder.<init>(String, int, String, TradeSide, int)",
+    "Integer TradeOrder.getAccountId()",
+    "String TradeOrder.getId()",
+    "Integer TradeOrder.getQuantity()",
+    "String TradeOrder.getSecurity()",
+    "TradeSide TradeOrder.getSide()",
+    "String TradeOrder.getState()"
+  })
   void testGettersAndSetters_when42_thenReturnIdIs42() {
     // Arrange and Act
     TradeOrder actualTradeOrder = new TradeOrder("42", 1, "Security", TradeSide.Buy, 1);

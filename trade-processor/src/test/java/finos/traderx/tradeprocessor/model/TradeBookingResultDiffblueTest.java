@@ -1,6 +1,7 @@
 package finos.traderx.tradeprocessor.model;
 
 import static org.junit.jupiter.api.Assertions.assertSame;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
@@ -12,8 +13,9 @@ import org.junit.jupiter.api.Test;
 class TradeBookingResultDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link TradeBookingResult#TradeBookingResult(Trade, Position)}
    *   <li>{@link TradeBookingResult#getPosition()}
@@ -22,26 +24,33 @@ class TradeBookingResultDiffblueTest {
    */
   @Test
   @DisplayName("Test getters and setters")
-  @Tag("MaintainedByDiffblue")
-  @MethodsUnderTest({"void TradeBookingResult.<init>(Trade, Position)", "Position TradeBookingResult.getPosition()",
-      "Trade TradeBookingResult.getTrade()"})
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void TradeBookingResult.<init>(Trade, Position)",
+    "Position TradeBookingResult.getPosition()",
+    "Trade TradeBookingResult.getTrade()"
+  })
   void testGettersAndSetters() {
     // Arrange
     Trade t = new Trade();
     t.setAccountId(1);
-    t.setCreated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    t.setCreated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     t.setId("42");
     t.setQuantity(1);
     t.setSecurity("Security");
     t.setSide(TradeSide.Buy);
     t.setState(TradeState.New);
-    t.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    t.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position p = new Position();
     p.setAccountId(1);
     p.setQuantity(1);
     p.setSecurity("Security");
-    p.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    p.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     // Act
     TradeBookingResult actualTradeBookingResult = new TradeBookingResult(t, p);

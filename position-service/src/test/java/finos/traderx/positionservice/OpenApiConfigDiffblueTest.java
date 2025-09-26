@@ -2,6 +2,7 @@ package finos.traderx.positionservice;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.SpecVersion;
@@ -12,16 +13,17 @@ import org.junit.jupiter.api.Test;
 class OpenApiConfigDiffblueTest {
   /**
    * Test {@link OpenApiConfig#config()}.
-   * <p>
-   * Method under test: {@link OpenApiConfig#config()}
+   *
+   * <p>Method under test: {@link OpenApiConfig#config()}
    */
   @Test
   @DisplayName("Test config()")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"OpenAPI OpenApiConfig.config()"})
   void testConfig() {
     // Arrange and Act
-    OpenAPI actualConfigResult = (new OpenApiConfig()).config();
+    OpenAPI actualConfigResult = new OpenApiConfig().config();
 
     // Assert
     assertEquals("3.0.1", actualConfigResult.getOpenapi());

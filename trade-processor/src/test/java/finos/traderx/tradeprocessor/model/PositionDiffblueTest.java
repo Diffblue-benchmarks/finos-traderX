@@ -2,6 +2,7 @@ package finos.traderx.tradeprocessor.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
@@ -13,8 +14,9 @@ import org.junit.jupiter.api.Test;
 class PositionDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>default or parameterless constructor of {@link Position}
    *   <li>{@link Position#setAccountId(Integer)}
@@ -29,10 +31,19 @@ class PositionDiffblueTest {
    */
   @Test
   @DisplayName("Test getters and setters")
-  @Tag("MaintainedByDiffblue")
-  @MethodsUnderTest({"void Position.<init>()", "Integer Position.getAccountId()", "Integer Position.getQuantity()",
-      "String Position.getSecurity()", "Date Position.getUpdated()", "void Position.setAccountId(Integer)",
-      "void Position.setQuantity(Integer)", "void Position.setSecurity(String)", "void Position.setUpdated(Date)"})
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void Position.<init>()",
+    "Integer Position.getAccountId()",
+    "Integer Position.getQuantity()",
+    "String Position.getSecurity()",
+    "Date Position.getUpdated()",
+    "void Position.setAccountId(Integer)",
+    "void Position.setQuantity(Integer)",
+    "void Position.setSecurity(String)",
+    "void Position.setUpdated(Date)"
+  })
   void testGettersAndSetters() {
     // Arrange and Act
     Position actualPosition = new Position();

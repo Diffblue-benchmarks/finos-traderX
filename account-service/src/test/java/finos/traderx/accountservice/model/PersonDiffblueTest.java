@@ -1,6 +1,7 @@
 package finos.traderx.accountservice.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -9,8 +10,9 @@ import org.junit.jupiter.api.Test;
 class PersonDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>default or parameterless constructor of {@link Person}
    *   <li>{@link Person#setDepartment(String)}
@@ -28,11 +30,22 @@ class PersonDiffblueTest {
    */
   @Test
   @DisplayName("Test getters and setters")
-  @Tag("MaintainedByDiffblue")
-  @MethodsUnderTest({"void Person.<init>()", "String Person.getDepartment()", "String Person.getEmail()",
-      "String Person.getFullName()", "String Person.getLogonId()", "String Person.getPhotoUrl()",
-      "void Person.setDepartment(String)", "void Person.setEmail(String)", "void Person.setFullName(String)",
-      "void Person.setLogonId(String)", "void Person.setPhotoUrl(String)", "String Person.toString()"})
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void Person.<init>()",
+    "String Person.getDepartment()",
+    "String Person.getEmail()",
+    "String Person.getFullName()",
+    "String Person.getLogonId()",
+    "String Person.getPhotoUrl()",
+    "void Person.setDepartment(String)",
+    "void Person.setEmail(String)",
+    "void Person.setFullName(String)",
+    "void Person.setLogonId(String)",
+    "void Person.setPhotoUrl(String)",
+    "String Person.toString()"
+  })
   void testGettersAndSetters() {
     // Arrange and Act
     Person actualPerson = new Person();
@@ -51,7 +64,8 @@ class PersonDiffblueTest {
     assertEquals("42", actualLogonId);
     assertEquals("Department", actualDepartment);
     assertEquals("Dr Jane Doe", actualFullName);
-    assertEquals("Person: 42 | Dr Jane Doe | jane.doe@example.org | Department |", actualToStringResult);
+    assertEquals(
+        "Person: 42 | Dr Jane Doe | jane.doe@example.org | Department |", actualToStringResult);
     assertEquals("https://example.org/example", actualPerson.getPhotoUrl());
     assertEquals("jane.doe@example.org", actualEmail);
   }

@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import finos.traderx.tradeprocessor.model.Position;
 import finos.traderx.tradeprocessor.model.PositionID;
@@ -26,12 +27,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.ListCrudRepository;
-import org.springframework.data.repository.ListPagingAndSortingRepository;
-import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.data.repository.query.QueryByExampleExecutor;
 import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration(classes = {PositionRepository.class})
@@ -39,17 +34,17 @@ import org.springframework.test.context.ContextConfiguration;
 @EnableAutoConfiguration
 @EntityScan(basePackages = {"finos.traderx.tradeprocessor.model"})
 class PositionRepositoryDiffblueTest {
-  @Autowired
-  private PositionRepository positionRepository;
+  @Autowired private PositionRepository positionRepository;
 
   /**
    * Test {@link PositionRepository#findByAccountId(Integer)}.
-   * <p>
-   * Method under test: {@link PositionRepository#findByAccountId(Integer)}
+   *
+   * <p>Method under test: {@link PositionRepository#findByAccountId(Integer)}
    */
   @Test
   @DisplayName("Test findByAccountId(Integer)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List PositionRepository.findByAccountId(Integer)"})
   void testFindByAccountId() {
     // Arrange
@@ -57,13 +52,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -80,12 +77,13 @@ class PositionRepositoryDiffblueTest {
 
   /**
    * Test {@link PositionRepository#findByAccountIdAndSecurity(Integer, String)}.
-   * <p>
-   * Method under test: {@link PositionRepository#findByAccountIdAndSecurity(Integer, String)}
+   *
+   * <p>Method under test: {@link PositionRepository#findByAccountIdAndSecurity(Integer, String)}
    */
   @Test
   @DisplayName("Test findByAccountIdAndSecurity(Integer, String)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Position PositionRepository.findByAccountIdAndSecurity(Integer, String)"})
   void testFindByAccountIdAndSecurity() {
     // Arrange
@@ -93,18 +91,21 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
     // Act
-    Position actualFindByAccountIdAndSecurityResult = positionRepository.findByAccountIdAndSecurity(1, "Security");
+    Position actualFindByAccountIdAndSecurityResult =
+        positionRepository.findByAccountIdAndSecurity(1, "Security");
 
     // Assert
     assertEquals("Security", actualFindByAccountIdAndSecurityResult.getSecurity());
@@ -113,13 +114,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#count()}.
-   * <p>
-   * Method under test: {@link PositionRepository#count()}
+   * Test {@link PositionRepository#count()}.
+   *
+   * <p>Method under test: {@link PositionRepository#count()}
    */
   @Test
   @DisplayName("Test count()")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"long PositionRepository.count()"})
   void testCount() {
     // Arrange
@@ -127,13 +129,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -142,13 +146,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link QueryByExampleExecutor#count(Example)} with {@code Example}.
-   * <p>
-   * Method under test: {@link PositionRepository#count(Example)}
+   * Test {@link PositionRepository#count(Example)} with {@code Example}.
+   *
+   * <p>Method under test: {@link PositionRepository#count(Example)}
    */
   @Test
   @DisplayName("Test count(Example) with 'Example'")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"long PositionRepository.count(Example)"})
   void testCountWithExample() {
     // Arrange
@@ -156,13 +161,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -170,7 +177,8 @@ class PositionRepositoryDiffblueTest {
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     Example<Position> example = Example.of(position3);
 
     // Act and Assert
@@ -178,13 +186,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#delete(Object)}.
-   * <p>
-   * Method under test: {@link PositionRepository#delete(Object)}
+   * Test {@link PositionRepository#delete(Object)}.
+   *
+   * <p>Method under test: {@link PositionRepository#delete(Object)}
    */
   @Test
   @DisplayName("Test delete(Object)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void PositionRepository.delete(Object)"})
   void testDelete() {
     // Arrange
@@ -192,19 +201,22 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position3 = new Position();
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
     positionRepository.save(position3);
@@ -222,13 +234,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#deleteAll()}.
-   * <p>
-   * Method under test: {@link PositionRepository#deleteAll()}
+   * Test {@link PositionRepository#deleteAll()}.
+   *
+   * <p>Method under test: {@link PositionRepository#deleteAll()}
    */
   @Test
   @DisplayName("Test deleteAll()")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void PositionRepository.deleteAll()"})
   void testDeleteAll() {
     // Arrange
@@ -236,13 +249,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -254,13 +269,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#deleteAllById(Iterable)}.
-   * <p>
-   * Method under test: {@link PositionRepository#deleteAllById(Iterable)}
+   * Test {@link PositionRepository#deleteAllById(Iterable)}.
+   *
+   * <p>Method under test: {@link PositionRepository#deleteAllById(Iterable)}
    */
   @Test
   @DisplayName("Test deleteAllById(Iterable)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void PositionRepository.deleteAllById(Iterable)"})
   void testDeleteAllById() {
     // Arrange
@@ -268,17 +284,20 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
     PositionID positionID = new PositionID();
     PositionID positionID2 = new PositionID();
+
     List<PositionID> ids = Arrays.asList(positionID, positionID2, new PositionID());
 
     // Act
@@ -298,13 +317,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link JpaRepository#deleteAllByIdInBatch(Iterable)}.
-   * <p>
-   * Method under test: {@link PositionRepository#deleteAllByIdInBatch(Iterable)}
+   * Test {@link PositionRepository#deleteAllByIdInBatch(Iterable)}.
+   *
+   * <p>Method under test: {@link PositionRepository#deleteAllByIdInBatch(Iterable)}
    */
   @Test
   @DisplayName("Test deleteAllByIdInBatch(Iterable)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void PositionRepository.deleteAllByIdInBatch(Iterable)"})
   void testDeleteAllByIdInBatch() {
     // Arrange
@@ -312,13 +332,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -339,13 +361,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link JpaRepository#deleteAllInBatch()}.
-   * <p>
-   * Method under test: {@link PositionRepository#deleteAllInBatch()}
+   * Test {@link PositionRepository#deleteAllInBatch()}.
+   *
+   * <p>Method under test: {@link PositionRepository#deleteAllInBatch()}
    */
   @Test
   @DisplayName("Test deleteAllInBatch()")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void PositionRepository.deleteAllInBatch()"})
   void testDeleteAllInBatch() {
     // Arrange
@@ -353,13 +376,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -371,13 +396,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link JpaRepository#deleteAllInBatch(Iterable)} with {@code Iterable}.
-   * <p>
-   * Method under test: {@link PositionRepository#deleteAllInBatch(Iterable)}
+   * Test {@link PositionRepository#deleteAllInBatch(Iterable)} with {@code Iterable}.
+   *
+   * <p>Method under test: {@link PositionRepository#deleteAllInBatch(Iterable)}
    */
   @Test
   @DisplayName("Test deleteAllInBatch(Iterable) with 'Iterable'")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void PositionRepository.deleteAllInBatch(Iterable)"})
   void testDeleteAllInBatchWithIterable() {
     // Arrange
@@ -385,36 +411,42 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position3 = new Position();
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position4 = new Position();
     position4.setAccountId(1);
     position4.setQuantity(1);
     position4.setSecurity("Security");
-    position4.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position4.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position5 = new Position();
     position5.setAccountId(1);
     position5.setQuantity(1);
     position5.setSecurity("Security");
-    position5.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position5.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
     positionRepository.save(position3);
     positionRepository.save(position4);
     positionRepository.save(position5);
+
     List<Position> entities = Arrays.asList(position3, position4, position5);
 
     // Act
@@ -430,13 +462,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#deleteAll(Iterable)} with {@code Iterable}.
-   * <p>
-   * Method under test: {@link PositionRepository#deleteAll(Iterable)}
+   * Test {@link PositionRepository#deleteAll(Iterable)} with {@code Iterable}.
+   *
+   * <p>Method under test: {@link PositionRepository#deleteAll(Iterable)}
    */
   @Test
   @DisplayName("Test deleteAll(Iterable) with 'Iterable'")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void PositionRepository.deleteAll(Iterable)"})
   void testDeleteAllWithIterable() {
     // Arrange
@@ -444,36 +477,42 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position3 = new Position();
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position4 = new Position();
     position4.setAccountId(1);
     position4.setQuantity(1);
     position4.setSecurity("Security");
-    position4.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position4.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position5 = new Position();
     position5.setAccountId(1);
     position5.setQuantity(1);
     position5.setSecurity("Security");
-    position5.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position5.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
     positionRepository.save(position3);
     positionRepository.save(position4);
     positionRepository.save(position5);
+
     List<Position> entities = Arrays.asList(position3, position4, position5);
 
     // Act
@@ -489,13 +528,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#deleteById(Object)}.
-   * <p>
-   * Method under test: {@link PositionRepository#deleteById(Object)}
+   * Test {@link PositionRepository#deleteById(Object)}.
+   *
+   * <p>Method under test: {@link PositionRepository#deleteById(Object)}
    */
   @Test
   @DisplayName("Test deleteById(Object)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void PositionRepository.deleteById(Object)"})
   void testDeleteById() {
     // Arrange
@@ -503,13 +543,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -530,13 +572,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link JpaRepository#deleteInBatch(Iterable)}.
-   * <p>
-   * Method under test: {@link PositionRepository#deleteInBatch(Iterable)}
+   * Test {@link PositionRepository#deleteInBatch(Iterable)}.
+   *
+   * <p>Method under test: {@link PositionRepository#deleteInBatch(Iterable)}
    */
   @Test
   @DisplayName("Test deleteInBatch(Iterable)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void PositionRepository.deleteInBatch(Iterable)"})
   void testDeleteInBatch() {
     // Arrange
@@ -544,36 +587,42 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position3 = new Position();
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position4 = new Position();
     position4.setAccountId(1);
     position4.setQuantity(1);
     position4.setSecurity("Security");
-    position4.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position4.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position5 = new Position();
     position5.setAccountId(1);
     position5.setQuantity(1);
     position5.setSecurity("Security");
-    position5.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position5.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
     positionRepository.save(position3);
     positionRepository.save(position4);
     positionRepository.save(position5);
+
     List<Position> entities = Arrays.asList(position3, position4, position5);
 
     // Act
@@ -589,17 +638,21 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#existsById(Object)}.
+   * Test {@link PositionRepository#existsById(Object)}.
+   *
    * <ul>
-   *   <li>When {@link PositionID#PositionID(Integer, String)} with accountId is one and {@code Security}.</li>
-   *   <li>Then return {@code true}.</li>
+   *   <li>When {@link PositionID#PositionID(Integer, String)} with accountId is one and {@code
+   *       Security}.
+   *   <li>Then return {@code true}.
    * </ul>
-   * <p>
-   * Method under test: {@link PositionRepository#existsById(Object)}
+   *
+   * <p>Method under test: {@link PositionRepository#existsById(Object)}
    */
   @Test
-  @DisplayName("Test existsById(Object); when PositionID(Integer, String) with accountId is one and 'Security'; then return 'true'")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test existsById(Object); when PositionID(Integer, String) with accountId is one and 'Security'; then return 'true'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"boolean PositionRepository.existsById(Object)"})
   void testExistsById_whenPositionIDWithAccountIdIsOneAndSecurity_thenReturnTrue() {
     // Arrange
@@ -607,13 +660,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -622,17 +677,19 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#existsById(Object)}.
+   * Test {@link PositionRepository#existsById(Object)}.
+   *
    * <ul>
-   *   <li>When {@link PositionID#PositionID()}.</li>
-   *   <li>Then return {@code false}.</li>
+   *   <li>When {@link PositionID#PositionID()}.
+   *   <li>Then return {@code false}.
    * </ul>
-   * <p>
-   * Method under test: {@link PositionRepository#existsById(Object)}
+   *
+   * <p>Method under test: {@link PositionRepository#existsById(Object)}
    */
   @Test
   @DisplayName("Test existsById(Object); when PositionID(); then return 'false'")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"boolean PositionRepository.existsById(Object)"})
   void testExistsById_whenPositionID_thenReturnFalse() {
     // Arrange
@@ -640,13 +697,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -655,17 +714,20 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link QueryByExampleExecutor#exists(Example)}.
+   * Test {@link PositionRepository#exists(Example)}.
+   *
    * <ul>
-   *   <li>Given {@link Position} (default constructor) AccountId is one.</li>
-   *   <li>Then return {@code true}.</li>
+   *   <li>Given {@link Position} (default constructor) AccountId is one.
+   *   <li>Then return {@code true}.
    * </ul>
-   * <p>
-   * Method under test: {@link PositionRepository#exists(Example)}
+   *
+   * <p>Method under test: {@link PositionRepository#exists(Example)}
    */
   @Test
-  @DisplayName("Test exists(Example); given Position (default constructor) AccountId is one; then return 'true'")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test exists(Example); given Position (default constructor) AccountId is one; then return 'true'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"boolean PositionRepository.exists(Example)"})
   void testExists_givenPositionAccountIdIsOne_thenReturnTrue() {
     // Arrange
@@ -673,13 +735,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -687,7 +751,8 @@ class PositionRepositoryDiffblueTest {
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     Example<Position> example = Example.of(position3);
 
     // Act and Assert
@@ -695,16 +760,18 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link QueryByExampleExecutor#exists(Example)}.
+   * Test {@link PositionRepository#exists(Example)}.
+   *
    * <ul>
-   *   <li>Then return {@code false}.</li>
+   *   <li>Then return {@code false}.
    * </ul>
-   * <p>
-   * Method under test: {@link PositionRepository#exists(Example)}
+   *
+   * <p>Method under test: {@link PositionRepository#exists(Example)}
    */
   @Test
   @DisplayName("Test exists(Example); then return 'false'")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"boolean PositionRepository.exists(Example)"})
   void testExists_thenReturnFalse() {
     // Arrange
@@ -712,13 +779,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(2);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -726,7 +795,8 @@ class PositionRepositoryDiffblueTest {
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     Example<Position> example = Example.of(position3);
 
     // Act and Assert
@@ -734,13 +804,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link ListCrudRepository#findAll()}.
-   * <p>
-   * Method under test: {@link PositionRepository#findAll()}
+   * Test {@link PositionRepository#findAll()}.
+   *
+   * <p>Method under test: {@link PositionRepository#findAll()}
    */
   @Test
   @DisplayName("Test findAll()")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List PositionRepository.findAll()"})
   void testFindAll() {
     // Arrange
@@ -748,13 +819,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -774,13 +847,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link ListCrudRepository#findAllById(Iterable)}.
-   * <p>
-   * Method under test: {@link PositionRepository#findAllById(Iterable)}
+   * Test {@link PositionRepository#findAllById(Iterable)}.
+   *
+   * <p>Method under test: {@link PositionRepository#findAllById(Iterable)}
    */
   @Test
   @DisplayName("Test findAllById(Iterable)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List PositionRepository.findAllById(Iterable)"})
   void testFindAllById() {
     // Arrange
@@ -788,17 +862,20 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
     PositionID positionID = new PositionID();
     PositionID positionID2 = new PositionID();
+
     List<PositionID> ids = Arrays.asList(positionID, positionID2, new PositionID());
 
     // Act and Assert
@@ -806,13 +883,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link JpaRepository#findAll(Example)} with {@code example}.
-   * <p>
-   * Method under test: {@link PositionRepository#findAll(Example)}
+   * Test {@link PositionRepository#findAll(Example)} with {@code example}.
+   *
+   * <p>Method under test: {@link PositionRepository#findAll(Example)}
    */
   @Test
   @DisplayName("Test findAll(Example) with 'example'")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List PositionRepository.findAll(Example)"})
   void testFindAllWithExample() {
     // Arrange
@@ -820,13 +898,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -834,7 +914,8 @@ class PositionRepositoryDiffblueTest {
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     Example<Position> example = Example.of(position3);
 
     // Act
@@ -849,13 +930,15 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link QueryByExampleExecutor#findAll(Example, Pageable)} with {@code example}, {@code pageable}.
-   * <p>
-   * Method under test: {@link PositionRepository#findAll(Example, Pageable)}
+   * Test {@link PositionRepository#findAll(Example, Pageable)} with {@code example}, {@code
+   * pageable}.
+   *
+   * <p>Method under test: {@link PositionRepository#findAll(Example, Pageable)}
    */
   @Test
   @DisplayName("Test findAll(Example, Pageable) with 'example', 'pageable'")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Page PositionRepository.findAll(Example, Pageable)"})
   void testFindAllWithExamplePageable() {
     // Arrange
@@ -863,13 +946,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -877,7 +962,8 @@ class PositionRepositoryDiffblueTest {
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     Example<Position> example = Example.of(position3);
 
     // Act
@@ -894,17 +980,20 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link JpaRepository#findAll(Example, Sort)} with {@code example}, {@code sort}.
+   * Test {@link PositionRepository#findAll(Example, Sort)} with {@code example}, {@code sort}.
+   *
    * <ul>
-   *   <li>When unsorted.</li>
-   *   <li>Then return size is one.</li>
+   *   <li>When unsorted.
+   *   <li>Then return size is one.
    * </ul>
-   * <p>
-   * Method under test: {@link PositionRepository#findAll(Example, Sort)}
+   *
+   * <p>Method under test: {@link PositionRepository#findAll(Example, Sort)}
    */
   @Test
-  @DisplayName("Test findAll(Example, Sort) with 'example', 'sort'; when unsorted; then return size is one")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test findAll(Example, Sort) with 'example', 'sort'; when unsorted; then return size is one")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List PositionRepository.findAll(Example, Sort)"})
   void testFindAllWithExampleSort_whenUnsorted_thenReturnSizeIsOne() {
     // Arrange
@@ -912,13 +1001,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -926,7 +1017,8 @@ class PositionRepositoryDiffblueTest {
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     Example<Position> example = Example.of(position3);
 
     // Act
@@ -941,13 +1033,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link PagingAndSortingRepository#findAll(Pageable)} with {@code pageable}.
-   * <p>
-   * Method under test: {@link PositionRepository#findAll(Pageable)}
+   * Test {@link PositionRepository#findAll(Pageable)} with {@code pageable}.
+   *
+   * <p>Method under test: {@link PositionRepository#findAll(Pageable)}
    */
   @Test
   @DisplayName("Test findAll(Pageable) with 'pageable'")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Page PositionRepository.findAll(Pageable)"})
   void testFindAllWithPageable() {
     // Arrange
@@ -955,13 +1048,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -983,17 +1078,19 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link ListPagingAndSortingRepository#findAll(Sort)} with {@code sort}.
+   * Test {@link PositionRepository#findAll(Sort)} with {@code sort}.
+   *
    * <ul>
-   *   <li>When unsorted.</li>
-   *   <li>Then return size is two.</li>
+   *   <li>When unsorted.
+   *   <li>Then return size is two.
    * </ul>
-   * <p>
-   * Method under test: {@link PositionRepository#findAll(Sort)}
+   *
+   * <p>Method under test: {@link PositionRepository#findAll(Sort)}
    */
   @Test
   @DisplayName("Test findAll(Sort) with 'sort'; when unsorted; then return size is two")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List PositionRepository.findAll(Sort)"})
   void testFindAllWithSort_whenUnsorted_thenReturnSizeIsTwo() {
     // Arrange
@@ -1001,13 +1098,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -1027,13 +1126,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#findById(Object)}.
-   * <p>
-   * Method under test: {@link PositionRepository#findById(Object)}
+   * Test {@link PositionRepository#findById(Object)}.
+   *
+   * <p>Method under test: {@link PositionRepository#findById(Object)}
    */
   @Test
   @DisplayName("Test findById(Object)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Optional PositionRepository.findById(Object)"})
   void testFindById() {
     // Arrange
@@ -1041,13 +1141,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -1056,13 +1158,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link QueryByExampleExecutor#findOne(Example)}.
-   * <p>
-   * Method under test: {@link PositionRepository#findOne(Example)}
+   * Test {@link PositionRepository#findOne(Example)}.
+   *
+   * <p>Method under test: {@link PositionRepository#findOne(Example)}
    */
   @Test
   @DisplayName("Test findOne(Example)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Optional PositionRepository.findOne(Example)"})
   void testFindOne() {
     // Arrange
@@ -1070,13 +1173,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -1084,7 +1189,8 @@ class PositionRepositoryDiffblueTest {
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     Example<Position> example = Example.of(position3);
 
     // Act
@@ -1099,13 +1205,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link JpaRepository#flush()}.
-   * <p>
-   * Method under test: {@link PositionRepository#flush()}
+   * Test {@link PositionRepository#flush()}.
+   *
+   * <p>Method under test: {@link PositionRepository#flush()}
    */
   @Test
   @DisplayName("Test flush()")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void PositionRepository.flush()"})
   void testFlush() {
     // Arrange
@@ -1113,13 +1220,15 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(2);
     position2.setQuantity(-1);
     position2.setSecurity("42");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
     positionRepository.save(position);
     positionRepository.save(position2);
 
@@ -1140,13 +1249,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#save(Object)}.
-   * <p>
-   * Method under test: {@link PositionRepository#save(Object)}
+   * Test {@link PositionRepository#save(Object)}.
+   *
+   * <p>Method under test: {@link PositionRepository#save(Object)}
    */
   @Test
   @DisplayName("Test save(Object)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Object PositionRepository.save(Object)"})
   void testSave() {
     // Arrange
@@ -1154,7 +1264,8 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     // Act
     Position actualSaveResult = positionRepository.save(position);
@@ -1166,13 +1277,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link ListCrudRepository#saveAll(Iterable)}.
-   * <p>
-   * Method under test: {@link PositionRepository#saveAll(Iterable)}
+   * Test {@link PositionRepository#saveAll(Iterable)}.
+   *
+   * <p>Method under test: {@link PositionRepository#saveAll(Iterable)}
    */
   @Test
   @DisplayName("Test saveAll(Iterable)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List PositionRepository.saveAll(Iterable)"})
   void testSaveAll() {
     // Arrange
@@ -1180,19 +1292,23 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(1);
     position2.setQuantity(1);
     position2.setSecurity("Security");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position3 = new Position();
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+
     List<Position> entities = Arrays.asList(position, position2, position3);
 
     // Act
@@ -1209,13 +1325,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link JpaRepository#saveAllAndFlush(Iterable)}.
-   * <p>
-   * Method under test: {@link PositionRepository#saveAllAndFlush(Iterable)}
+   * Test {@link PositionRepository#saveAllAndFlush(Iterable)}.
+   *
+   * <p>Method under test: {@link PositionRepository#saveAllAndFlush(Iterable)}
    */
   @Test
   @DisplayName("Test saveAllAndFlush(Iterable)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"List PositionRepository.saveAllAndFlush(Iterable)"})
   void testSaveAllAndFlush() {
     // Arrange
@@ -1223,19 +1340,23 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position2 = new Position();
     position2.setAccountId(1);
     position2.setQuantity(1);
     position2.setSecurity("Security");
-    position2.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position2.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     Position position3 = new Position();
     position3.setAccountId(1);
     position3.setQuantity(1);
     position3.setSecurity("Security");
-    position3.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position3.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+
     List<Position> entities = Arrays.asList(position, position2, position3);
 
     // Act
@@ -1252,13 +1373,14 @@ class PositionRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link JpaRepository#saveAndFlush(Object)}.
-   * <p>
-   * Method under test: {@link PositionRepository#saveAndFlush(Object)}
+   * Test {@link PositionRepository#saveAndFlush(Object)}.
+   *
+   * <p>Method under test: {@link PositionRepository#saveAndFlush(Object)}
    */
   @Test
   @DisplayName("Test saveAndFlush(Object)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Object PositionRepository.saveAndFlush(Object)"})
   void testSaveAndFlush() {
     // Arrange
@@ -1266,7 +1388,8 @@ class PositionRepositoryDiffblueTest {
     position.setAccountId(1);
     position.setQuantity(1);
     position.setSecurity("Security");
-    position.setUpdated(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+    position.setUpdated(
+        Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
 
     // Act
     Position actualSaveAndFlushResult = positionRepository.saveAndFlush(position);

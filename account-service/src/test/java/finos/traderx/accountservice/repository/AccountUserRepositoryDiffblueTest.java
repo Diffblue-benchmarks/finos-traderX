@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import finos.traderx.accountservice.model.AccountUser;
 import finos.traderx.accountservice.model.AccountUserID;
@@ -17,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration(classes = {AccountUserRepository.class})
@@ -25,17 +25,17 @@ import org.springframework.test.context.ContextConfiguration;
 @EnableAutoConfiguration
 @EntityScan(basePackages = {"finos.traderx.accountservice.model"})
 class AccountUserRepositoryDiffblueTest {
-  @Autowired
-  private AccountUserRepository accountUserRepository;
+  @Autowired private AccountUserRepository accountUserRepository;
 
   /**
    * Test {@link AccountUserRepository#findByAccountId(Integer)}.
-   * <p>
-   * Method under test: {@link AccountUserRepository#findByAccountId(Integer)}
+   *
+   * <p>Method under test: {@link AccountUserRepository#findByAccountId(Integer)}
    */
   @Test
   @DisplayName("Test findByAccountId(Integer)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Optional AccountUserRepository.findByAccountId(Integer)"})
   void testFindByAccountId() {
     // Arrange
@@ -60,13 +60,14 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#count()}.
-   * <p>
-   * Method under test: {@link AccountUserRepository#count()}
+   * Test {@link AccountUserRepository#count()}.
+   *
+   * <p>Method under test: {@link AccountUserRepository#count()}
    */
   @Test
   @DisplayName("Test count()")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"long AccountUserRepository.count()"})
   void testCount() {
     // Arrange
@@ -85,13 +86,14 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#delete(Object)}.
-   * <p>
-   * Method under test: {@link AccountUserRepository#delete(Object)}
+   * Test {@link AccountUserRepository#delete(Object)}.
+   *
+   * <p>Method under test: {@link AccountUserRepository#delete(Object)}
    */
   @Test
   @DisplayName("Test delete(Object)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void AccountUserRepository.delete(Object)"})
   void testDelete() {
     // Arrange
@@ -123,13 +125,14 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#deleteAll()}.
-   * <p>
-   * Method under test: {@link AccountUserRepository#deleteAll()}
+   * Test {@link AccountUserRepository#deleteAll()}.
+   *
+   * <p>Method under test: {@link AccountUserRepository#deleteAll()}
    */
   @Test
   @DisplayName("Test deleteAll()")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void AccountUserRepository.deleteAll()"})
   void testDeleteAll() {
     // Arrange
@@ -153,13 +156,14 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#deleteAllById(Iterable)}.
-   * <p>
-   * Method under test: {@link AccountUserRepository#deleteAllById(Iterable)}
+   * Test {@link AccountUserRepository#deleteAllById(Iterable)}.
+   *
+   * <p>Method under test: {@link AccountUserRepository#deleteAllById(Iterable)}
    */
   @Test
   @DisplayName("Test deleteAllById(Iterable)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void AccountUserRepository.deleteAllById(Iterable)"})
   void testDeleteAllById() {
     // Arrange
@@ -184,6 +188,7 @@ class AccountUserRepositoryDiffblueTest {
     AccountUserID accountUserID3 = new AccountUserID();
     accountUserID3.setAccountId(1);
     accountUserID3.setUsername("janedoe");
+
     List<AccountUserID> ids = Arrays.asList(accountUserID, accountUserID2, accountUserID3);
 
     // Act
@@ -199,13 +204,14 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#deleteAll(Iterable)} with {@code Iterable}.
-   * <p>
-   * Method under test: {@link AccountUserRepository#deleteAll(Iterable)}
+   * Test {@link AccountUserRepository#deleteAll(Iterable)} with {@code Iterable}.
+   *
+   * <p>Method under test: {@link AccountUserRepository#deleteAll(Iterable)}
    */
   @Test
   @DisplayName("Test deleteAll(Iterable) with 'Iterable'")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void AccountUserRepository.deleteAll(Iterable)"})
   void testDeleteAllWithIterable() {
     // Arrange
@@ -233,6 +239,7 @@ class AccountUserRepositoryDiffblueTest {
     accountUserRepository.save(accountUser3);
     accountUserRepository.save(accountUser4);
     accountUserRepository.save(accountUser5);
+
     List<AccountUser> entities = Arrays.asList(accountUser3, accountUser4, accountUser5);
 
     // Act
@@ -248,13 +255,14 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#deleteById(Object)}.
-   * <p>
-   * Method under test: {@link AccountUserRepository#deleteById(Object)}
+   * Test {@link AccountUserRepository#deleteById(Object)}.
+   *
+   * <p>Method under test: {@link AccountUserRepository#deleteById(Object)}
    */
   @Test
   @DisplayName("Test deleteById(Object)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"void AccountUserRepository.deleteById(Object)"})
   void testDeleteById() {
     // Arrange
@@ -285,19 +293,23 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#existsById(Object)}.
+   * Test {@link AccountUserRepository#existsById(Object)}.
+   *
    * <ul>
-   *   <li>Given {@link AccountUser} (default constructor) AccountId is one.</li>
-   *   <li>Then return {@code true}.</li>
+   *   <li>Given one.
+   *   <li>When {@link AccountUserID} (default constructor) AccountId is one.
+   *   <li>Then return {@code true}.
    * </ul>
-   * <p>
-   * Method under test: {@link AccountUserRepository#existsById(Object)}
+   *
+   * <p>Method under test: {@link AccountUserRepository#existsById(Object)}
    */
   @Test
-  @DisplayName("Test existsById(Object); given AccountUser (default constructor) AccountId is one; then return 'true'")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test existsById(Object); given one; when AccountUserID (default constructor) AccountId is one; then return 'true'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"boolean AccountUserRepository.existsById(Object)"})
-  void testExistsById_givenAccountUserAccountIdIsOne_thenReturnTrue() {
+  void testExistsById_givenOne_whenAccountUserIDAccountIdIsOne_thenReturnTrue() {
     // Arrange
     AccountUser accountUser = new AccountUser();
     accountUser.setAccountId(1);
@@ -318,21 +330,26 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#existsById(Object)}.
+   * Test {@link AccountUserRepository#existsById(Object)}.
+   *
    * <ul>
-   *   <li>Then return {@code false}.</li>
+   *   <li>Given two.
+   *   <li>When {@link AccountUserID} (default constructor) AccountId is two.
+   *   <li>Then return {@code false}.
    * </ul>
-   * <p>
-   * Method under test: {@link AccountUserRepository#existsById(Object)}
+   *
+   * <p>Method under test: {@link AccountUserRepository#existsById(Object)}
    */
   @Test
-  @DisplayName("Test existsById(Object); then return 'false'")
-  @Tag("MaintainedByDiffblue")
+  @DisplayName(
+      "Test existsById(Object); given two; when AccountUserID (default constructor) AccountId is two; then return 'false'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"boolean AccountUserRepository.existsById(Object)"})
-  void testExistsById_thenReturnFalse() {
+  void testExistsById_givenTwo_whenAccountUserIDAccountIdIsTwo_thenReturnFalse() {
     // Arrange
     AccountUser accountUser = new AccountUser();
-    accountUser.setAccountId(2);
+    accountUser.setAccountId(1);
     accountUser.setUsername("janedoe");
 
     AccountUser accountUser2 = new AccountUser();
@@ -342,7 +359,7 @@ class AccountUserRepositoryDiffblueTest {
     accountUserRepository.save(accountUser2);
 
     AccountUserID accountUserID = new AccountUserID();
-    accountUserID.setAccountId(1);
+    accountUserID.setAccountId(2);
     accountUserID.setUsername("janedoe");
 
     // Act and Assert
@@ -350,13 +367,14 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#findAll()}.
-   * <p>
-   * Method under test: {@link AccountUserRepository#findAll()}
+   * Test {@link AccountUserRepository#findAll()}.
+   *
+   * <p>Method under test: {@link AccountUserRepository#findAll()}
    */
   @Test
   @DisplayName("Test findAll()")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Iterable AccountUserRepository.findAll()"})
   void testFindAll() {
     // Arrange
@@ -385,13 +403,14 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#findAllById(Iterable)}.
-   * <p>
-   * Method under test: {@link AccountUserRepository#findAllById(Iterable)}
+   * Test {@link AccountUserRepository#findAllById(Iterable)}.
+   *
+   * <p>Method under test: {@link AccountUserRepository#findAllById(Iterable)}
    */
   @Test
   @DisplayName("Test findAllById(Iterable)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Iterable AccountUserRepository.findAllById(Iterable)"})
   void testFindAllById() {
     // Arrange
@@ -416,6 +435,7 @@ class AccountUserRepositoryDiffblueTest {
     AccountUserID accountUserID3 = new AccountUserID();
     accountUserID3.setAccountId(1);
     accountUserID3.setUsername("janedoe");
+
     List<AccountUserID> ids = Arrays.asList(accountUserID, accountUserID2, accountUserID3);
 
     // Act
@@ -432,13 +452,14 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#findById(Object)}.
-   * <p>
-   * Method under test: {@link AccountUserRepository#findById(Object)}
+   * Test {@link AccountUserRepository#findById(Object)}.
+   *
+   * <p>Method under test: {@link AccountUserRepository#findById(Object)}
    */
   @Test
   @DisplayName("Test findById(Object)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Optional AccountUserRepository.findById(Object)"})
   void testFindById() {
     // Arrange
@@ -467,13 +488,14 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#save(Object)}.
-   * <p>
-   * Method under test: {@link AccountUserRepository#save(Object)}
+   * Test {@link AccountUserRepository#save(Object)}.
+   *
+   * <p>Method under test: {@link AccountUserRepository#save(Object)}
    */
   @Test
   @DisplayName("Test save(Object)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Object AccountUserRepository.save(Object)"})
   void testSave() {
     // Arrange
@@ -490,13 +512,14 @@ class AccountUserRepositoryDiffblueTest {
   }
 
   /**
-   * Test {@link CrudRepository#saveAll(Iterable)}.
-   * <p>
-   * Method under test: {@link AccountUserRepository#saveAll(Iterable)}
+   * Test {@link AccountUserRepository#saveAll(Iterable)}.
+   *
+   * <p>Method under test: {@link AccountUserRepository#saveAll(Iterable)}
    */
   @Test
   @DisplayName("Test saveAll(Iterable)")
-  @Tag("MaintainedByDiffblue")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
   @MethodsUnderTest({"Iterable AccountUserRepository.saveAll(Iterable)"})
   void testSaveAll() {
     // Arrange
@@ -511,6 +534,7 @@ class AccountUserRepositoryDiffblueTest {
     AccountUser accountUser3 = new AccountUser();
     accountUser3.setAccountId(1);
     accountUser3.setUsername("janedoe");
+
     List<AccountUser> entities = Arrays.asList(accountUser, accountUser2, accountUser3);
 
     // Act

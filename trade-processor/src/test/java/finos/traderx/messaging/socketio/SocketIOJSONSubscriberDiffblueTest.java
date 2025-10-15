@@ -14,17 +14,11 @@ import io.socket.client.IO.Options;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
-@ExtendWith(MockitoExtension.class)
 class SocketIOJSONSubscriberDiffblueTest {
-  @InjectMocks private TradeFeedHandler tradeFeedHandler;
-
   /**
    * Test {@link SocketIOJSONSubscriber#getIOOptions()}.
    *
@@ -130,102 +124,6 @@ class SocketIOJSONSubscriberDiffblueTest {
 
     // Act and Assert
     assertThrows(PubSubException.class, () -> tradeFeedHandler.connect());
-  }
-
-  /**
-   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
-   *
-   * <ul>
-   *   <li>Given {@link TradeFeedHandler} (default constructor) DefaultTopic is {@code null}.
-   * </ul>
-   *
-   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
-   */
-  @Test
-  @DisplayName(
-      "Test afterPropertiesSet(); given TradeFeedHandler (default constructor) DefaultTopic is 'null'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
-  void testAfterPropertiesSet_givenTradeFeedHandlerDefaultTopicIsNull() throws Exception {
-    // Arrange
-    TradeFeedHandler tradeFeedHandler = new TradeFeedHandler();
-    tradeFeedHandler.setDefaultTopic(null);
-    tradeFeedHandler.setSocketAddress("Addr");
-
-    // Act and Assert
-    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
-  }
-
-  /**
-   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
-   *
-   * <ul>
-   *   <li>Given {@link TradeFeedHandler} DefaultTopic is {@code null}.
-   * </ul>
-   *
-   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
-   */
-  @Test
-  @DisplayName("Test afterPropertiesSet(); given TradeFeedHandler DefaultTopic is 'null'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
-  void testAfterPropertiesSet_givenTradeFeedHandlerDefaultTopicIsNull2() throws Exception {
-    // Arrange
-    tradeFeedHandler.setDefaultTopic(null);
-    tradeFeedHandler.setSocketAddress("topic");
-
-    // Act and Assert
-    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
-  }
-
-  /**
-   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
-   *
-   * <ul>
-   *   <li>Given {@link TradeFeedHandler} DefaultTopic is {@code Topic/default}.
-   * </ul>
-   *
-   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
-   */
-  @Test
-  @DisplayName("Test afterPropertiesSet(); given TradeFeedHandler DefaultTopic is 'Topic/default'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
-  void testAfterPropertiesSet_givenTradeFeedHandlerDefaultTopicIsTopicDefault() throws Exception {
-    // Arrange
-    tradeFeedHandler.setDefaultTopic("Topic/default");
-    tradeFeedHandler.setSocketAddress("");
-
-    // Act and Assert
-    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
-  }
-
-  /**
-   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
-   *
-   * <ul>
-   *   <li>Given {@link TradeFeedHandler} DefaultTopic is {@code Topicdisconnect}.
-   * </ul>
-   *
-   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
-   */
-  @Test
-  @DisplayName(
-      "Test afterPropertiesSet(); given TradeFeedHandler DefaultTopic is 'Topicdisconnect'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
-  void testAfterPropertiesSet_givenTradeFeedHandlerDefaultTopicIsTopicdisconnect()
-      throws Exception {
-    // Arrange
-    tradeFeedHandler.setDefaultTopic("Topicdisconnect");
-    tradeFeedHandler.setSocketAddress("");
-
-    // Act and Assert
-    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
   }
 
   /**

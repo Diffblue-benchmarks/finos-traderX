@@ -4,18 +4,18 @@
   },
   "run" : {
     "version" : "2025.09.01-44e352d-licensed",
-    "creationTimestamp" : "2025-09-26T15:16:07.418819673Z",
+    "creationTimestamp" : "2025-10-15T15:29:18.073266027Z",
     "command" : "dcover create --exclude-modules=database --coverage-reports --upload http://localhost:8080 --project-name finos-traderX --name with-diffblue-tests",
-    "totalTime" : 642.495,
-    "environmentDetectionTime" : 0.485,
-    "indexingTime" : 0.354,
-    "entryPointsTime" : 0.373,
-    "generationTime" : 502.534,
-    "timeToFirstTest" : 74.937,
-    "timeToLastTest" : 581.209,
-    "indexQueryTime" : 10.116,
-    "verificationTime" : 26.202,
-    "validationTime" : 26.864
+    "totalTime" : 659.968,
+    "environmentDetectionTime" : 0.403,
+    "indexingTime" : 0.521,
+    "entryPointsTime" : 0.29,
+    "generationTime" : 511.484,
+    "timeToFirstTest" : 80.695,
+    "timeToLastTest" : 595.28,
+    "indexQueryTime" : 10.76,
+    "verificationTime" : 25.658,
+    "validationTime" : 28.816
   },
   "codes" : {
     "R000" : "Success",
@@ -42,9 +42,9 @@
   "summary" : {
     "classesCount" : 34,
     "methodsCount" : 223,
-    "cumulativeDiffblueTestCount" : 66,
+    "cumulativeDiffblueTestCount" : 62,
     "cumulativeManualTestCount" : 0,
-    "completeTestCount" : 66,
+    "completeTestCount" : 62,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 791,
@@ -79,14 +79,14 @@
       "W001" : 1
     },
     "perTestOutcome" : {
-      "R000" : 66
+      "R000" : 62
     },
     "perTestValidation" : {
-      "V000" : 66
+      "V000" : 62
     },
     "warnings" : {
       "W001" : 1,
-      "W002" : 6
+      "W002" : 4
     }
   },
   "classes" : {
@@ -204,7 +204,7 @@
     },
     "finos.traderx.messaging.socketio.SocketIOJSONSubscriber" : {
       "methodsCount" : 13,
-      "completeTestCount" : 10,
+      "completeTestCount" : 6,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 10,
@@ -219,11 +219,11 @@
         "W001" : 1
       },
       "perTestOutcome" : {
-        "R000" : 10
+        "R000" : 6
       },
       "warnings" : {
         "W001" : 1,
-        "W002" : 6
+        "W002" : 4
       }
     },
     "finos.traderx.messaging.socketio.SocketIOJSONSubscriber$1" : {
@@ -1156,15 +1156,15 @@
       ]
     },
     "finos.traderx.messaging.socketio.SocketIOJSONSubscriber.afterPropertiesSet:()V" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 2,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 2
       },
       "warnings" : {
-        "W002" : 4
+        "W002" : 2
       },
       "lineNumbers" : [
         148,

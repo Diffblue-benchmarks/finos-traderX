@@ -1,0 +1,3 @@
+base-test-classes:
+  # Use custom base class for PubSubConfig to prevent external SocketIO connections during tests
+  finos.traderx.tradeservice.PubSubConfig: finos.traderx.tradeservice.PubSubConfigTestBase

@@ -1,17 +1,13 @@
-package finos.traderx.messaging.socketio;
+package finos.traderx.tradeservice;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import finos.traderx.tradeprocessor.TradeProcessorApplication;
-import finos.traderx.tradeprocessor.service.TradeService;
-
 /**
- * Custom base class for testing SocketIOJSONSubscriber and its subclasses.
+ * Custom base class for testing PubSubConfig and related components.
  * This ensures proper Spring Boot context initialization for Diffblue Cover tests.
  *
  * This base class uses TestPubSubConfig to provide mock beans that override
@@ -19,17 +15,14 @@ import finos.traderx.tradeprocessor.service.TradeService;
  * from attempting to connect to external SocketIO servers during application
  * context initialization.
  */
-@SpringBootTest(classes = TradeProcessorApplication.class,
+@SpringBootTest(classes = TradeServiceApplication.class,
     webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
 @Import(TestPubSubConfig.class)
-public abstract class SocketIOJSONSubscriberTestBase {
+public abstract class PubSubConfigTestBase {
 
-    @MockBean
-    protected TradeService tradeService;
-
-    // Base class for SocketIOJSONSubscriber tests
+    // Base class for PubSubConfig tests
     // This provides proper Spring Boot application context with mocked dependencies
-    // The TestPubSubConfig provides the necessary mock beans for publishers and subscribers
+    // The TestPubSubConfig provides the necessary mock beans for publishers
 }

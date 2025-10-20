@@ -1,7 +1,7 @@
-package finos.traderx.tradeprocessor.repository;
+package finos.traderx.positionservice.repository;
 
 import com.diffblue.cover.annotations.InterestingTestFactory;
-import finos.traderx.tradeprocessor.model.Position;
+import finos.traderx.positionservice.model.Position;
 import org.springframework.data.domain.Example;
 import org.springframework.data.repository.query.FluentQuery;
 

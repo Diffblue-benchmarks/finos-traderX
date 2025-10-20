@@ -1,0 +1,82 @@
+package finos.traderx.tradeprocessor.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
+class PositionIDDiffblueTest {
+  /**
+   * Test getters and setters.
+   *
+   * <ul>
+   *   <li>Then return AccountId is {@code null}.
+   * </ul>
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link PositionID#PositionID()}
+   *   <li>{@link PositionID#getAccountId()}
+   *   <li>{@link PositionID#getSecurity()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters; then return AccountId is 'null'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void PositionID.<init>()",
+    "void PositionID.<init>(Integer, String)",
+    "Integer PositionID.getAccountId()",
+    "String PositionID.getSecurity()"
+  })
+  void testGettersAndSetters_thenReturnAccountIdIsNull() {
+    // Arrange and Act
+    PositionID actualPositionID = new PositionID();
+    Integer actualAccountId = actualPositionID.getAccountId();
+
+    // Assert
+    assertNull(actualAccountId);
+    assertNull(actualPositionID.getSecurity());
+  }
+
+  /**
+   * Test getters and setters.
+   *
+   * <ul>
+   *   <li>When one.
+   *   <li>Then return {@code Security}.
+   * </ul>
+   *
+   * <p>Methods under test:
+   *
+   * <ul>
+   *   <li>{@link PositionID#PositionID(Integer, String)}
+   *   <li>{@link PositionID#getAccountId()}
+   *   <li>{@link PositionID#getSecurity()}
+   * </ul>
+   */
+  @Test
+  @DisplayName("Test getters and setters; when one; then return 'Security'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "void PositionID.<init>()",
+    "void PositionID.<init>(Integer, String)",
+    "Integer PositionID.getAccountId()",
+    "String PositionID.getSecurity()"
+  })
+  void testGettersAndSetters_whenOne_thenReturnSecurity() {
+    // Arrange and Act
+    PositionID actualPositionID = new PositionID(1, "Security");
+    Integer actualAccountId = actualPositionID.getAccountId();
+
+    // Assert
+    assertEquals("Security", actualPositionID.getSecurity());
+    assertEquals(1, actualAccountId.intValue());
+  }
+}

@@ -3,7 +3,9 @@
     "allow": [
       "Bash(mvn install:*)",
       "Bash(./gradlew build:*)",
-      "Bash(./gradlew testClasses:*)"
+      "Bash(./gradlew testClasses:*)",
+      "Bash(./gradlew test:*)",
+      "Bash(awk:*)"
     ],
     "deny": [],
     "ask": []

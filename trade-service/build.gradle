@@ -28,7 +28,7 @@ configurations.all {
 }
 
 dependencies {
-    compileOnly "com.diffblue.cover:cover-annotations:1.6.0"
+    compileOnly "com.diffblue.cover:cover-annotations:1.7.0"
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -45,7 +45,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	pitest 'org.pitest:pitest-junit5-plugin:1.2.1'
 
-    testImplementation "com.diffblue.cover:cover-annotations:1.6.0"
+    testImplementation "com.diffblue.cover:cover-annotations:1.7.0"
 }
 sourceSets {
 	test {

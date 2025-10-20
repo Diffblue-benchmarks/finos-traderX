@@ -24,7 +24,7 @@ import finos.traderx.tradeprocessor.service.TradeService;
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
 @Import(TestPubSubConfig.class)
-public abstract class SocketIOJSONSubscriberTestBase {
+public abstract class SocketIOJSONSubscriberDiffblueBase {
 
     @MockBean
     protected TradeService tradeService;

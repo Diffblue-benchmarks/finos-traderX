@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * Verification test to ensure the base class can successfully load the Spring context.
  * This test confirms that Diffblue Cover can use this base class for generating tests.
  */
-public class PubSubConfigTestBaseVerificationTest extends PubSubConfigTestBase {
+public class PubSubConfigTestBaseVerificationTest extends PubSubConfigDiffblueBase {
 
     @Autowired
     private ApplicationContext applicationContext;

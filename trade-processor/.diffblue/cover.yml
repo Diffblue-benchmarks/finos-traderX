@@ -1,5 +1,0 @@
-base-test-classes:
-  # Use custom base class for SocketIOJSONSubscriber and its subclasses
-  finos.traderx.messaging.socketio.SocketIOJSONSubscriber: finos.traderx.messaging.socketio.SocketIOJSONSubscriberTestBase
-  # Also cover TradeFeedHandler which extends SocketIOJSONSubscriber
-  finos.traderx.tradeprocessor.TradeFeedHandler: finos.traderx.messaging.socketio.SocketIOJSONSubscriberTestBase

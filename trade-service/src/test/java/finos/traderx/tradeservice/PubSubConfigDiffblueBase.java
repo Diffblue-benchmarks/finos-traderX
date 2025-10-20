@@ -20,7 +20,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
 @Import(TestPubSubConfig.class)
-public abstract class PubSubConfigTestBase {
+public abstract class PubSubConfigDiffblueBase {
 
     // Base class for PubSubConfig tests
     // This provides proper Spring Boot application context with mocked dependencies

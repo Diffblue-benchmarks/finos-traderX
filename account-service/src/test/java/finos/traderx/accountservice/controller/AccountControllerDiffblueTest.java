@@ -149,43 +149,40 @@ class AccountControllerDiffblueTest {
    * Test {@link AccountController#createAccount(Account)}.
    *
    * <ul>
-   *   <li>Given {@code https://example.org/example}.
-   *   <li>Then status four hundred fifteen.
+   *   <li>Given {@link PropertyNamingStrategy} (default constructor).
    * </ul>
    *
    * <p>Method under test: {@link AccountController#createAccount(Account)}
    */
   @Test
-  @DisplayName(
-      "Test createAccount(Account); given 'https://example.org/example'; then status four hundred fifteen")
+  @DisplayName("Test createAccount(Account); given PropertyNamingStrategy (default constructor)")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"ResponseEntity AccountController.createAccount(Account)"})
-  void testCreateAccount_givenHttpsExampleOrgExample_thenStatusFourHundredFifteen()
-      throws Exception {
+  void testCreateAccount_givenPropertyNamingStrategy() throws Exception {
     // Arrange
+    when(accountService.upsertAccount(Mockito.<Account>any()))
+        .thenThrow(new ResourceNotFoundException("An error occurred"));
+
     Account account = new Account();
     account.setDisplayName("Display Name");
     account.setId(1);
-    when(accountService.upsertAccount(Mockito.<Account>any())).thenReturn(account);
 
-    MockHttpServletRequestBuilder postResult = MockMvcRequestBuilders.post("/account/");
-    postResult.characterEncoding("https://example.org/example");
-
-    Account account2 = new Account();
-    account2.setDisplayName("Display Name");
-    account2.setId(1);
+    Builder builderResult = JsonMapper.builder();
+    builderResult.propertyNamingStrategy(new PropertyNamingStrategy());
 
     MockHttpServletRequestBuilder requestBuilder =
-        postResult
+        MockMvcRequestBuilders.post("/account/")
             .contentType(MediaType.APPLICATION_JSON)
-            .content(JsonMapper.builder().findAndAddModules().build().writeValueAsString(account2));
+            .content(builderResult.findAndAddModules().build().writeValueAsString(account));
 
     // Act and Assert
     MockMvcBuilders.standaloneSetup(accountController)
         .build()
         .perform(requestBuilder)
-        .andExpect(status().is(415));
+        .andExpect(status().isNotFound())
+        .andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
+        .andExpect(content().string("An error occurred"));
   }
 
   /**
@@ -264,89 +261,6 @@ class AccountControllerDiffblueTest {
         .andExpect(status().isOk())
         .andExpect(content().contentType("application/json"))
         .andExpect(content().string("{\"id\":1,\"displayName\":\"Display Name\"}"));
-  }
-
-  /**
-   * Test {@link AccountController#updateAccount(Account)}.
-   *
-   * <ul>
-   *   <li>Given {@code https://example.org/example}.
-   *   <li>Then status four hundred fifteen.
-   * </ul>
-   *
-   * <p>Method under test: {@link AccountController#updateAccount(Account)}
-   */
-  @Test
-  @DisplayName(
-      "Test updateAccount(Account); given 'https://example.org/example'; then status four hundred fifteen")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"ResponseEntity AccountController.updateAccount(Account)"})
-  void testUpdateAccount_givenHttpsExampleOrgExample_thenStatusFourHundredFifteen()
-      throws Exception {
-    // Arrange
-    Account account = new Account();
-    account.setDisplayName("Display Name");
-    account.setId(1);
-    when(accountService.upsertAccount(Mockito.<Account>any())).thenReturn(account);
-
-    MockHttpServletRequestBuilder putResult = MockMvcRequestBuilders.put("/account/");
-    putResult.characterEncoding("https://example.org/example");
-
-    Account account2 = new Account();
-    account2.setDisplayName("Display Name");
-    account2.setId(1);
-
-    MockHttpServletRequestBuilder requestBuilder =
-        putResult
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(JsonMapper.builder().findAndAddModules().build().writeValueAsString(account2));
-
-    // Act and Assert
-    MockMvcBuilders.standaloneSetup(accountController)
-        .build()
-        .perform(requestBuilder)
-        .andExpect(status().is(415));
-  }
-
-  /**
-   * Test {@link AccountController#updateAccount(Account)}.
-   *
-   * <ul>
-   *   <li>Given {@link PropertyNamingStrategy} (default constructor).
-   * </ul>
-   *
-   * <p>Method under test: {@link AccountController#updateAccount(Account)}
-   */
-  @Test
-  @DisplayName("Test updateAccount(Account); given PropertyNamingStrategy (default constructor)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"ResponseEntity AccountController.updateAccount(Account)"})
-  void testUpdateAccount_givenPropertyNamingStrategy() throws Exception {
-    // Arrange
-    when(accountService.upsertAccount(Mockito.<Account>any()))
-        .thenThrow(new ResourceNotFoundException("An error occurred"));
-
-    Account account = new Account();
-    account.setDisplayName("Display Name");
-    account.setId(1);
-
-    Builder builderResult = JsonMapper.builder();
-    builderResult.propertyNamingStrategy(new PropertyNamingStrategy());
-
-    MockHttpServletRequestBuilder requestBuilder =
-        MockMvcRequestBuilders.put("/account/")
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(builderResult.findAndAddModules().build().writeValueAsString(account));
-
-    // Act and Assert
-    MockMvcBuilders.standaloneSetup(accountController)
-        .build()
-        .perform(requestBuilder)
-        .andExpect(status().isNotFound())
-        .andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
-        .andExpect(content().string("An error occurred"));
   }
 
   /**

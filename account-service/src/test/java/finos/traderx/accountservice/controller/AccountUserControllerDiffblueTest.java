@@ -108,57 +108,14 @@ class AccountUserControllerDiffblueTest {
   /**
    * Test {@link AccountUserController#createAccountUser(AccountUser)}.
    *
-   * <ul>
-   *   <li>Given {@code https://example.org/example}.
-   *   <li>Then status four hundred fifteen.
-   * </ul>
-   *
    * <p>Method under test: {@link AccountUserController#createAccountUser(AccountUser)}
    */
   @Test
-  @DisplayName(
-      "Test createAccountUser(AccountUser); given 'https://example.org/example'; then status four hundred fifteen")
+  @DisplayName("Test createAccountUser(AccountUser)")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"ResponseEntity AccountUserController.createAccountUser(AccountUser)"})
-  void testCreateAccountUser_givenHttpsExampleOrgExample_thenStatusFourHundredFifteen()
-      throws Exception {
-    // Arrange
-    MockHttpServletRequestBuilder postResult = MockMvcRequestBuilders.post("/accountuser/");
-    postResult.characterEncoding("https://example.org/example");
-
-    AccountUser accountUser = new AccountUser();
-    accountUser.setAccountId(1);
-    accountUser.setUsername("janedoe");
-
-    MockHttpServletRequestBuilder requestBuilder =
-        postResult
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(
-                JsonMapper.builder().findAndAddModules().build().writeValueAsString(accountUser));
-
-    // Act and Assert
-    MockMvcBuilders.standaloneSetup(accountUserController)
-        .build()
-        .perform(requestBuilder)
-        .andExpect(status().is(415));
-  }
-
-  /**
-   * Test {@link AccountUserController#createAccountUser(AccountUser)}.
-   *
-   * <ul>
-   *   <li>Then status {@link StatusResultMatchers#isInternalServerError()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link AccountUserController#createAccountUser(AccountUser)}
-   */
-  @Test
-  @DisplayName("Test createAccountUser(AccountUser); then status isInternalServerError()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"ResponseEntity AccountUserController.createAccountUser(AccountUser)"})
-  void testCreateAccountUser_thenStatusIsInternalServerError() throws Exception {
+  void testCreateAccountUser() throws Exception {
     // Arrange
     AccountUser accountUser = new AccountUser();
     accountUser.setAccountId(1);
@@ -179,6 +136,43 @@ class AccountUserControllerDiffblueTest {
         .andExpect(
             content()
                 .string("Not enough variable values available to expand 'people.service.url'"));
+  }
+
+  /**
+   * Test {@link AccountUserController#createAccountUser(AccountUser)}.
+   *
+   * <p>Method under test: {@link AccountUserController#createAccountUser(AccountUser)}
+   */
+  @Test
+  @DisplayName("Test createAccountUser(AccountUser)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"ResponseEntity AccountUserController.createAccountUser(AccountUser)"})
+  void testCreateAccountUser2() throws Exception {
+    // Arrange
+    MockHttpServletRequestBuilder postResult = MockMvcRequestBuilders.post("/accountuser/");
+    postResult.characterEncoding("Encoding");
+
+    AccountUser accountUser = new AccountUser();
+    accountUser.setAccountId(1);
+    accountUser.setUsername("janedoe");
+
+    MockHttpServletRequestBuilder requestBuilder =
+        postResult
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(
+                JsonMapper.builder().findAndAddModules().build().writeValueAsString(accountUser));
+
+    // Act and Assert
+    MockMvcBuilders.standaloneSetup(accountUserController)
+        .build()
+        .perform(requestBuilder)
+        .andExpect(status().isInternalServerError())
+        .andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
+        .andExpect(
+            content()
+                .string(
+                    "Invalid mime type \"application/json;charset=Encoding\": unsupported charset 'Encoding'"));
   }
 
   /**
@@ -221,50 +215,6 @@ class AccountUserControllerDiffblueTest {
         .andExpect(status().isOk())
         .andExpect(content().contentType("application/json"))
         .andExpect(content().string("{\"accountId\":1,\"username\":\"janedoe\"}"));
-  }
-
-  /**
-   * Test {@link AccountUserController#updateAccountUser(AccountUser)}.
-   *
-   * <ul>
-   *   <li>Given {@code https://example.org/example}.
-   *   <li>Then status four hundred fifteen.
-   * </ul>
-   *
-   * <p>Method under test: {@link AccountUserController#updateAccountUser(AccountUser)}
-   */
-  @Test
-  @DisplayName(
-      "Test updateAccountUser(AccountUser); given 'https://example.org/example'; then status four hundred fifteen")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"ResponseEntity AccountUserController.updateAccountUser(AccountUser)"})
-  void testUpdateAccountUser_givenHttpsExampleOrgExample_thenStatusFourHundredFifteen()
-      throws Exception {
-    // Arrange
-    AccountUser accountUser = new AccountUser();
-    accountUser.setAccountId(1);
-    accountUser.setUsername("janedoe");
-    when(accountUserService.upsertAccountUser(Mockito.<AccountUser>any())).thenReturn(accountUser);
-
-    MockHttpServletRequestBuilder putResult = MockMvcRequestBuilders.put("/accountuser/");
-    putResult.characterEncoding("https://example.org/example");
-
-    AccountUser accountUser2 = new AccountUser();
-    accountUser2.setAccountId(1);
-    accountUser2.setUsername("janedoe");
-
-    MockHttpServletRequestBuilder requestBuilder =
-        putResult
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(
-                JsonMapper.builder().findAndAddModules().build().writeValueAsString(accountUser2));
-
-    // Act and Assert
-    MockMvcBuilders.standaloneSetup(accountUserController)
-        .build()
-        .perform(requestBuilder)
-        .andExpect(status().is(415));
   }
 
   /**

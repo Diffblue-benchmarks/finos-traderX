@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn install:*)",
+      "Bash(./gradlew build:*)",
+      "Bash(./gradlew testClasses:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

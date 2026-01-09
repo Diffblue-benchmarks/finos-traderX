@@ -1,0 +1,7 @@
+name: com.diffblue.cover.refactoring.Recipe
+recipeList:
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: finos.traderx.positionservice.model.PositionID,
+    fieldName: accountId}
+- com.diffblue.cover.refactoring.recipes.AddGetter: {className: finos.traderx.positionservice.model.PositionID,
+    fieldName: security}
+type: specs.openrewrite.org/v1beta/recipe

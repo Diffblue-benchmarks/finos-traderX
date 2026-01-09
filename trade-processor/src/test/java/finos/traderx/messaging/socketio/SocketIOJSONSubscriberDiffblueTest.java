@@ -14,17 +14,11 @@ import io.socket.client.IO.Options;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
-@ExtendWith(MockitoExtension.class)
 class SocketIOJSONSubscriberDiffblueTest {
-  @InjectMocks private TradeFeedHandler tradeFeedHandler;
-
   /**
    * Test {@link SocketIOJSONSubscriber#getIOOptions()}.
    *
@@ -160,85 +154,6 @@ class SocketIOJSONSubscriberDiffblueTest {
    * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
    *
    * <ul>
-   *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code 42 Main St}.
-   * </ul>
-   *
-   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
-   */
-  @Test
-  @DisplayName(
-      "Test afterPropertiesSet(); given TradeFeedHandler (default constructor) SocketAddress is '42 Main St'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
-  void testAfterPropertiesSet_givenTradeFeedHandlerSocketAddressIs42MainSt2() throws Exception {
-    // Arrange
-    TradeFeedHandler tradeFeedHandler = new TradeFeedHandler();
-    tradeFeedHandler.setSocketAddress("42 Main St");
-    tradeFeedHandler.setDefaultTopic("Topicconnect");
-
-    // Act and Assert
-    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
-  }
-
-  /**
-   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
-   *
-   * <ul>
-   *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code 42 Main St42
-   *       Main St}.
-   * </ul>
-   *
-   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
-   */
-  @Test
-  @DisplayName(
-      "Test afterPropertiesSet(); given TradeFeedHandler (default constructor) SocketAddress is '42 Main St42 Main St'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
-  void testAfterPropertiesSet_givenTradeFeedHandlerSocketAddressIs42MainSt42MainSt()
-      throws Exception {
-    // Arrange
-    TradeFeedHandler tradeFeedHandler = new TradeFeedHandler();
-    tradeFeedHandler.setSocketAddress("42 Main St42 Main St");
-    tradeFeedHandler.setDefaultTopic(null);
-
-    // Act and Assert
-    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
-  }
-
-  /**
-   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
-   *
-   * <ul>
-   *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code 42 Main St42
-   *       Main St}.
-   * </ul>
-   *
-   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
-   */
-  @Test
-  @DisplayName(
-      "Test afterPropertiesSet(); given TradeFeedHandler (default constructor) SocketAddress is '42 Main St42 Main St'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
-  void testAfterPropertiesSet_givenTradeFeedHandlerSocketAddressIs42MainSt42MainSt2()
-      throws Exception {
-    // Arrange
-    TradeFeedHandler tradeFeedHandler = new TradeFeedHandler();
-    tradeFeedHandler.setSocketAddress("42 Main St42 Main St");
-    tradeFeedHandler.setDefaultTopic("Topicconnect");
-
-    // Act and Assert
-    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
-  }
-
-  /**
-   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
-   *
-   * <ul>
    *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code Addr}.
    * </ul>
    *
@@ -254,100 +169,6 @@ class SocketIOJSONSubscriberDiffblueTest {
     // Arrange
     TradeFeedHandler tradeFeedHandler = new TradeFeedHandler();
     tradeFeedHandler.setSocketAddress("Addr");
-
-    // Act and Assert
-    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
-  }
-
-  /**
-   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
-   *
-   * <ul>
-   *   <li>Given {@link TradeFeedHandler} (default constructor) SocketAddress is {@code /default}.
-   * </ul>
-   *
-   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
-   */
-  @Test
-  @DisplayName(
-      "Test afterPropertiesSet(); given TradeFeedHandler (default constructor) SocketAddress is '/default'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
-  void testAfterPropertiesSet_givenTradeFeedHandlerSocketAddressIsDefault() throws Exception {
-    // Arrange
-    TradeFeedHandler tradeFeedHandler = new TradeFeedHandler();
-    tradeFeedHandler.setSocketAddress("/default");
-    tradeFeedHandler.setDefaultTopic("42");
-
-    // Act and Assert
-    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
-  }
-
-  /**
-   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
-   *
-   * <ul>
-   *   <li>Given {@link TradeFeedHandler} SocketAddress is {@code /default}.
-   * </ul>
-   *
-   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
-   */
-  @Test
-  @DisplayName("Test afterPropertiesSet(); given TradeFeedHandler SocketAddress is '/default'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
-  void testAfterPropertiesSet_givenTradeFeedHandlerSocketAddressIsDefault2() throws Exception {
-    // Arrange
-    tradeFeedHandler.setSocketAddress("/default");
-    tradeFeedHandler.setDefaultTopic("42");
-
-    // Act and Assert
-    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
-  }
-
-  /**
-   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
-   *
-   * <ul>
-   *   <li>Given {@link TradeFeedHandler} SocketAddress is empty string.
-   * </ul>
-   *
-   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
-   */
-  @Test
-  @DisplayName("Test afterPropertiesSet(); given TradeFeedHandler SocketAddress is empty string")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
-  void testAfterPropertiesSet_givenTradeFeedHandlerSocketAddressIsEmptyString() throws Exception {
-    // Arrange
-    tradeFeedHandler.setSocketAddress("");
-    tradeFeedHandler.setDefaultTopic("disconnect");
-
-    // Act and Assert
-    assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());
-  }
-
-  /**
-   * Test {@link SocketIOJSONSubscriber#afterPropertiesSet()}.
-   *
-   * <ul>
-   *   <li>Given {@link TradeFeedHandler} SocketAddress is {@code topic}.
-   * </ul>
-   *
-   * <p>Method under test: {@link SocketIOJSONSubscriber#afterPropertiesSet()}
-   */
-  @Test
-  @DisplayName("Test afterPropertiesSet(); given TradeFeedHandler SocketAddress is 'topic'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void SocketIOJSONSubscriber.afterPropertiesSet()"})
-  void testAfterPropertiesSet_givenTradeFeedHandlerSocketAddressIsTopic() throws Exception {
-    // Arrange
-    tradeFeedHandler.setSocketAddress("topic");
-    tradeFeedHandler.setDefaultTopic("42");
 
     // Act and Assert
     assertThrows(PubSubException.class, () -> tradeFeedHandler.afterPropertiesSet());

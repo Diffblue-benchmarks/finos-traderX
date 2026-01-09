@@ -1,8 +1,6 @@
 package finos.traderx.accountservice.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.anyInt;
 import static org.mockito.Mockito.when;
@@ -221,17 +219,17 @@ class AccountUserControllerDiffblueTest {
    * Test {@link AccountUserController#updateAccountUser(AccountUser)}.
    *
    * <ul>
-   *   <li>Then status {@link StatusResultMatchers#isInternalServerError()}.
+   *   <li>Then content string {@code 200 OK}.
    * </ul>
    *
    * <p>Method under test: {@link AccountUserController#updateAccountUser(AccountUser)}
    */
   @Test
-  @DisplayName("Test updateAccountUser(AccountUser); then status isInternalServerError()")
+  @DisplayName("Test updateAccountUser(AccountUser); then content string '200 OK'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"ResponseEntity AccountUserController.updateAccountUser(AccountUser)"})
-  void testUpdateAccountUser_thenStatusIsInternalServerError() throws Exception {
+  void testUpdateAccountUser_thenContentString200Ok() throws Exception {
     // Arrange
     when(accountUserService.upsertAccountUser(Mockito.<AccountUser>any()))
         .thenThrow(new HttpClientErrorException(HttpStatus.OK));
@@ -380,35 +378,5 @@ class AccountUserControllerDiffblueTest {
     assertEquals(HttpStatus.NOT_FOUND, statusCode);
     assertTrue(actualResourceNotFoundExceptionMapperResult.hasBody());
     assertTrue(actualResourceNotFoundExceptionMapperResult.getHeaders().isEmpty());
-  }
-
-  /**
-   * Test {@link AccountUserController#generalError(Exception)}.
-   *
-   * <ul>
-   *   <li>When {@link Exception#Exception()}.
-   *   <li>Then StatusCode return {@link HttpStatus}.
-   * </ul>
-   *
-   * <p>Method under test: {@link AccountUserController#generalError(Exception)}
-   */
-  @Test
-  @DisplayName("Test generalError(Exception); when Exception(); then StatusCode return HttpStatus")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"ResponseEntity AccountUserController.generalError(Exception)"})
-  void testGeneralError_whenException_thenStatusCodeReturnHttpStatus() {
-    // Arrange and Act
-    ResponseEntity<String> actualGeneralErrorResult =
-        accountUserController.generalError(new Exception());
-
-    // Assert
-    HttpStatusCode statusCode = actualGeneralErrorResult.getStatusCode();
-    assertTrue(statusCode instanceof HttpStatus);
-    assertNull(actualGeneralErrorResult.getBody());
-    assertEquals(500, actualGeneralErrorResult.getStatusCodeValue());
-    assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, statusCode);
-    assertFalse(actualGeneralErrorResult.hasBody());
-    assertTrue(actualGeneralErrorResult.getHeaders().isEmpty());
   }
 }

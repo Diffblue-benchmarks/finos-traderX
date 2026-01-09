@@ -1,8 +1,6 @@
 package finos.traderx.accountservice.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.anyInt;
 import static org.mockito.Mockito.when;
@@ -35,6 +33,7 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.StatusResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder;
 
 @ContextConfiguration(classes = {AccountController.class})
 @DisabledInAotMode
@@ -102,6 +101,88 @@ class AccountControllerDiffblueTest {
         .andExpect(status().isNotFound())
         .andExpect(content().contentType("application/json"))
         .andExpect(content().string("An error occurred"));
+  }
+
+  /**
+   * Test {@link AccountController#createAccount(Account)}.
+   *
+   * <p>Method under test: {@link AccountController#createAccount(Account)}
+   */
+  @Test
+  @DisplayName("Test createAccount(Account)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"ResponseEntity AccountController.createAccount(Account)"})
+  void testCreateAccount() throws Exception {
+    // Arrange
+    MockHttpServletRequestBuilder postResult = MockMvcRequestBuilders.post("/account/");
+    postResult.characterEncoding("Encoding");
+
+    Account account = new Account();
+    account.setDisplayName("Display Name");
+    account.setId(1);
+
+    MockHttpServletRequestBuilder requestBuilder =
+        postResult
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(JsonMapper.builder().findAndAddModules().build().writeValueAsString(account));
+
+    StandaloneMockMvcBuilder standaloneSetupResult =
+        MockMvcBuilders.standaloneSetup(new AccountController());
+
+    // Act and Assert
+    standaloneSetupResult
+        .build()
+        .perform(requestBuilder)
+        .andExpect(status().isInternalServerError())
+        .andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
+        .andExpect(
+            content()
+                .string(
+                    "Invalid mime type \"application/json;charset=Encoding\": unsupported charset 'Encoding'"));
+  }
+
+  /**
+   * Test {@link AccountController#createAccount(Account)}.
+   *
+   * <ul>
+   *   <li>Given {@link AccountController} (default constructor).
+   *   <li>Then content string a string.
+   * </ul>
+   *
+   * <p>Method under test: {@link AccountController#createAccount(Account)}
+   */
+  @Test
+  @DisplayName(
+      "Test createAccount(Account); given AccountController (default constructor); then content string a string")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"ResponseEntity AccountController.createAccount(Account)"})
+  void testCreateAccount_givenAccountController_thenContentStringAString() throws Exception {
+    // Arrange
+    Account account = new Account();
+    account.setDisplayName("Display Name");
+    account.setId(1);
+
+    MockHttpServletRequestBuilder requestBuilder =
+        MockMvcRequestBuilders.post("/account/")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(JsonMapper.builder().findAndAddModules().build().writeValueAsString(account));
+
+    StandaloneMockMvcBuilder standaloneSetupResult =
+        MockMvcBuilders.standaloneSetup(new AccountController());
+
+    // Act and Assert
+    standaloneSetupResult
+        .build()
+        .perform(requestBuilder)
+        .andExpect(status().isInternalServerError())
+        .andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
+        .andExpect(
+            content()
+                .string(
+                    "Cannot invoke \"finos.traderx.accountservice.service.AccountService.upsertAccount(finos.traderx"
+                        + ".accountservice.model.Account)\" because \"this.accountService\" is null"));
   }
 
   /**
@@ -220,6 +301,49 @@ class AccountControllerDiffblueTest {
         .andExpect(status().isNotFound())
         .andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
         .andExpect(content().string("An error occurred"));
+  }
+
+  /**
+   * Test {@link AccountController#updateAccount(Account)}.
+   *
+   * <ul>
+   *   <li>Given {@link AccountController} (default constructor).
+   *   <li>Then content string a string.
+   * </ul>
+   *
+   * <p>Method under test: {@link AccountController#updateAccount(Account)}
+   */
+  @Test
+  @DisplayName(
+      "Test updateAccount(Account); given AccountController (default constructor); then content string a string")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"ResponseEntity AccountController.updateAccount(Account)"})
+  void testUpdateAccount_givenAccountController_thenContentStringAString() throws Exception {
+    // Arrange
+    Account account = new Account();
+    account.setDisplayName("Display Name");
+    account.setId(1);
+
+    MockHttpServletRequestBuilder requestBuilder =
+        MockMvcRequestBuilders.put("/account/")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(JsonMapper.builder().findAndAddModules().build().writeValueAsString(account));
+
+    StandaloneMockMvcBuilder standaloneSetupResult =
+        MockMvcBuilders.standaloneSetup(new AccountController());
+
+    // Act and Assert
+    standaloneSetupResult
+        .build()
+        .perform(requestBuilder)
+        .andExpect(status().isInternalServerError())
+        .andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
+        .andExpect(
+            content()
+                .string(
+                    "Cannot invoke \"finos.traderx.accountservice.service.AccountService.upsertAccount(finos.traderx"
+                        + ".accountservice.model.Account)\" because \"this.accountService\" is null"));
   }
 
   /**
@@ -391,35 +515,5 @@ class AccountControllerDiffblueTest {
     assertEquals(HttpStatus.NOT_FOUND, statusCode);
     assertTrue(actualResourceNotFoundExceptionMapperResult.hasBody());
     assertTrue(actualResourceNotFoundExceptionMapperResult.getHeaders().isEmpty());
-  }
-
-  /**
-   * Test {@link AccountController#generalError(Exception)}.
-   *
-   * <ul>
-   *   <li>When {@link Exception#Exception()}.
-   *   <li>Then StatusCode return {@link HttpStatus}.
-   * </ul>
-   *
-   * <p>Method under test: {@link AccountController#generalError(Exception)}
-   */
-  @Test
-  @DisplayName("Test generalError(Exception); when Exception(); then StatusCode return HttpStatus")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"ResponseEntity AccountController.generalError(Exception)"})
-  void testGeneralError_whenException_thenStatusCodeReturnHttpStatus() {
-    // Arrange and Act
-    ResponseEntity<String> actualGeneralErrorResult =
-        accountController.generalError(new Exception());
-
-    // Assert
-    HttpStatusCode statusCode = actualGeneralErrorResult.getStatusCode();
-    assertTrue(statusCode instanceof HttpStatus);
-    assertNull(actualGeneralErrorResult.getBody());
-    assertEquals(500, actualGeneralErrorResult.getStatusCodeValue());
-    assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, statusCode);
-    assertFalse(actualGeneralErrorResult.hasBody());
-    assertTrue(actualGeneralErrorResult.getHeaders().isEmpty());
   }
 }

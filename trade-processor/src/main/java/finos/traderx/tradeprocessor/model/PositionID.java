@@ -14,4 +14,12 @@ public class PositionID implements Serializable {
 			this.accountId = accountId;
 			this.security = security;
 	}
+
+	public Integer getAccountId() {
+			return accountId;
+	}
+
+	public String getSecurity() {
+			return security;
+	}
 }

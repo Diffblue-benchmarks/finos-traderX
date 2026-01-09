@@ -1,7 +1,3 @@
 name: com.diffblue.cover.refactoring.Recipe
-recipeList:
-- com.diffblue.cover.refactoring.recipes.AddGetter: {className: finos.traderx.accountservice.model.AccountUserID,
-    fieldName: accountId}
-- com.diffblue.cover.refactoring.recipes.AddGetter: {className: finos.traderx.accountservice.model.AccountUserID,
-    fieldName: username}
+recipeList: []
 type: specs.openrewrite.org/v1beta/recipe

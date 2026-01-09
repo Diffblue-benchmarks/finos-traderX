@@ -14,4 +14,12 @@ public class AccountUserID implements Serializable {
 			this.accountId = accountId;
 			this.username = username;
 	}
+
+	public Integer getAccountId() {
+			return accountId;
+	}
+
+	public String getUsername() {
+			return username;
+	}
 }

@@ -7,6 +7,7 @@ import java.util.Optional;
 import finos.traderx.accountservice.exceptions.ResourceNotFoundException;
 import finos.traderx.accountservice.model.Account;
 import finos.traderx.accountservice.model.AccountUser;
+import finos.traderx.accountservice.model.AccountUserID;
 import finos.traderx.accountservice.repository.AccountRepository;
 import finos.traderx.accountservice.repository.AccountUserRepository;
 
@@ -28,10 +29,11 @@ public class AccountUserService {
 		return accountUsers;
 	}
 
-	public AccountUser getAccountUserById(int id) throws ResourceNotFoundException {
-		Optional<AccountUser> accountUser = this.accountUserRepository.findById(Integer.valueOf(id));
+	public AccountUser getAccountUserById(int accountId, String username) throws ResourceNotFoundException {
+		AccountUserID id = new AccountUserID(accountId, username);
+		Optional<AccountUser> accountUser = this.accountUserRepository.findById(id);
 		if (accountUser.isEmpty()) {
-			throw new ResourceNotFoundException("AccountUser with id " + id + "not found");
+			throw new ResourceNotFoundException("AccountUser with accountId " + accountId + " and username " + username + " not found");
 		}
 		return accountUser.get();
 	}

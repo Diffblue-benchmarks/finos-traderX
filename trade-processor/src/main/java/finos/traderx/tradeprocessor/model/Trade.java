@@ -18,8 +18,8 @@ public class Trade implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-    @Column(length = 100, name = "ID")
     @Id
+    @Column(length = 100, name = "ID")
 	private String id;
 
 	public String getId() {

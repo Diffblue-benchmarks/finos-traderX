@@ -1,0 +1,8 @@
+13:07:20.139 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Loading properties from resources
+13:07:20.141 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Loading properties from installation directory
+13:07:20.141 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] /opt/cover/cover.properties doesn't exist
+13:07:20.141 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Loading properties from user home directory
+13:07:20.141 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] /home/jbergqvist/.diffblue/cover.properties doesn't exist
+13:07:20.141 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Loaded properties
+13:07:20.142 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Property cover.disableEnvironmentCache has not been set, using default value false
+13:07:20.157 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Property cover.licence.environment has not been set, using default value PRODUCTION

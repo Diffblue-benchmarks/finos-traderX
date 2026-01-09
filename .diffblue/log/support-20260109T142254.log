@@ -1,0 +1,90 @@
+14:22:54.899 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Loading properties from resources
+14:22:54.900 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Loading properties from installation directory
+14:22:54.900 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] /opt/cover/cover.properties doesn't exist
+14:22:54.901 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Loading properties from user home directory
+14:22:54.901 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] /home/jbergqvist/.diffblue/cover.properties doesn't exist
+14:22:54.901 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Loaded properties
+14:22:54.902 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Property cover.disableEnvironmentCache has not been set, using default value false
+14:22:54.917 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Property cover.licence.environment has not been set, using default value PRODUCTION
+14:22:55.329 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Loading properties from resources
+14:22:55.329 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Loading properties from installation directory
+14:22:55.329 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e]  - telemetry.collect.username: false
+14:22:55.329 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e]  - telemetry.external.environment: production
+14:22:55.329 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e]  - telemetry.collect.username: false
+14:22:55.329 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e]  - telemetry.external.environment: production
+14:22:55.330 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Loading properties from user home directory
+14:22:55.330 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e]  - telemetry.external.environment: production
+14:22:55.330 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e]  - telemetry.id: f11a2ef0-98f3-4977-8276-e71972899881
+14:22:55.330 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Loaded properties
+14:22:55.330 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e]  - telemetry.collect.username: false
+14:22:55.330 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e]  - telemetry.external.environment: production
+14:22:55.330 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e]  - telemetry.id: f11a2ef0-98f3-4977-8276-e71972899881
+14:22:55.330 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Property telemetry.collect.username set in properties file to value false
+14:22:55.331 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Property telemetry.external.environment set in properties file to value production
+14:22:55.331 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Property telemetry.id set in properties file to value f11a2ef0-98f3-4977-8276-e71972899881
+14:22:55.338 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Property telemetry.external.enabled has not been set, using default value true
+14:22:55.339 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Property telemetry.reports.scheme has not been set, using default value http
+14:22:55.339 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Property telemetry.reports.hostname has not been set, using default value localhost
+14:22:55.339 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Property telemetry.reports.port has not been set, using default value 8080
+14:22:55.339 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.commons.configuration.e] Property telemetry.reports.enabled has not been set, using default value false
+14:22:55.340 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.d.a] Checking connectivity of telemetry (mixpanel) to uri: https://api-eu.mixpanel.com
+14:22:55.413 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.d.a] Unable to connect to telemetry (mixpanel) with error: 
+java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1257)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1143)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1705)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1629)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at com.diffblue.cover.d.a.a(SourceFile:150)
+	at com.diffblue.cover.analytics.c.b.a(SourceFile:54)
+	at com.diffblue.cover.analytics.a.c.d(SourceFile:338)
+	at com.diffblue.cover.analytics.b.a.d(SourceFile:56)
+	at com.diffblue.cover.analytics.a.h.d(SourceFile:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at com.diffblue.cover.analytics.a.m.d(SourceFile:72)
+	at com.diffblue.cover.ui.controller.ak.a(SourceFile:190)
+	at com.diffblue.cover.ui.Main.main(SourceFile:63)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.diffblue.cover.launcher.Launcher.invokeMainMethod(Launcher.java:118)
+	at com.diffblue.cover.launcher.Launcher.main(Launcher.java:74)
+14:22:55.715 [DEBUG]  [Preparing]   [main]              [com.diffblue.cover.ui.controller.ak] Client heap size: 16016 MB
+14:22:55.724 [INFO]   [Preparing]   [main]              [com.diffblue.cover.ui.controller.s] Diffblue Cover 2025.12.02-74144f0-licensed
+14:22:55.725 [INFO]   [Preparing]   [main]              [com.diffblue.cover.ui.controller.s] Running: dcover issues --include-modules position-service --prompts --skip 7 --auto-apply-fixes-with-llm
+14:22:55.725 [INFO]   [Preparing]   [main]              [com.diffblue.cover.ui.controller.am] 
+14:22:55.725 [INFO]   [Preparing]   [main]              [com.diffblue.cover.ui.controller.am] Command: issues
+14:22:55.726 [INFO]   [Preparing]   [main]              [com.diffblue.cover.ui.controller.am] Output a prioritized list of issues.
+14:22:55.726 [INFO]   [Preparing]   [main]              [com.diffblue.cover.ui.controller.am] 
+14:22:55.763 [DEBUG]  [Checking]    [main]              [com.diffblue.cover.configuration.b] Using JSON detector cache at /home/jbergqvist/diffblue/finos-traderX/.diffblue/cache/env.json
+14:22:55.972 [DEBUG]  [Checking]    [main]              [com.diffblue.cover.configuration.a.g] checking if /home/jbergqvist/diffblue/finos-traderX/DiffblueBuild.yaml exists...
+14:22:55.973 [DEBUG]  [Checking]    [main]              [com.diffblue.cover.configuration.a.g] checking if /home/jbergqvist/diffblue/finos-traderX/DiffblueBuild.yml exists...
+14:22:56.060 [DEBUG]  [Checking]    [main]              [com.diffblue.cover.configuration.a.c] Gradle wrapper found: /home/jbergqvist/diffblue/finos-traderX/gradlew
+14:22:56.713 [DEBUG]  [Checking]    [main]              [com.diffblue.cover.buildsystem.config.registry.Registry] checking if /home/jbergqvist/diffblue/finos-traderX/DiffblueBuild.yaml exists...
+14:22:56.713 [DEBUG]  [Checking]    [main]              [com.diffblue.cover.buildsystem.config.registry.Registry] checking if /home/jbergqvist/diffblue/finos-traderX/DiffblueBuild.yml exists...
+14:22:56.713 [INFO]   [Checking]    [main]              [com.diffblue.cover.buildsystem.config.registry.Registry] Using default build rules as no custom rules found in any of [/home/jbergqvist/diffblue/finos-traderX]
+14:22:56.713 [DEBUG]  [Checking]    [main]              [com.diffblue.cover.buildsystem.config.registry.Registry] CLASSPATH phase not found, using INFO phase
+14:22:56.714 [INFO]   [Checking]    [main]              [com.diffblue.cover.buildsystem.config.registry.Registry] The file /home/jbergqvist/diffblue/finos-traderX/.diffblue/init.gradle already exists and will be overwritten.
+14:22:56.719 [DEBUG]  [Checking]    [main]              [com.diffblue.cover.buildsystem.config.registry.Registry] Build execution request for Classpath Phase
+14:22:56.721 [INFO]   [Checking]    [main]              [com.diffblue.cover.buildsystem.config.a.a] Attempting to invoke /home/jbergqvist/diffblue/finos-traderX/./gradlew in working directory: /home/jbergqvist/diffblue/finos-traderX
+14:22:56.723 [INFO]   [Checking]    [main]              [com.diffblue.cover.buildsystem.config.a.a] Started "/home/jbergqvist/diffblue/finos-traderX/./gradlew --init-script=/home/jbergqvist/diffblue/finos-traderX/.diffblue/init.gradle --info --console=plain -PskipTestOptimizer=true -Dcom.diffblue.cover.buildsystem.gradle.model-jar=/opt/cover/com.diffblue.cover.buildsystem.gradle.plugin.jar --no-daemon"
+14:22:56.974 [INFO]   [Checking]    [gradle:out]        [com.diffblue.cover.buildsystem.config.a.a] out: Initialized native services in: /home/jbergqvist/.gradle/native
+14:22:57.053 [INFO]   [Checking]    [gradle:out]        [com.diffblue.cover.buildsystem.config.a.a] out: Initialized jansi services in: /home/jbergqvist/.gradle/native
+14:22:57.083 [INFO]   [Checking]    [gradle:out]        [com.diffblue.cover.buildsystem.config.a.a] out: Received JVM installation metadata from '/home/jbergqvist/.sdkman/candidates/java/21.0.9-amzn': {JAVA_HOME=/home/jbergqvist/.sdkman/candidates/java/21.0.9-amzn, JAVA_VERSION=21.0.9, JAVA_VENDOR=Amazon.com Inc., RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.9+10-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.9+10-LTS, VM_VENDOR=Amazon.com Inc., OS_ARCH=amd64}
+14:22:57.182 [INFO]   [Checking]    [gradle:out]        [com.diffblue.cover.buildsystem.config.a.a] out: To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+14:22:57.183 [INFO]   [Checking]    [gradle:out]        [com.diffblue.cover.buildsystem.config.a.a] out: Starting process 'Gradle build daemon'. Working directory: /home/jbergqvist/.gradle/daemon/8.8 Command: /home/jbergqvist/.sdkman/candidates/java/21.0.9-amzn/bin/java --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=GB -Duser.language=en -Duser.variant -cp /home/jbergqvist/.gradle/wrapper/dists/gradle-8.8-bin/dl7vupf4psengwqhwktix4v1/gradle-8.8/lib/gradle-launcher-8.8.jar -javaagent:/home/jbergqvist/.gradle/wrapper/dists/gradle-8.8-bin/dl7vupf4psengwqhwktix4v1/gradle-8.8/lib/agents/gradle-instrumentation-agent-8.8.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.8
+14:22:57.183 [INFO]   [Checking]    [gradle:out]        [com.diffblue.cover.buildsystem.config.a.a] out: Successfully started process 'Gradle build daemon'

@@ -1,0 +1,16 @@
+14:22:55.724 [INFO]   [Preparing]   Diffblue Cover 2025.12.02-74144f0-licensed
+14:22:55.725 [INFO]   [Preparing]   Running: dcover issues --include-modules position-service --prompts --skip 7 --auto-apply-fixes-with-llm
+14:22:55.725 [INFO]   [Preparing]   
+14:22:55.725 [INFO]   [Preparing]   Command: issues
+14:22:55.726 [INFO]   [Preparing]   Output a prioritized list of issues.
+14:22:55.726 [INFO]   [Preparing]   
+14:22:56.713 [INFO]   [Checking]    Using default build rules as no custom rules found in any of [/home/jbergqvist/diffblue/finos-traderX]
+14:22:56.714 [INFO]   [Checking]    The file /home/jbergqvist/diffblue/finos-traderX/.diffblue/init.gradle already exists and will be overwritten.
+14:22:56.721 [INFO]   [Checking]    Attempting to invoke /home/jbergqvist/diffblue/finos-traderX/./gradlew in working directory: /home/jbergqvist/diffblue/finos-traderX
+14:22:56.723 [INFO]   [Checking]    Started "/home/jbergqvist/diffblue/finos-traderX/./gradlew --init-script=/home/jbergqvist/diffblue/finos-traderX/.diffblue/init.gradle --info --console=plain -PskipTestOptimizer=true -Dcom.diffblue.cover.buildsystem.gradle.model-jar=/opt/cover/com.diffblue.cover.buildsystem.gradle.plugin.jar --no-daemon"
+14:22:56.974 [INFO]   [Checking]    out: Initialized native services in: /home/jbergqvist/.gradle/native
+14:22:57.053 [INFO]   [Checking]    out: Initialized jansi services in: /home/jbergqvist/.gradle/native
+14:22:57.083 [INFO]   [Checking]    out: Received JVM installation metadata from '/home/jbergqvist/.sdkman/candidates/java/21.0.9-amzn': {JAVA_HOME=/home/jbergqvist/.sdkman/candidates/java/21.0.9-amzn, JAVA_VERSION=21.0.9, JAVA_VENDOR=Amazon.com Inc., RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.9+10-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.9+10-LTS, VM_VENDOR=Amazon.com Inc., OS_ARCH=amd64}
+14:22:57.182 [INFO]   [Checking]    out: To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+14:22:57.183 [INFO]   [Checking]    out: Starting process 'Gradle build daemon'. Working directory: /home/jbergqvist/.gradle/daemon/8.8 Command: /home/jbergqvist/.sdkman/candidates/java/21.0.9-amzn/bin/java --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=GB -Duser.language=en -Duser.variant -cp /home/jbergqvist/.gradle/wrapper/dists/gradle-8.8-bin/dl7vupf4psengwqhwktix4v1/gradle-8.8/lib/gradle-launcher-8.8.jar -javaagent:/home/jbergqvist/.gradle/wrapper/dists/gradle-8.8-bin/dl7vupf4psengwqhwktix4v1/gradle-8.8/lib/agents/gradle-instrumentation-agent-8.8.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.8
+14:22:57.183 [INFO]   [Checking]    out: Successfully started process 'Gradle build daemon'

@@ -1,0 +1,596 @@
+13:38:05.284 [INFO]   [Preparing]   Diffblue Cover 2025.12.02-74144f0-licensed
+13:38:05.284 [INFO]   [Preparing]   Running: dcover issues --include-modules trade-processor --prompts --skip 7
+13:38:05.284 [INFO]   [Preparing]   
+13:38:05.284 [INFO]   [Preparing]   Command: issues
+13:38:05.285 [INFO]   [Preparing]   Output a prioritized list of issues.
+13:38:05.285 [INFO]   [Preparing]   
+13:38:06.265 [INFO]   [Checking]    Using default build rules as no custom rules found in any of [/home/jbergqvist/diffblue/finos-traderX]
+13:38:06.266 [INFO]   [Checking]    The file /home/jbergqvist/diffblue/finos-traderX/.diffblue/init.gradle already exists and will be overwritten.
+13:38:06.273 [INFO]   [Checking]    Attempting to invoke /home/jbergqvist/diffblue/finos-traderX/./gradlew in working directory: /home/jbergqvist/diffblue/finos-traderX
+13:38:06.274 [INFO]   [Checking]    Started "/home/jbergqvist/diffblue/finos-traderX/./gradlew --init-script=/home/jbergqvist/diffblue/finos-traderX/.diffblue/init.gradle --info --console=plain -PskipTestOptimizer=true -Dcom.diffblue.cover.buildsystem.gradle.model-jar=/opt/cover/com.diffblue.cover.buildsystem.gradle.plugin.jar --no-daemon"
+13:38:06.520 [INFO]   [Checking]    out: Initialized native services in: /home/jbergqvist/.gradle/native
+13:38:06.626 [INFO]   [Checking]    out: Initialized jansi services in: /home/jbergqvist/.gradle/native
+13:38:06.630 [INFO]   [Checking]    out: Received JVM installation metadata from '/home/jbergqvist/.sdkman/candidates/java/21.0.9-amzn': {JAVA_HOME=/home/jbergqvist/.sdkman/candidates/java/21.0.9-amzn, JAVA_VERSION=21.0.9, JAVA_VENDOR=Amazon.com Inc., RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.9+10-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.9+10-LTS, VM_VENDOR=Amazon.com Inc., OS_ARCH=amd64}
+13:38:06.729 [INFO]   [Checking]    out: To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+13:38:06.730 [INFO]   [Checking]    out: Starting process 'Gradle build daemon'. Working directory: /home/jbergqvist/.gradle/daemon/8.8 Command: /home/jbergqvist/.sdkman/candidates/java/21.0.9-amzn/bin/java --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=GB -Duser.language=en -Duser.variant -cp /home/jbergqvist/.gradle/wrapper/dists/gradle-8.8-bin/dl7vupf4psengwqhwktix4v1/gradle-8.8/lib/gradle-launcher-8.8.jar -javaagent:/home/jbergqvist/.gradle/wrapper/dists/gradle-8.8-bin/dl7vupf4psengwqhwktix4v1/gradle-8.8/lib/agents/gradle-instrumentation-agent-8.8.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.8
+13:38:06.730 [INFO]   [Checking]    out: Successfully started process 'Gradle build daemon'
+13:38:07.229 [INFO]   [Checking]    out: An attempt to start the daemon took 0.53 secs.
+13:38:07.329 [INFO]   [Checking]    out: The client will now receive all logging from the daemon (pid: 334596). The daemon log file: /home/jbergqvist/.gradle/daemon/8.8/daemon-334596.out.log
+13:38:07.329 [INFO]   [Checking]    out: Daemon will be stopped at the end of the build 
+13:38:07.529 [INFO]   [Checking]    out: Using 20 worker leases.
+13:38:07.629 [INFO]   [Checking]    out: Received JVM installation metadata from '/home/jbergqvist/.sdkman/candidates/java/21.0.9-amzn': {JAVA_HOME=/home/jbergqvist/.sdkman/candidates/java/21.0.9-amzn, JAVA_VERSION=21.0.9, JAVA_VENDOR=Amazon.com Inc., RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.9+10-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.9+10-LTS, VM_VENDOR=Amazon.com Inc., OS_ARCH=amd64}
+13:38:07.829 [INFO]   [Checking]    out: Watching the file system is configured to be enabled if available
+13:38:07.829 [INFO]   [Checking]    out: Now considering [/home/jbergqvist/diffblue/finos-traderX] as hierarchies to watch
+13:38:07.829 [INFO]   [Checking]    out: File system watching is active
+13:38:08.729 [INFO]   [Checking]    out: Transforming com.diffblue.cover.buildsystem.gradle.plugin.jar with InstrumentationAnalysisTransform
+13:38:08.730 [INFO]   [Checking]    out: Transforming com.diffblue.cover.buildsystem.gradle.plugin.jar with InstrumentationAnalysisTransform
+13:38:08.730 [INFO]   [Checking]    out: Transforming com.diffblue.cover.buildsystem.gradle.plugin.jar with MergeInstrumentationAnalysisTransform
+13:38:08.730 [INFO]   [Checking]    out: Transforming com.diffblue.cover.buildsystem.gradle.plugin.jar with ExternalDependencyInstrumentingArtifactTransform
+13:38:08.829 [INFO]   [Checking]    out: Starting Build
+13:38:08.829 [INFO]   [Checking]    out: Settings evaluated using settings file '/home/jbergqvist/diffblue/finos-traderX/settings.gradle'.
+13:38:08.929 [INFO]   [Checking]    out: Projects loaded. Root project using build file '/home/jbergqvist/diffblue/finos-traderX/build.gradle'.
+13:38:08.929 [INFO]   [Checking]    out: Included projects: [root project 'finos-traderX', project ':account-service', project ':database', project ':position-service', project ':trade-processor', project ':trade-service']
+13:38:09.029 [INFO]   [Checking]    out: Started Diffblue Gradle Event Listener
+13:38:09.029 [INFO]   [Checking]    out: 
+13:38:09.030 [INFO]   [Checking]    out: > Configure project :
+13:38:09.030 [INFO]   [Checking]    out: Evaluating root project 'finos-traderX' using build file '/home/jbergqvist/diffblue/finos-traderX/build.gradle'.
+13:38:09.629 [INFO]   [Checking]    out: 
+13:38:09.630 [INFO]   [Checking]    out: > Configure project :account-service
+13:38:09.630 [INFO]   [Checking]    out: Evaluating project ':account-service' using build file '/home/jbergqvist/diffblue/finos-traderX/account-service/build.gradle'.
+13:38:09.630 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.630 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with InstrumentationAnalysisTransform
+13:38:09.630 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.631 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.631 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with InstrumentationAnalysisTransform
+13:38:09.631 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.631 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.631 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.631 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.631 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.631 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.632 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with InstrumentationAnalysisTransform
+13:38:09.632 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with InstrumentationAnalysisTransform
+13:38:09.632 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.632 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.632 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.632 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.632 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with InstrumentationAnalysisTransform
+13:38:09.632 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with InstrumentationAnalysisTransform
+13:38:09.632 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with InstrumentationAnalysisTransform
+13:38:09.633 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.633 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with MergeInstrumentationAnalysisTransform
+13:38:09.633 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with InstrumentationAnalysisTransform
+13:38:09.633 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with MergeInstrumentationAnalysisTransform
+13:38:09.633 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.633 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with MergeInstrumentationAnalysisTransform
+13:38:09.633 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.633 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with MergeInstrumentationAnalysisTransform
+13:38:09.633 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with InstrumentationAnalysisTransform
+13:38:09.634 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with MergeInstrumentationAnalysisTransform
+13:38:09.634 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.634 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with MergeInstrumentationAnalysisTransform
+13:38:09.634 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.634 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.634 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.635 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.635 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.635 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.635 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.635 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.635 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.635 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with MergeInstrumentationAnalysisTransform
+13:38:09.635 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with InstrumentationAnalysisTransform
+13:38:09.635 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with MergeInstrumentationAnalysisTransform
+13:38:09.635 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with InstrumentationAnalysisTransform
+13:38:09.636 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with MergeInstrumentationAnalysisTransform
+13:38:09.636 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.636 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.636 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.636 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.636 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with MergeInstrumentationAnalysisTransform
+13:38:09.636 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.636 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.636 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.637 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with MergeInstrumentationAnalysisTransform
+13:38:09.637 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.637 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with MergeInstrumentationAnalysisTransform
+13:38:09.637 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.637 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.637 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with MergeInstrumentationAnalysisTransform
+13:38:09.637 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with InstrumentationAnalysisTransform
+13:38:09.637 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with MergeInstrumentationAnalysisTransform
+13:38:09.637 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with InstrumentationAnalysisTransform
+13:38:09.637 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with MergeInstrumentationAnalysisTransform
+13:38:09.637 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.638 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.638 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with InstrumentationAnalysisTransform
+13:38:09.638 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with MergeInstrumentationAnalysisTransform
+13:38:09.638 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.638 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.638 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.638 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.638 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.638 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.639 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.639 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.639 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.639 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.639 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.639 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.639 [INFO]   [Checking]    out: Applying dependency management to configuration 'annotationProcessor' in project 'account-service'
+13:38:09.639 [INFO]   [Checking]    out: Applying dependency management to configuration 'apiElements' in project 'account-service'
+13:38:09.639 [INFO]   [Checking]    out: Applying dependency management to configuration 'archives' in project 'account-service'
+13:38:09.639 [INFO]   [Checking]    out: Applying dependency management to configuration 'bootArchives' in project 'account-service'
+13:38:09.639 [INFO]   [Checking]    out: Applying dependency management to configuration 'compileClasspath' in project 'account-service'
+13:38:09.640 [INFO]   [Checking]    out: Applying dependency management to configuration 'compileOnly' in project 'account-service'
+13:38:09.640 [INFO]   [Checking]    out: Applying dependency management to configuration 'default' in project 'account-service'
+13:38:09.640 [INFO]   [Checking]    out: Applying dependency management to configuration 'developmentOnly' in project 'account-service'
+13:38:09.640 [INFO]   [Checking]    out: Applying dependency management to configuration 'implementation' in project 'account-service'
+13:38:09.640 [INFO]   [Checking]    out: Applying dependency management to configuration 'mainSourceElements' in project 'account-service'
+13:38:09.640 [INFO]   [Checking]    out: Applying dependency management to configuration 'productionRuntimeClasspath' in project 'account-service'
+13:38:09.640 [INFO]   [Checking]    out: Applying dependency management to configuration 'runtimeClasspath' in project 'account-service'
+13:38:09.640 [INFO]   [Checking]    out: Applying dependency management to configuration 'runtimeElements' in project 'account-service'
+13:38:09.640 [INFO]   [Checking]    out: Applying dependency management to configuration 'runtimeOnly' in project 'account-service'
+13:38:09.640 [INFO]   [Checking]    out: Applying dependency management to configuration 'testAndDevelopmentOnly' in project 'account-service'
+13:38:09.640 [INFO]   [Checking]    out: Applying dependency management to configuration 'testAnnotationProcessor' in project 'account-service'
+13:38:09.641 [INFO]   [Checking]    out: Applying dependency management to configuration 'testCompileClasspath' in project 'account-service'
+13:38:09.641 [INFO]   [Checking]    out: Applying dependency management to configuration 'testCompileOnly' in project 'account-service'
+13:38:09.641 [INFO]   [Checking]    out: Applying dependency management to configuration 'testImplementation' in project 'account-service'
+13:38:09.641 [INFO]   [Checking]    out: Applying dependency management to configuration 'testResultsElementsForTest' in project 'account-service'
+13:38:09.641 [INFO]   [Checking]    out: Applying dependency management to configuration 'testRuntimeClasspath' in project 'account-service'
+13:38:09.641 [INFO]   [Checking]    out: Applying dependency management to configuration 'testRuntimeOnly' in project 'account-service'
+13:38:09.641 [INFO]   [Checking]    out: Configuring Jacoco Plugin for use with Diffblue Cover
+13:38:09.641 [INFO]   [Checking]    out: Applying dependency management to configuration 'jacocoAgent' in project 'account-service'
+13:38:09.641 [INFO]   [Checking]    out: Applying dependency management to configuration 'jacocoAnt' in project 'account-service'
+13:38:09.641 [INFO]   [Checking]    out: Applying dependency management to configuration 'coverageDataElementsForTest' in project 'account-service'
+13:38:09.641 [INFO]   [Checking]    out: Configuring task :account-service:test for use with Diffblue Cover
+13:38:09.642 [INFO]   [Checking]    out: ignoreFailures: false
+13:38:09.642 [INFO]   [Checking]    out: excludes: []
+13:38:09.642 [INFO]   [Checking]    out: includes: []
+13:38:09.642 [INFO]   [Checking]    out: No group filtering configured
+13:38:09.642 [INFO]   [Checking]    out: Saving execution data to: /home/jbergqvist/diffblue/finos-traderX/account-service/build/jacoco/test.exec
+13:38:09.642 [INFO]   [Checking]    out: testFramework: class org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestFramework
+13:38:09.642 [INFO]   [Checking]    out: Getting testXMLPath
+13:38:09.642 [INFO]   [Checking]    out: testXMLPath exists: true
+13:38:09.642 [INFO]   [Checking]    out: diffblueTempPath: /home/jbergqvist/diffblue/finos-traderX/account-service/build/test-results/diffblueTemp
+13:38:09.642 [INFO]   [Checking]    out: diffblueTempPath exists after mkdir: true
+13:38:09.642 [INFO]   [Checking]    out: Configuring task :account-service:jacocoTestReport for use with Diffblue Cover
+13:38:09.642 [INFO]   [Checking]    out: executionData: file collection
+13:38:09.642 [INFO]   [Checking]    out: exec files to make report: [/home/jbergqvist/diffblue/finos-traderX/account-service/build/jacoco/test.exec]
+13:38:09.642 [INFO]   [Checking]    out: exec files to make report from: [org.gradle.testing.jacoco.tasks.JacocoReportBase$2@47ecbdfc]
+13:38:09.643 [INFO]   [Checking]    out: Configuring task :account-service:jacocoTestReportDeletePrevious for use with Diffblue Cover
+13:38:09.643 [INFO]   [Checking]    out: Adding /home/jbergqvist/diffblue/finos-traderX/account-service/build/reports/jacoco/test/jacocoTestReport.xml to be deleted
+13:38:09.643 [INFO]   [Checking]    out: Configuring task :account-service:jacocoTestReportPrepareEmptyExec for use with Diffblue Cover
+13:38:09.643 [INFO]   [Checking]    out: Configuring task :account-service:testMoveTestXMLBack for use with Diffblue Cover
+13:38:09.643 [INFO]   [Checking]    out: testXMLPath exists: true
+13:38:09.643 [INFO]   [Checking]    out: diffblueTempPath before: {}
+13:38:09.643 [INFO]   [Checking]    out: textXmlPAth files before: /home/jbergqvist/diffblue/finos-traderX/account-service/build/test-results/test/binary
+13:38:09.643 [INFO]   [Checking]    out: Configuring task :account-service:testMoveBackJacocoExec for use with Diffblue Cover
+13:38:09.643 [INFO]   [Checking]    out: Configuring task :account-service:testDeletePreviousExecFiles for use with Diffblue Cover
+13:38:09.729 [INFO]   [Checking]    out: 
+13:38:09.729 [INFO]   [Checking]    out: > Configure project :database
+13:38:09.730 [INFO]   [Checking]    out: Evaluating project ':database' using build file '/home/jbergqvist/diffblue/finos-traderX/database/build.gradle'.
+13:38:09.730 [INFO]   [Checking]    out: Configuring Jacoco Plugin for use with Diffblue Cover
+13:38:09.730 [INFO]   [Checking]    out: Configuring task :database:test for use with Diffblue Cover
+13:38:09.730 [INFO]   [Checking]    out: ignoreFailures: false
+13:38:09.730 [INFO]   [Checking]    out: excludes: []
+13:38:09.730 [INFO]   [Checking]    out: includes: []
+13:38:09.730 [INFO]   [Checking]    out: No group filtering configured
+13:38:09.730 [INFO]   [Checking]    out: Saving execution data to: /home/jbergqvist/diffblue/finos-traderX/database/build/jacoco/test.exec
+13:38:09.730 [INFO]   [Checking]    out: testFramework: class org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestFramework
+13:38:09.730 [INFO]   [Checking]    out: Getting testXMLPath
+13:38:09.730 [INFO]   [Checking]    out: testXMLPath exists: false
+13:38:09.730 [INFO]   [Checking]    out: diffblueTempPath: /home/jbergqvist/diffblue/finos-traderX/database/build/test-results/diffblueTemp
+13:38:09.730 [INFO]   [Checking]    out: Creating diffblueTempPath
+13:38:09.730 [INFO]   [Checking]    out: diffblueTempPath exists after mkdir: false
+13:38:09.731 [INFO]   [Checking]    out: Configuring task :database:jacocoTestReport for use with Diffblue Cover
+13:38:09.731 [INFO]   [Checking]    out: executionData: file collection
+13:38:09.731 [INFO]   [Checking]    out: exec files to make report: [/home/jbergqvist/diffblue/finos-traderX/database/build/jacoco/test.exec]
+13:38:09.731 [INFO]   [Checking]    out: exec files to make report from: [org.gradle.testing.jacoco.tasks.JacocoReportBase$2@4f1cd4f5]
+13:38:09.731 [INFO]   [Checking]    out: Configuring task :database:jacocoTestReportDeletePrevious for use with Diffblue Cover
+13:38:09.731 [INFO]   [Checking]    out: Adding /home/jbergqvist/diffblue/finos-traderX/database/build/reports/jacoco/test/jacocoTestReport.xml to be deleted
+13:38:09.731 [INFO]   [Checking]    out: Configuring task :database:jacocoTestReportPrepareEmptyExec for use with Diffblue Cover
+13:38:09.731 [INFO]   [Checking]    out: Configuring task :database:testMoveTestXMLBack for use with Diffblue Cover
+13:38:09.731 [INFO]   [Checking]    out: Configuring task :database:testMoveBackJacocoExec for use with Diffblue Cover
+13:38:09.731 [INFO]   [Checking]    out: Configuring task :database:testDeletePreviousExecFiles for use with Diffblue Cover
+13:38:09.732 [INFO]   [Checking]    out: 
+13:38:09.732 [INFO]   [Checking]    out: > Configure project :position-service
+13:38:09.732 [INFO]   [Checking]    out: Evaluating project ':position-service' using build file '/home/jbergqvist/diffblue/finos-traderX/position-service/build.gradle'.
+13:38:09.732 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.732 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with InstrumentationAnalysisTransform
+13:38:09.732 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.732 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.732 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with InstrumentationAnalysisTransform
+13:38:09.732 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.732 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.732 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.732 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.732 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.733 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.733 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with InstrumentationAnalysisTransform
+13:38:09.733 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with InstrumentationAnalysisTransform
+13:38:09.733 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.733 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.733 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.733 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.733 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with InstrumentationAnalysisTransform
+13:38:09.733 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with InstrumentationAnalysisTransform
+13:38:09.733 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with InstrumentationAnalysisTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with MergeInstrumentationAnalysisTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with InstrumentationAnalysisTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with MergeInstrumentationAnalysisTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with MergeInstrumentationAnalysisTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with MergeInstrumentationAnalysisTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with InstrumentationAnalysisTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with MergeInstrumentationAnalysisTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.734 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with MergeInstrumentationAnalysisTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with MergeInstrumentationAnalysisTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.735 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with InstrumentationAnalysisTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with MergeInstrumentationAnalysisTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with InstrumentationAnalysisTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with MergeInstrumentationAnalysisTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with MergeInstrumentationAnalysisTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with MergeInstrumentationAnalysisTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with MergeInstrumentationAnalysisTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.736 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with MergeInstrumentationAnalysisTransform
+13:38:09.737 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.737 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with InstrumentationAnalysisTransform
+13:38:09.737 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with MergeInstrumentationAnalysisTransform
+13:38:09.737 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.737 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with InstrumentationAnalysisTransform
+13:38:09.737 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with MergeInstrumentationAnalysisTransform
+13:38:09.737 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.737 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with InstrumentationAnalysisTransform
+13:38:09.737 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with MergeInstrumentationAnalysisTransform
+13:38:09.737 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.737 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.737 [INFO]   [Checking]    out: Applying dependency management to configuration 'annotationProcessor' in project 'position-service'
+13:38:09.737 [INFO]   [Checking]    out: Applying dependency management to configuration 'apiElements' in project 'position-service'
+13:38:09.737 [INFO]   [Checking]    out: Applying dependency management to configuration 'archives' in project 'position-service'
+13:38:09.737 [INFO]   [Checking]    out: Applying dependency management to configuration 'bootArchives' in project 'position-service'
+13:38:09.737 [INFO]   [Checking]    out: Applying dependency management to configuration 'compileClasspath' in project 'position-service'
+13:38:09.737 [INFO]   [Checking]    out: Applying dependency management to configuration 'compileOnly' in project 'position-service'
+13:38:09.737 [INFO]   [Checking]    out: Applying dependency management to configuration 'default' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'developmentOnly' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'implementation' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'mainSourceElements' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'productionRuntimeClasspath' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'runtimeClasspath' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'runtimeElements' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'runtimeOnly' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'testAndDevelopmentOnly' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'testAnnotationProcessor' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'testCompileClasspath' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'testCompileOnly' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'testImplementation' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'testResultsElementsForTest' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'testRuntimeClasspath' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'testRuntimeOnly' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Configuring Jacoco Plugin for use with Diffblue Cover
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'jacocoAgent' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'jacocoAnt' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Applying dependency management to configuration 'coverageDataElementsForTest' in project 'position-service'
+13:38:09.738 [INFO]   [Checking]    out: Configuring task :position-service:test for use with Diffblue Cover
+13:38:09.739 [INFO]   [Checking]    out: ignoreFailures: false
+13:38:09.739 [INFO]   [Checking]    out: excludes: []
+13:38:09.739 [INFO]   [Checking]    out: includes: []
+13:38:09.739 [INFO]   [Checking]    out: No group filtering configured
+13:38:09.739 [INFO]   [Checking]    out: Saving execution data to: /home/jbergqvist/diffblue/finos-traderX/position-service/build/jacoco/test.exec
+13:38:09.739 [INFO]   [Checking]    out: testFramework: class org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestFramework
+13:38:09.739 [INFO]   [Checking]    out: Getting testXMLPath
+13:38:09.739 [INFO]   [Checking]    out: testXMLPath exists: true
+13:38:09.739 [INFO]   [Checking]    out: diffblueTempPath: /home/jbergqvist/diffblue/finos-traderX/position-service/build/test-results/diffblueTemp
+13:38:09.739 [INFO]   [Checking]    out: diffblueTempPath exists after mkdir: true
+13:38:09.739 [INFO]   [Checking]    out: Configuring task :position-service:jacocoTestReport for use with Diffblue Cover
+13:38:09.739 [INFO]   [Checking]    out: executionData: file collection
+13:38:09.739 [INFO]   [Checking]    out: exec files to make report: [/home/jbergqvist/diffblue/finos-traderX/position-service/build/jacoco/test.exec]
+13:38:09.739 [INFO]   [Checking]    out: exec files to make report from: [org.gradle.testing.jacoco.tasks.JacocoReportBase$2@22a3275c]
+13:38:09.739 [INFO]   [Checking]    out: Configuring task :position-service:jacocoTestReportDeletePrevious for use with Diffblue Cover
+13:38:09.739 [INFO]   [Checking]    out: Adding /home/jbergqvist/diffblue/finos-traderX/position-service/build/reports/jacoco/test/jacocoTestReport.xml to be deleted
+13:38:09.739 [INFO]   [Checking]    out: Configuring task :position-service:jacocoTestReportPrepareEmptyExec for use with Diffblue Cover
+13:38:09.739 [INFO]   [Checking]    out: Configuring task :position-service:testMoveTestXMLBack for use with Diffblue Cover
+13:38:09.739 [INFO]   [Checking]    out: testXMLPath exists: true
+13:38:09.739 [INFO]   [Checking]    out: diffblueTempPath before: {}
+13:38:09.739 [INFO]   [Checking]    out: textXmlPAth files before: /home/jbergqvist/diffblue/finos-traderX/position-service/build/test-results/test/binary
+13:38:09.740 [INFO]   [Checking]    out: Configuring task :position-service:testMoveBackJacocoExec for use with Diffblue Cover
+13:38:09.740 [INFO]   [Checking]    out: Configuring task :position-service:testDeletePreviousExecFiles for use with Diffblue Cover
+13:38:09.829 [INFO]   [Checking]    out: 
+13:38:09.830 [INFO]   [Checking]    out: > Configure project :trade-processor
+13:38:09.830 [INFO]   [Checking]    out: Evaluating project ':trade-processor' using build file '/home/jbergqvist/diffblue/finos-traderX/trade-processor/build.gradle'.
+13:38:09.830 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with InstrumentationAnalysisTransform
+13:38:09.830 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with MergeInstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with MergeInstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with MergeInstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with MergeInstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with MergeInstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.831 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with MergeInstrumentationAnalysisTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with MergeInstrumentationAnalysisTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.832 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with InstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with MergeInstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with InstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with MergeInstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with MergeInstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with MergeInstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with MergeInstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with MergeInstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with InstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with MergeInstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with InstrumentationAnalysisTransform
+13:38:09.833 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with MergeInstrumentationAnalysisTransform
+13:38:09.834 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with InstrumentationAnalysisTransform
+13:38:09.834 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with MergeInstrumentationAnalysisTransform
+13:38:09.834 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.834 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.834 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'annotationProcessor' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'apiElements' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'archives' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'bootArchives' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'compileClasspath' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'compileOnly' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'default' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'developmentOnly' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'implementation' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'mainSourceElements' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'productionRuntimeClasspath' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'runtimeClasspath' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'runtimeElements' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'runtimeOnly' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'testAndDevelopmentOnly' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'testAnnotationProcessor' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'testCompileClasspath' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'testCompileOnly' in project 'trade-processor'
+13:38:09.834 [INFO]   [Checking]    out: Applying dependency management to configuration 'testImplementation' in project 'trade-processor'
+13:38:09.835 [INFO]   [Checking]    out: Applying dependency management to configuration 'testResultsElementsForTest' in project 'trade-processor'
+13:38:09.835 [INFO]   [Checking]    out: Applying dependency management to configuration 'testRuntimeClasspath' in project 'trade-processor'
+13:38:09.835 [INFO]   [Checking]    out: Applying dependency management to configuration 'testRuntimeOnly' in project 'trade-processor'
+13:38:09.835 [INFO]   [Checking]    out: Configuring Jacoco Plugin for use with Diffblue Cover
+13:38:09.835 [INFO]   [Checking]    out: Applying dependency management to configuration 'jacocoAgent' in project 'trade-processor'
+13:38:09.835 [INFO]   [Checking]    out: Applying dependency management to configuration 'jacocoAnt' in project 'trade-processor'
+13:38:09.835 [INFO]   [Checking]    out: Applying dependency management to configuration 'coverageDataElementsForTest' in project 'trade-processor'
+13:38:09.835 [INFO]   [Checking]    out: Configuring task :trade-processor:test for use with Diffblue Cover
+13:38:09.835 [INFO]   [Checking]    out: ignoreFailures: false
+13:38:09.835 [INFO]   [Checking]    out: excludes: []
+13:38:09.835 [INFO]   [Checking]    out: includes: []
+13:38:09.835 [INFO]   [Checking]    out: No group filtering configured
+13:38:09.835 [INFO]   [Checking]    out: Saving execution data to: /home/jbergqvist/diffblue/finos-traderX/trade-processor/build/jacoco/test.exec
+13:38:09.835 [INFO]   [Checking]    out: testFramework: class org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestFramework
+13:38:09.835 [INFO]   [Checking]    out: Getting testXMLPath
+13:38:09.835 [INFO]   [Checking]    out: testXMLPath exists: true
+13:38:09.835 [INFO]   [Checking]    out: diffblueTempPath: /home/jbergqvist/diffblue/finos-traderX/trade-processor/build/test-results/diffblueTemp
+13:38:09.835 [INFO]   [Checking]    out: diffblueTempPath exists after mkdir: true
+13:38:09.835 [INFO]   [Checking]    out: Configuring task :trade-processor:jacocoTestReport for use with Diffblue Cover
+13:38:09.835 [INFO]   [Checking]    out: executionData: file collection
+13:38:09.835 [INFO]   [Checking]    out: exec files to make report: [/home/jbergqvist/diffblue/finos-traderX/trade-processor/build/jacoco/test.exec]
+13:38:09.835 [INFO]   [Checking]    out: exec files to make report from: [org.gradle.testing.jacoco.tasks.JacocoReportBase$2@4eb98f59]
+13:38:09.835 [INFO]   [Checking]    out: Configuring task :trade-processor:jacocoTestReportDeletePrevious for use with Diffblue Cover
+13:38:09.835 [INFO]   [Checking]    out: Adding /home/jbergqvist/diffblue/finos-traderX/trade-processor/build/reports/jacoco/test/jacocoTestReport.xml to be deleted
+13:38:09.835 [INFO]   [Checking]    out: Configuring task :trade-processor:jacocoTestReportPrepareEmptyExec for use with Diffblue Cover
+13:38:09.835 [INFO]   [Checking]    out: Configuring task :trade-processor:testMoveTestXMLBack for use with Diffblue Cover
+13:38:09.835 [INFO]   [Checking]    out: testXMLPath exists: true
+13:38:09.835 [INFO]   [Checking]    out: diffblueTempPath before: {}
+13:38:09.835 [INFO]   [Checking]    out: textXmlPAth files before: /home/jbergqvist/diffblue/finos-traderX/trade-processor/build/test-results/test/binary
+13:38:09.835 [INFO]   [Checking]    out: Configuring task :trade-processor:testMoveBackJacocoExec for use with Diffblue Cover
+13:38:09.836 [INFO]   [Checking]    out: Configuring task :trade-processor:testDeletePreviousExecFiles for use with Diffblue Cover
+13:38:09.929 [INFO]   [Checking]    out: 
+13:38:09.929 [INFO]   [Checking]    out: > Configure project :trade-service
+13:38:09.929 [INFO]   [Checking]    out: Evaluating project ':trade-service' using build file '/home/jbergqvist/diffblue/finos-traderX/trade-service/build.gradle'.
+13:38:09.930 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.930 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with MergeInstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with InstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with MergeInstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming spring-boot-gradle-plugin-3.3.3.jar (org.springframework.boot:spring-boot-gradle-plugin:3.3.3) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming dependency-management-plugin-1.1.6.jar (io.spring.gradle:dependency-management-plugin:1.1.6) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with MergeInstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with InstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with MergeInstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming spring-boot-buildpack-platform-3.3.3.jar (org.springframework.boot:spring-boot-buildpack-platform:3.3.3) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with InstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with MergeInstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming spring-boot-loader-tools-3.3.3.jar (org.springframework.boot:spring-boot-loader-tools:3.3.3) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with MergeInstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming commons-compress-1.25.0.jar (org.apache.commons:commons-compress:1.25.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming spring-core-6.1.12.jar (org.springframework:spring-core:6.1.12) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming jackson-annotations-2.14.2.jar (com.fasterxml.jackson.core:jackson-annotations:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.931 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming jackson-core-2.14.2.jar (com.fasterxml.jackson.core:jackson-core:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with InstrumentationAnalysisTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming jackson-module-parameter-names-2.14.2.jar (com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with MergeInstrumentationAnalysisTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with MergeInstrumentationAnalysisTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming jackson-databind-2.14.2.jar (com.fasterxml.jackson.core:jackson-databind:2.14.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with InstrumentationAnalysisTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with MergeInstrumentationAnalysisTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming jna-platform-5.13.0.jar (net.java.dev.jna:jna-platform:5.13.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with InstrumentationAnalysisTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with MergeInstrumentationAnalysisTransform
+13:38:09.932 [INFO]   [Checking]    out: Transforming httpclient5-5.3.1.jar (org.apache.httpcomponents.client5:httpclient5:5.3.1) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with InstrumentationAnalysisTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with MergeInstrumentationAnalysisTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming tomlj-1.0.0.jar (org.tomlj:tomlj:1.0.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with InstrumentationAnalysisTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with MergeInstrumentationAnalysisTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming spring-jcl-6.1.12.jar (org.springframework:spring-jcl:6.1.12) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with MergeInstrumentationAnalysisTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming jna-5.13.0.jar (net.java.dev.jna:jna:5.13.0) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with InstrumentationAnalysisTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with MergeInstrumentationAnalysisTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming httpcore5-h2-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5-h2:5.2.4) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with InstrumentationAnalysisTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with MergeInstrumentationAnalysisTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming httpcore5-5.2.4.jar (org.apache.httpcomponents.core5:httpcore5:5.2.4) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with InstrumentationAnalysisTransform
+13:38:09.933 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with MergeInstrumentationAnalysisTransform
+13:38:09.934 [INFO]   [Checking]    out: Transforming slf4j-api-1.7.36.jar (org.slf4j:slf4j-api:1.7.36) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.934 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with InstrumentationAnalysisTransform
+13:38:09.934 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with MergeInstrumentationAnalysisTransform
+13:38:09.934 [INFO]   [Checking]    out: Transforming antlr4-runtime-4.7.2.jar (org.antlr:antlr4-runtime:4.7.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.934 [INFO]   [Checking]    out: Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with ExternalDependencyInstrumentingArtifactTransform
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'annotationProcessor' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'apiElements' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'archives' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'bootArchives' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'compileClasspath' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'compileOnly' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'default' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'developmentOnly' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'implementation' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'mainSourceElements' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'productionRuntimeClasspath' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'runtimeClasspath' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'runtimeElements' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'runtimeOnly' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'testAndDevelopmentOnly' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'testAnnotationProcessor' in project 'trade-service'
+13:38:09.934 [INFO]   [Checking]    out: Applying dependency management to configuration 'testCompileClasspath' in project 'trade-service'
+13:38:09.935 [INFO]   [Checking]    out: Applying dependency management to configuration 'testCompileOnly' in project 'trade-service'
+13:38:09.935 [INFO]   [Checking]    out: Applying dependency management to configuration 'testImplementation' in project 'trade-service'
+13:38:09.935 [INFO]   [Checking]    out: Applying dependency management to configuration 'testResultsElementsForTest' in project 'trade-service'
+13:38:09.935 [INFO]   [Checking]    out: Applying dependency management to configuration 'testRuntimeClasspath' in project 'trade-service'
+13:38:09.935 [INFO]   [Checking]    out: Applying dependency management to configuration 'testRuntimeOnly' in project 'trade-service'
+13:38:09.935 [INFO]   [Checking]    out: Configuring Jacoco Plugin for use with Diffblue Cover
+13:38:09.935 [INFO]   [Checking]    out: Applying dependency management to configuration 'jacocoAgent' in project 'trade-service'
+13:38:09.935 [INFO]   [Checking]    out: Applying dependency management to configuration 'jacocoAnt' in project 'trade-service'
+13:38:09.935 [INFO]   [Checking]    out: Applying dependency management to configuration 'coverageDataElementsForTest' in project 'trade-service'
+13:38:09.935 [INFO]   [Checking]    out: Configuring task :trade-service:test for use with Diffblue Cover
+13:38:09.935 [INFO]   [Checking]    out: ignoreFailures: false
+13:38:09.935 [INFO]   [Checking]    out: excludes: []
+13:38:09.935 [INFO]   [Checking]    out: includes: []
+13:38:09.935 [INFO]   [Checking]    out: No group filtering configured
+13:38:09.935 [INFO]   [Checking]    out: Saving execution data to: /home/jbergqvist/diffblue/finos-traderX/trade-service/build/jacoco/test.exec
+13:38:09.935 [INFO]   [Checking]    out: testFramework: class org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestFramework
+13:38:09.935 [INFO]   [Checking]    out: Getting testXMLPath
+13:38:09.935 [INFO]   [Checking]    out: testXMLPath exists: true
+13:38:09.935 [INFO]   [Checking]    out: diffblueTempPath: /home/jbergqvist/diffblue/finos-traderX/trade-service/build/test-results/diffblueTemp
+13:38:09.935 [INFO]   [Checking]    out: diffblueTempPath exists after mkdir: true
+13:38:09.935 [INFO]   [Checking]    out: Configuring task :trade-service:jacocoTestReport for use with Diffblue Cover
+13:38:09.935 [INFO]   [Checking]    out: executionData: file collection
+13:38:09.935 [INFO]   [Checking]    out: exec files to make report: [/home/jbergqvist/diffblue/finos-traderX/trade-service/build/jacoco/test.exec]
+13:38:09.935 [INFO]   [Checking]    out: exec files to make report from: [org.gradle.testing.jacoco.tasks.JacocoReportBase$2@4124dd9d]
+13:38:09.935 [INFO]   [Checking]    out: Configuring task :trade-service:jacocoTestReportDeletePrevious for use with Diffblue Cover
+13:38:09.935 [INFO]   [Checking]    out: Adding /home/jbergqvist/diffblue/finos-traderX/trade-service/build/reports/jacoco/test/jacocoTestReport.xml to be deleted
+13:38:09.935 [INFO]   [Checking]    out: Configuring task :trade-service:jacocoTestReportPrepareEmptyExec for use with Diffblue Cover
+13:38:09.935 [INFO]   [Checking]    out: Configuring task :trade-service:testMoveTestXMLBack for use with Diffblue Cover
+13:38:09.935 [INFO]   [Checking]    out: testXMLPath exists: true
+13:38:09.935 [INFO]   [Checking]    out: diffblueTempPath before: {}
+13:38:09.936 [INFO]   [Checking]    out: textXmlPAth files before: {}
+13:38:09.936 [INFO]   [Checking]    out: Configuring task :trade-service:testMoveBackJacocoExec for use with Diffblue Cover
+13:38:09.936 [INFO]   [Checking]    out: Configuring task :trade-service:testDeletePreviousExecFiles for use with Diffblue Cover
+13:38:09.936 [INFO]   [Checking]    out: All projects evaluated.
+13:38:09.936 [INFO]   [Checking]    out: Resolving global dependency management for project 'trade-processor'

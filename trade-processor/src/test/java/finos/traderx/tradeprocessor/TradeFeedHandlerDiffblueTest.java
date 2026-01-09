@@ -28,7 +28,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-class TradeFeedHandlerDiffblueTest {
+class TradeFeedHandlerDiffblueTest extends TradeFeedHandlerDiffblueBase {
   @InjectMocks private TradeFeedHandler tradeFeedHandler;
 
   @Mock private TradeService tradeService;

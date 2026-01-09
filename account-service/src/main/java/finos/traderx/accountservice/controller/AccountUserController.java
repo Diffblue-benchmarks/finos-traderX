@@ -40,9 +40,9 @@ public class AccountUserController {
 	@Value("${people.service.url}")
 	private String peopleServiceAddress;
 
-	@GetMapping("/{id}")
-	public ResponseEntity<AccountUser> getAccountUserById(@PathVariable int id) {
-		AccountUser retVal = this.accountUserService.getAccountUserById(id);
+	@GetMapping("/{accountId}/{username}")
+	public ResponseEntity<AccountUser> getAccountUserById(@PathVariable int accountId, @PathVariable String username) {
+		AccountUser retVal = this.accountUserService.getAccountUserById(accountId, username);
 		return ResponseEntity.ok(retVal);
 	}
 

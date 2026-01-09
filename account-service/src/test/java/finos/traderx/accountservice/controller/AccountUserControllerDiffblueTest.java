@@ -42,62 +42,65 @@ class AccountUserControllerDiffblueTest {
   @MockBean private AccountUserService accountUserService;
 
   /**
-   * Test {@link AccountUserController#getAccountUserById(int)}.
+   * Test {@link AccountUserController#getAccountUserById(int, String)}.
    *
    * <ul>
    *   <li>Given {@link AccountUser} (default constructor) AccountId is one.
    *   <li>Then status {@link StatusResultMatchers#isOk()}.
    * </ul>
    *
-   * <p>Method under test: {@link AccountUserController#getAccountUserById(int)}
+   * <p>Method under test: {@link AccountUserController#getAccountUserById(int, String)}
    */
   @Test
   @DisplayName(
-      "Test getAccountUserById(int); given AccountUser (default constructor) AccountId is one; then status isOk()")
+      "Test getAccountUserById(int, String); given AccountUser (default constructor) AccountId is one; then status isOk()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({"ResponseEntity AccountUserController.getAccountUserById(int)"})
+  @MethodsUnderTest({"ResponseEntity AccountUserController.getAccountUserById(int, String)"})
   void testGetAccountUserById_givenAccountUserAccountIdIsOne_thenStatusIsOk() throws Exception {
     // Arrange
     AccountUser accountUser = new AccountUser();
     accountUser.setAccountId(1);
     accountUser.setUsername("janedoe");
-    when(accountUserService.getAccountUserById(anyInt())).thenReturn(accountUser);
+    when(accountUserService.getAccountUserById(anyInt(), Mockito.<String>any()))
+        .thenReturn(accountUser);
 
     // Act and Assert
     MockMvcBuilders.standaloneSetup(accountUserController)
         .build()
         .perform(
-            MockMvcRequestBuilders.get("/accountuser/{id}", 1).accept(MediaType.APPLICATION_JSON))
+            MockMvcRequestBuilders.get("/accountuser/{accountId}/{username}", 1, "janedoe")
+                .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(content().contentType("application/json"))
         .andExpect(content().string("{\"accountId\":1,\"username\":\"janedoe\"}"));
   }
 
   /**
-   * Test {@link AccountUserController#getAccountUserById(int)}.
+   * Test {@link AccountUserController#getAccountUserById(int, String)}.
    *
    * <ul>
    *   <li>Then status {@link StatusResultMatchers#isNotFound()}.
    * </ul>
    *
-   * <p>Method under test: {@link AccountUserController#getAccountUserById(int)}
+   * <p>Method under test: {@link AccountUserController#getAccountUserById(int, String)}
    */
   @Test
-  @DisplayName("Test getAccountUserById(int); then status isNotFound()")
+  @DisplayName("Test getAccountUserById(int, String); then status isNotFound()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({"ResponseEntity AccountUserController.getAccountUserById(int)"})
+  @MethodsUnderTest({"ResponseEntity AccountUserController.getAccountUserById(int, String)"})
   void testGetAccountUserById_thenStatusIsNotFound() throws Exception {
     // Arrange
-    when(accountUserService.getAccountUserById(anyInt()))
+    when(accountUserService.getAccountUserById(anyInt(), Mockito.<String>any()))
         .thenThrow(new ResourceNotFoundException("An error occurred"));
 
     // Act and Assert
     MockMvcBuilders.standaloneSetup(accountUserController)
         .build()
         .perform(
-            MockMvcRequestBuilders.get("/accountuser/{id}", 1).accept(MediaType.APPLICATION_JSON))
+            MockMvcRequestBuilders.get("/accountuser/{accountId}/{username}", 1, "janedoe")
+                .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isNotFound())
         .andExpect(content().contentType("application/json"))
         .andExpect(content().string("An error occurred"));

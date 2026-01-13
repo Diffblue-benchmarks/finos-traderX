@@ -1,0 +1,276 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Selected modules:
+INFO  - position-service
+INFO  
+INFO  
+INFO  [1/1] Diagnosing issues for module: position-service
+INFO  ====================================================
+INFO  
+INFO  Detected Java version 21.0.9
+INFO  Selected build system: Gradle
+INFO  Reading report file '/home/jbergqvist/diffblue/finos-traderX/position-service/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/finos-traderX/position-service/.diffblue/reports/report-20260113T113119.json'
+INFO  
+INFO  R028: Incomplete repository information
+      Diffblue Cover cannot write tests because it wasn't able to fully understand
+      your Spring Data Repository:
+      Repository:  finos.traderx.tradeprocessor.repository.TradeRepository
+      Data Type:   finos.traderx.tradeprocessor.model.Trade
+      ID Type:     java.lang.Integer
+      ID Getter:
+      Save Method: org.springframework.data.repository.CrudRepository.save(Object)
+      Is Entity an IdClass: false
+      Diffblue Cover needs to understand the Data Type and the ID Type in order to
+      write repository tests. Diffblue Cover also needs an ID Getter method that
+      gets the identifier field from a Data Type instance, this should be annotated
+      '@Id' and be of type ID Type. Alternatively, if using composite keys with
+      '@IdClass', the entity class must be annotated with '@IdClass' which must
+      reference the ID Type. Finally, better tests can be written if a Save Method
+      is found taking a Data Type instance and storing it in the repository.
+      Try extending 'CrudRepository' with concrete type parameters, or if the class
+      should not be considered a repository then annotate the class with the
+      '@NoRepositoryBean' annotation.
+      Please contact Diffblue through the appropriate support channel
+      (https://www.diffblue.com/support/) providing details about this error.
+      
+INFO  Affected methods:
+      finos.traderx.tradeprocessor.repository.TradeRepository.count:()J
+      finos.traderx.tradeprocessor.repository.TradeRepository.count:(Lorg/springframework/data/domain/Example;)J
+      finos.traderx.tradeprocessor.repository.TradeRepository.delete:(Ljava/lang/Object;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteAll:()V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteAll:(Ljava/lang/Iterable;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteAllById:(Ljava/lang/Iterable;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteAllByIdInBatch:(Ljava/lang/Iterable;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteAllInBatch:()V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteAllInBatch:(Ljava/lang/Iterable;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteById:(Ljava/lang/Object;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteInBatch:(Ljava/lang/Iterable;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.exists:(Lorg/springframework/data/domain/Example;)Z
+      finos.traderx.tradeprocessor.repository.TradeRepository.existsById:(Ljava/lang/Object;)Z
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAll:()Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;Lorg/springframework/data/domain/Sort;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Sort;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAllById:(Ljava/lang/Iterable;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findBy:(Lorg/springframework/data/domain/Example;Ljava/util/function/Function;)Ljava/lang/Object;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findByAccountId:(Ljava/lang/Integer;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findById:(Ljava/lang/Object;)Ljava/util/Optional;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findOne:(Lorg/springframework/data/domain/Example;)Ljava/util/Optional;
+      finos.traderx.tradeprocessor.repository.TradeRepository.flush:()V
+      finos.traderx.tradeprocessor.repository.TradeRepository.getById:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.tradeprocessor.repository.TradeRepository.getOne:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.tradeprocessor.repository.TradeRepository.getReferenceById:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.tradeprocessor.repository.TradeRepository.save:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.tradeprocessor.repository.TradeRepository.saveAll:(Ljava/lang/Iterable;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.saveAllAndFlush:(Ljava/lang/Iterable;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.saveAndFlush:(Ljava/lang/Object;)Ljava/lang/Object;
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for:
+      finos.traderx.tradeprocessor.repository.TradeRepository.count:()J
+      finos.traderx.tradeprocessor.repository.TradeRepository.count:(Lorg/springframework/data/domain/Example;)J
+      finos.traderx.tradeprocessor.repository.TradeRepository.delete:(Ljava/lang/Object;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteAll:()V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteAll:(Ljava/lang/Iterable;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteAllById:(Ljava/lang/Iterable;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteAllByIdInBatch:(Ljava/lang/Iterable;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteAllInBatch:()V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteAllInBatch:(Ljava/lang/Iterable;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteById:(Ljava/lang/Object;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.deleteInBatch:(Ljava/lang/Iterable;)V
+      finos.traderx.tradeprocessor.repository.TradeRepository.exists:(Lorg/springframework/data/domain/Example;)Z
+      finos.traderx.tradeprocessor.repository.TradeRepository.existsById:(Ljava/lang/Object;)Z
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAll:()Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;Lorg/springframework/data/domain/Sort;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Sort;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findAllById:(Ljava/lang/Iterable;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findBy:(Lorg/springframework/data/domain/Example;Ljava/util/function/Function;)Ljava/lang/Object;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findByAccountId:(Ljava/lang/Integer;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findById:(Ljava/lang/Object;)Ljava/util/Optional;
+      finos.traderx.tradeprocessor.repository.TradeRepository.findOne:(Lorg/springframework/data/domain/Example;)Ljava/util/Optional;
+      finos.traderx.tradeprocessor.repository.TradeRepository.flush:()V
+      finos.traderx.tradeprocessor.repository.TradeRepository.getById:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.tradeprocessor.repository.TradeRepository.getOne:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.tradeprocessor.repository.TradeRepository.getReferenceById:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.tradeprocessor.repository.TradeRepository.save:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.tradeprocessor.repository.TradeRepository.saveAll:(Ljava/lang/Iterable;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.saveAllAndFlush:(Ljava/lang/Iterable;)Ljava/util/List;
+      finos.traderx.tradeprocessor.repository.TradeRepository.saveAndFlush:(Ljava/lang/Object;)Ljava/lang/Object;
+      
+      Diffblue Cover cannot write tests because it wasn't able to fully understand
+      your Spring Data Repository:
+      Repository:  finos.traderx.tradeprocessor.repository.TradeRepository
+      Data Type:   finos.traderx.tradeprocessor.model.Trade
+      ID Type:     java.lang.Integer
+      ID Getter:
+      Save Method: org.springframework.data.repository.CrudRepository.save(Object)
+      Is Entity an IdClass: false
+      Diffblue Cover needs to understand the Data Type and the ID Type in order to
+      write repository tests. Diffblue Cover also needs an ID Getter method that
+      gets the identifier field from a Data Type instance, this should be annotated
+      '@Id' and be of type ID Type. Alternatively, if using composite keys with
+      '@IdClass', the entity class must be annotated with '@IdClass' which must
+      reference the ID Type. Finally, better tests can be written if a Save Method
+      is found taking a Data Type instance and storing it in the repository.
+      Try extending 'CrudRepository' with concrete type parameters, or if the class
+      should not be considered a repository then annotate the class with the
+      '@NoRepositoryBean' annotation.
+      Please contact Diffblue through the appropriate support channel
+      (https://www.diffblue.com/support/) providing details about this error.
+      
+INFO  
+INFO  R028: Incomplete repository information
+      Diffblue Cover cannot write tests because it wasn't able to fully understand
+      your Spring Data Repository:
+      Repository:  finos.traderx.positionservice.repository.TradeRepository
+      Data Type:   finos.traderx.positionservice.model.Trade
+      ID Type:     java.lang.Integer
+      ID Getter:
+      Save Method: org.springframework.data.repository.CrudRepository.save(Object)
+      Is Entity an IdClass: false
+      Diffblue Cover needs to understand the Data Type and the ID Type in order to
+      write repository tests. Diffblue Cover also needs an ID Getter method that
+      gets the identifier field from a Data Type instance, this should be annotated
+      '@Id' and be of type ID Type. Alternatively, if using composite keys with
+      '@IdClass', the entity class must be annotated with '@IdClass' which must
+      reference the ID Type. Finally, better tests can be written if a Save Method
+      is found taking a Data Type instance and storing it in the repository.
+      Try extending 'CrudRepository' with concrete type parameters, or if the class
+      should not be considered a repository then annotate the class with the
+      '@NoRepositoryBean' annotation.
+      Please contact Diffblue through the appropriate support channel
+      (https://www.diffblue.com/support/) providing details about this error.
+      
+INFO  Affected methods:
+      finos.traderx.positionservice.repository.TradeRepository.count:()J
+      finos.traderx.positionservice.repository.TradeRepository.count:(Lorg/springframework/data/domain/Example;)J
+      finos.traderx.positionservice.repository.TradeRepository.delete:(Ljava/lang/Object;)V
+      finos.traderx.positionservice.repository.TradeRepository.deleteAll:()V
+      finos.traderx.positionservice.repository.TradeRepository.deleteAll:(Ljava/lang/Iterable;)V
+      finos.traderx.positionservice.repository.TradeRepository.deleteAllById:(Ljava/lang/Iterable;)V
+      finos.traderx.positionservice.repository.TradeRepository.deleteAllByIdInBatch:(Ljava/lang/Iterable;)V
+      finos.traderx.positionservice.repository.TradeRepository.deleteAllInBatch:()V
+      finos.traderx.positionservice.repository.TradeRepository.deleteAllInBatch:(Ljava/lang/Iterable;)V
+      finos.traderx.positionservice.repository.TradeRepository.deleteById:(Ljava/lang/Object;)V
+      finos.traderx.positionservice.repository.TradeRepository.deleteInBatch:(Ljava/lang/Iterable;)V
+      finos.traderx.positionservice.repository.TradeRepository.exists:(Lorg/springframework/data/domain/Example;)Z
+      finos.traderx.positionservice.repository.TradeRepository.existsById:(Ljava/lang/Object;)Z
+      finos.traderx.positionservice.repository.TradeRepository.findAll:()Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;
+      finos.traderx.positionservice.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;Lorg/springframework/data/domain/Sort;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;
+      finos.traderx.positionservice.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Sort;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.findAllById:(Ljava/lang/Iterable;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.findBy:(Lorg/springframework/data/domain/Example;Ljava/util/function/Function;)Ljava/lang/Object;
+      finos.traderx.positionservice.repository.TradeRepository.findByAccountId:(Ljava/lang/Integer;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.findById:(Ljava/lang/Object;)Ljava/util/Optional;
+      finos.traderx.positionservice.repository.TradeRepository.findOne:(Lorg/springframework/data/domain/Example;)Ljava/util/Optional;
+      finos.traderx.positionservice.repository.TradeRepository.flush:()V
+      finos.traderx.positionservice.repository.TradeRepository.getById:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.positionservice.repository.TradeRepository.getOne:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.positionservice.repository.TradeRepository.getReferenceById:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.positionservice.repository.TradeRepository.save:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.positionservice.repository.TradeRepository.saveAll:(Ljava/lang/Iterable;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.saveAllAndFlush:(Ljava/lang/Iterable;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.saveAndFlush:(Ljava/lang/Object;)Ljava/lang/Object;
+      
+INFO  To resolve the issue, use the following prompt with your AI assistant:
+      
+      Fix the following issue preventing test creation for:
+      finos.traderx.positionservice.repository.TradeRepository.count:()J
+      finos.traderx.positionservice.repository.TradeRepository.count:(Lorg/springframework/data/domain/Example;)J
+      finos.traderx.positionservice.repository.TradeRepository.delete:(Ljava/lang/Object;)V
+      finos.traderx.positionservice.repository.TradeRepository.deleteAll:()V
+      finos.traderx.positionservice.repository.TradeRepository.deleteAll:(Ljava/lang/Iterable;)V
+      finos.traderx.positionservice.repository.TradeRepository.deleteAllById:(Ljava/lang/Iterable;)V
+      finos.traderx.positionservice.repository.TradeRepository.deleteAllByIdInBatch:(Ljava/lang/Iterable;)V
+      finos.traderx.positionservice.repository.TradeRepository.deleteAllInBatch:()V
+      finos.traderx.positionservice.repository.TradeRepository.deleteAllInBatch:(Ljava/lang/Iterable;)V
+      finos.traderx.positionservice.repository.TradeRepository.deleteById:(Ljava/lang/Object;)V
+      finos.traderx.positionservice.repository.TradeRepository.deleteInBatch:(Ljava/lang/Iterable;)V
+      finos.traderx.positionservice.repository.TradeRepository.exists:(Lorg/springframework/data/domain/Example;)Z
+      finos.traderx.positionservice.repository.TradeRepository.existsById:(Ljava/lang/Object;)Z
+      finos.traderx.positionservice.repository.TradeRepository.findAll:()Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;
+      finos.traderx.positionservice.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Example;Lorg/springframework/data/domain/Sort;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;
+      finos.traderx.positionservice.repository.TradeRepository.findAll:(Lorg/springframework/data/domain/Sort;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.findAllById:(Ljava/lang/Iterable;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.findBy:(Lorg/springframework/data/domain/Example;Ljava/util/function/Function;)Ljava/lang/Object;
+      finos.traderx.positionservice.repository.TradeRepository.findByAccountId:(Ljava/lang/Integer;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.findById:(Ljava/lang/Object;)Ljava/util/Optional;
+      finos.traderx.positionservice.repository.TradeRepository.findOne:(Lorg/springframework/data/domain/Example;)Ljava/util/Optional;
+      finos.traderx.positionservice.repository.TradeRepository.flush:()V
+      finos.traderx.positionservice.repository.TradeRepository.getById:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.positionservice.repository.TradeRepository.getOne:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.positionservice.repository.TradeRepository.getReferenceById:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.positionservice.repository.TradeRepository.save:(Ljava/lang/Object;)Ljava/lang/Object;
+      finos.traderx.positionservice.repository.TradeRepository.saveAll:(Ljava/lang/Iterable;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.saveAllAndFlush:(Ljava/lang/Iterable;)Ljava/util/List;
+      finos.traderx.positionservice.repository.TradeRepository.saveAndFlush:(Ljava/lang/Object;)Ljava/lang/Object;
+      
+      Diffblue Cover cannot write tests because it wasn't able to fully understand
+      your Spring Data Repository:
+      Repository:  finos.traderx.positionservice.repository.TradeRepository
+      Data Type:   finos.traderx.positionservice.model.Trade
+      ID Type:     java.lang.Integer
+      ID Getter:
+      Save Method: org.springframework.data.repository.CrudRepository.save(Object)
+      Is Entity an IdClass: false
+      Diffblue Cover needs to understand the Data Type and the ID Type in order to
+      write repository tests. Diffblue Cover also needs an ID Getter method that
+      gets the identifier field from a Data Type instance, this should be annotated
+      '@Id' and be of type ID Type. Alternatively, if using composite keys with
+      '@IdClass', the entity class must be annotated with '@IdClass' which must
+      reference the ID Type. Finally, better tests can be written if a Save Method
+      is found taking a Data Type instance and storing it in the repository.
+      Try extending 'CrudRepository' with concrete type parameters, or if the class
+      should not be considered a repository then annotate the class with the
+      '@NoRepositoryBean' annotation.
+      Please contact Diffblue through the appropriate support channel
+      (https://www.diffblue.com/support/) providing details about this error.
+      
+INFO  
+INFO  11 issues were found, numbers 10-11 were displayed
+INFO  Rerun without --prompts to summarise all the issues
+INFO  Actioning all 2 listed issues via agent
+INFO  Executing prompt with Claude Code agent...
+INFO  [Claude Code] Perfect! Both issues have been resolved. Let me provide a summary:
+INFO  [Claude Code] 
+INFO  [Claude Code] ## Summary
+INFO  [Claude Code] 
+INFO  [Claude Code] I've successfully fixed both Diffblue Cover issues:
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Issue 1: trade-processor TradeRepository
+INFO  [Claude Code] **Location**: `trade-processor/src/main/java/finos/traderx/tradeprocessor/repository/TradeRepository.java:9`
+INFO  [Claude Code] 
+INFO  [Claude Code] **Problem**: The repository interface declared the wrong ID type parameter (`Integer` instead of `String`), which didn't match the `@Id` field type in the `Trade` entity.
+INFO  [Claude Code] 
+INFO  [Claude Code] **Status**: Already fixed (change was staged in git) - changed from `JpaRepository<Trade, Integer>` to `JpaRepository<Trade, String>`
+INFO  [Claude Code] 
+INFO  [Claude Code] ### Issue 2: position-service TradeRepository  
+INFO  [Claude Code] **Location**: `position-service/src/main/java/finos/traderx/positionservice/repository/TradeRepository.java:9`
+INFO  [Claude Code] 
+INFO  [Claude Code] **Problem**: Same issue - repository declared `Integer` as ID type when the `Trade` entity's `@Id` field is of type `String`.
+INFO  [Claude Code] 
+INFO  [Claude Code] **Fix Applied**: Changed from `JpaRepository<Trade, Integer>` to `JpaRepository<Trade, String>`
+INFO  [Claude Code] 
+INFO  [Claude Code] Both repositories now correctly specify `String` as the ID type parameter, matching the `@Id` annotated field in their respective `Trade` entities. This allows Diffblue Cover to properly understand the repository structure and generate tests for all the listed methods.
+INFO  [Claude Code] 
+INFO  [Claude Code] As you noted, you may need to run `mvn install -DskipTests` to update the classpath after these changes.
+INFO  Claude Code agent completed successfully.
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/finos-traderX/.diffblue/log/user-20260113T131910.log
+INFO  Finished in 1m 20s

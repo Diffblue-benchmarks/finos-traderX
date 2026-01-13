@@ -1,0 +1,125 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: issues
+INFO  Output a prioritized list of issues.
+INFO  
+INFO  Discovered modules:
+INFO  - database
+INFO  - trade-processor
+INFO  - trade-service
+INFO  - position-service
+INFO  - account-service
+INFO  
+INFO  
+INFO  [1/5] Diagnosing issues for module: database
+INFO  ============================================
+INFO  
+INFO  Detected Java version 21.0.9
+INFO  Selected build system: Gradle
+INFO  Reading report file '/home/jbergqvist/diffblue/finos-traderX/database/.diffblue/reports/report.json'
+WARN  Failed to find report file '/home/jbergqvist/diffblue/finos-traderX/database/.diffblue/reports/report.json', have you run `dcover create`?
+INFO  
+INFO  [2/5] Diagnosing issues for module: trade-processor
+INFO  ===================================================
+INFO  
+INFO  Detected Java version 21.0.9
+INFO  Selected build system: Gradle
+INFO  Reading report file '/home/jbergqvist/diffblue/finos-traderX/trade-processor/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/finos-traderX/trade-processor/.diffblue/reports/report-20260113T113119.json'
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+INFO  Issues: 1
+INFO  Affected methods: 1
+INFO  
+INFO  R026: Failed to create Spring context
+INFO  Issues: 7
+INFO  Affected methods: 7
+INFO  
+INFO  R028: Incomplete repository information
+INFO  Issues: 1
+INFO  Affected methods: 32
+INFO  
+INFO  9 issues were found, rerun with --prompts to list with actionable advice
+INFO  Rerun with --prompts --limit 10 --skip 10 to restrict which issues are displayed
+INFO  
+INFO  [3/5] Diagnosing issues for module: trade-service
+INFO  =================================================
+INFO  
+INFO  Detected Java version 21.0.9
+INFO  Selected build system: Gradle
+INFO  Reading report file '/home/jbergqvist/diffblue/finos-traderX/trade-service/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/finos-traderX/trade-service/.diffblue/reports/report-20260113T113119.json'
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+INFO  Issues: 1
+INFO  Affected methods: 1
+INFO  
+INFO  R026: Failed to create Spring context
+INFO  Issues: 7
+INFO  Affected methods: 7
+INFO  
+INFO  R028: Incomplete repository information
+INFO  Issues: 1
+INFO  Affected methods: 32
+INFO  
+INFO  9 issues were found, rerun with --prompts to list with actionable advice
+INFO  Rerun with --prompts --limit 10 --skip 10 to restrict which issues are displayed
+INFO  
+INFO  [4/5] Diagnosing issues for module: position-service
+INFO  ====================================================
+INFO  
+INFO  Detected Java version 21.0.9
+INFO  Selected build system: Gradle
+INFO  Reading report file '/home/jbergqvist/diffblue/finos-traderX/position-service/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/finos-traderX/position-service/.diffblue/reports/report-20260113T113119.json'
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+INFO  Issues: 2
+INFO  Affected methods: 2
+INFO  
+INFO  R026: Failed to create Spring context
+INFO  Issues: 7
+INFO  Affected methods: 7
+INFO  
+INFO  R028: Incomplete repository information
+INFO  Issues: 2
+INFO  Affected methods: 64
+INFO  
+INFO  11 issues were found, rerun with --prompts to list with actionable advice
+INFO  Rerun with --prompts --limit 10 --skip 10 to restrict which issues are displayed
+INFO  
+INFO  [5/5] Diagnosing issues for module: account-service
+INFO  ===================================================
+INFO  
+INFO  Detected Java version 21.0.9
+INFO  Selected build system: Gradle
+INFO  Reading report file '/home/jbergqvist/diffblue/finos-traderX/account-service/.diffblue/reports/report.json'
+INFO  Copied report file to '/home/jbergqvist/diffblue/finos-traderX/account-service/.diffblue/reports/report-20260113T113119.json'
+INFO  
+INFO  R013: No inputs found that don't throw a trivial exception
+INFO  Issues: 7
+INFO  Affected methods: 7
+INFO  
+INFO  R026: Failed to create Spring context
+INFO  Issues: 7
+INFO  Affected methods: 7
+INFO  
+INFO  R028: Incomplete repository information
+INFO  Issues: 2
+INFO  Affected methods: 64
+INFO  
+INFO  16 issues were found, rerun with --prompts to list with actionable advice
+INFO  Rerun with --prompts --limit 10 --skip 10 to restrict which issues are displayed
+INFO  
+INFO  Run summary:
+INFO  ------------
+WARN  issues                                                      WARNING
+WARN  - database                                                  WARNING
+INFO  - trade-processor                                           SUCCESS
+INFO  - trade-service                                             SUCCESS
+INFO  - position-service                                          SUCCESS
+INFO  - account-service                                           SUCCESS
+INFO  
+WARN  One or more warnings were logged, please review them in the log file
+INFO  Log file: /home/jbergqvist/diffblue/finos-traderX/.diffblue/log/user-20260113T123533.log
+INFO  Finished in 8s

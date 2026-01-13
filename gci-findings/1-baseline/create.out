@@ -1,0 +1,381 @@
+INFO  Diffblue Cover 2025.12.02-74144f0-licensed
+INFO  
+INFO  Command: create
+INFO  Create tests for the specified package/class/method.
+INFO  
+INFO  Selected modules:
+INFO  - trade-processor
+INFO  - trade-service
+INFO  - position-service
+INFO  - account-service
+INFO  
+INFO  
+INFO  [1/4] Creating tests for module: trade-processor
+INFO  ================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 21.0.9
+INFO  Selected build system: Gradle
+INFO  Selected classpath from build system gradle
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Detected Kotlin Standard Library for JVM version 1.9.25
+INFO  Selected Java language compliance level: 21
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - finos.traderx.messaging
+INFO  - finos.traderx.messaging.socketio
+INFO  - finos.traderx.tradeprocessor
+INFO  - finos.traderx.tradeprocessor.controller
+INFO  - finos.traderx.tradeprocessor.model
+INFO  - finos.traderx.tradeprocessor.repository
+INFO  - finos.traderx.tradeprocessor.service
+INFO  Gathering methods to test...
+INFO  Found 176 callable methods in 22 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO   [1/22] finos.traderx.messaging.PubSubException
+INFO   [1/22]   Tests created: 3
+INFO   [2/22] finos.traderx.messaging.socketio.SocketIOEnvelope
+INFO   [2/22]   Tests created: 2
+INFO   [3/22] finos.traderx.messaging.socketio.SocketIOJSONPublisher
+INFO   [3/22]   Tests created: 0
+INFO   [4/22] finos.traderx.messaging.socketio.SocketIOJSONSubscriber
+INFO   [4/22]   Tests created: 6
+INFO   [5/22] finos.traderx.tradeprocessor.OpenApiConfig
+INFO   [5/22]   Tests created: 1
+INFO   [6/22] finos.traderx.tradeprocessor.PubSubConfig
+INFO   [6/22]   Tests created: 1
+INFO   [7/22] finos.traderx.tradeprocessor.TradeFeedHandler
+INFO   [7/22]   Tests created: 3
+INFO   [8/22] finos.traderx.tradeprocessor.TradeProcessorApplication
+INFO   [8/22]   Tests created: 0
+INFO   [9/22] finos.traderx.tradeprocessor.controller.DocsController
+INFO   [9/22]   Tests created: 1
+INFO  [10/22] finos.traderx.tradeprocessor.controller.TradeServiceController
+INFO  [10/22]   Tests created: 1
+INFO  [11/22] finos.traderx.tradeprocessor.model.Position
+INFO  [11/22]   Tests created: 1
+INFO  [12/22] finos.traderx.tradeprocessor.model.PositionID
+INFO  [12/22]   Tests created: 0
+INFO  [13/22] finos.traderx.tradeprocessor.model.Trade
+INFO  [13/22]   Tests created: 2
+INFO  [14/22] finos.traderx.tradeprocessor.model.TradeBookingResult
+INFO  [14/22]   Tests created: 1
+INFO  [15/22] finos.traderx.tradeprocessor.model.TradeOrder
+INFO  [15/22]   Tests created: 2
+INFO  [16/22] finos.traderx.tradeprocessor.model.TradeRequest
+INFO  [16/22]   Tests created: 1
+INFO  [17/22] finos.traderx.tradeprocessor.model.TradeResponse
+INFO  [17/22]   Tests created: 3
+INFO  [18/22] finos.traderx.tradeprocessor.model.TradeSide
+INFO  [18/22]   Tests created: 0
+INFO  [19/22] finos.traderx.tradeprocessor.model.TradeState
+INFO  [19/22]   Tests created: 0
+INFO  [20/22] finos.traderx.tradeprocessor.repository.PositionRepository
+INFO  [20/22]   Tests created: 31
+INFO  [21/22] finos.traderx.tradeprocessor.repository.TradeRepository
+INFO  [21/22]   Tests created: 0
+INFO  [22/22] finos.traderx.tradeprocessor.service.TradeService
+INFO  [22/22]   Tests created: 3
+INFO  
+INFO  Test creation summary for module: trade-processor
+INFO  -------------------------------------------------
+INFO  Total:                                             176 methods
+INFO  62 tests created for:                              109 methods
+INFO  
+INFO  Tested indirectly via other methods:                 6 methods
+INFO      6 T005: Trivial constructor
+INFO  Not unit-testable:                                  11 methods
+INFO     10 T009: No implementation for abstract class
+INFO      1 T006: Main method
+INFO  No tests created for:                               46 methods
+INFO     32 R028: Incomplete repository information
+INFO      7 R026: Failed to create Spring context
+INFO      2 R002: Missing observers
+INFO      1 R013: No inputs found that don't throw a trivial exception
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 62 created tests were successfully validated.
+INFO  Refactorings have been generated - run `dcover refactor` to apply them
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/finos-traderX/trade-processor/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/finos-traderX/trade-processor/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 212 of 323 lines to cover (65.6%)
+INFO  Manual tests cover 0 of 323 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/finos-traderX/trade-processor/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 62
+      Diffblue test coverage: 212 of 323 lines to cover
+      Manual test coverage: 0 of 323 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/traderx/trade-processor?runId=1000018
+INFO  
+INFO  [2/4] Creating tests for module: trade-service
+INFO  ==============================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 21.0.9
+INFO  Selected build system: Gradle
+INFO  Selected classpath from build system gradle
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Detected Kotlin Standard Library for JVM version 1.9.25
+INFO  Selected Java language compliance level: 21
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - finos.traderx.messaging
+INFO  - finos.traderx.messaging.socketio
+INFO  - finos.traderx.tradeservice
+INFO  - finos.traderx.tradeservice.controller
+INFO  - finos.traderx.tradeservice.exceptions
+INFO  - finos.traderx.tradeservice.model
+INFO  Gathering methods to test...
+INFO  Found 83 callable methods in 17 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO   [1/17] finos.traderx.messaging.PubSubException
+INFO   [1/17]   Tests created: 3
+INFO   [2/17] finos.traderx.messaging.socketio.SocketIOEnvelope
+INFO   [2/17]   Tests created: 2
+INFO   [3/17] finos.traderx.messaging.socketio.SocketIOJSONPublisher
+INFO   [3/17]   Tests created: 0
+INFO   [4/17] finos.traderx.messaging.socketio.SocketIOJSONSubscriber
+INFO   [4/17]   Tests created: 0
+INFO   [5/17] finos.traderx.tradeservice.OpenApiConfig
+INFO   [5/17]   Tests created: 1
+INFO   [6/17] finos.traderx.tradeservice.PubSubConfig
+INFO   [6/17]   Tests created: 0
+INFO   [7/17] finos.traderx.tradeservice.TradeServiceApplication
+INFO   [7/17]   Tests created: 0
+INFO   [8/17] finos.traderx.tradeservice.controller.DocsController
+INFO   [8/17]   Tests created: 1
+INFO   [9/17] finos.traderx.tradeservice.controller.TradeOrderController
+INFO   [9/17]   Tests created: 2
+INFO  [10/17] finos.traderx.tradeservice.exceptions.ResourceNotFoundException
+INFO  [10/17]   Tests created: 1
+INFO  [11/17] finos.traderx.tradeservice.model.Account
+INFO  [11/17]   Tests created: 4
+INFO  [12/17] finos.traderx.tradeservice.model.Security
+INFO  [12/17]   Tests created: 3
+INFO  [13/17] finos.traderx.tradeservice.model.TradeOrder
+INFO  [13/17]   Tests created: 2
+INFO  [14/17] finos.traderx.tradeservice.model.TradeRequest
+INFO  [14/17]   Tests created: 1
+INFO  [15/17] finos.traderx.tradeservice.model.TradeResponse
+INFO  [15/17]   Tests created: 3
+INFO  [16/17] finos.traderx.tradeservice.model.TradeSide
+INFO  [16/17]   Tests created: 0
+INFO  [17/17] finos.traderx.tradeservice.model.TradeState
+INFO  [17/17]   Tests created: 0
+INFO  
+INFO  Test creation summary for module: trade-service
+INFO  -----------------------------------------------
+INFO  Total:                                              83 methods
+INFO  23 tests created for:                               52 methods
+INFO  
+INFO  Tested indirectly via other methods:                 5 methods
+INFO      5 T005: Trivial constructor
+INFO  Not unit-testable:                                  21 methods
+INFO     20 T009: No implementation for abstract class
+INFO      1 T006: Main method
+INFO  No tests created for:                                1 method
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 23 created tests were successfully validated.
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/finos-traderX/trade-service/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/finos-traderX/trade-service/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 116 of 264 lines to cover (43.9%)
+INFO  Manual tests cover 0 of 264 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/finos-traderX/trade-service/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 23
+      Diffblue test coverage: 116 of 264 lines to cover
+      Manual test coverage: 0 of 264 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/traderx/trade-service?runId=1000019
+INFO  
+INFO  [3/4] Creating tests for module: position-service
+INFO  =================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 21.0.9
+INFO  Selected build system: Gradle
+INFO  Selected classpath from build system gradle
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 21
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - finos.traderx.positionservice
+INFO  - finos.traderx.positionservice.controller
+INFO  - finos.traderx.positionservice.model
+INFO  - finos.traderx.positionservice.repository
+INFO  - finos.traderx.positionservice.service
+INFO  Gathering methods to test...
+INFO  Found 112 callable methods in 12 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO   [1/12] finos.traderx.positionservice.OpenApiConfig
+INFO   [1/12]   Tests created: 1
+INFO   [2/12] finos.traderx.positionservice.PositionServiceApplication
+INFO   [2/12]   Tests created: 0
+INFO   [3/12] finos.traderx.positionservice.controller.DocsController
+INFO   [3/12]   Tests created: 1
+INFO   [4/12] finos.traderx.positionservice.controller.PositionController
+INFO   [4/12]   Tests created: 3
+INFO   [5/12] finos.traderx.positionservice.controller.TradeController
+INFO   [5/12]   Tests created: 3
+INFO   [6/12] finos.traderx.positionservice.model.Position
+INFO   [6/12]   Tests created: 1
+INFO   [7/12] finos.traderx.positionservice.model.PositionID
+INFO   [7/12]   Tests created: 0
+INFO   [8/12] finos.traderx.positionservice.model.Trade
+INFO   [8/12]   Tests created: 1
+INFO   [9/12] finos.traderx.positionservice.repository.PositionRepository
+INFO   [9/12]   Tests created: 30
+INFO  [10/12] finos.traderx.positionservice.repository.TradeRepository
+INFO  [10/12]   Tests created: 0
+INFO  [11/12] finos.traderx.positionservice.service.PositionService
+INFO  [11/12]   Tests created: 4
+INFO  [12/12] finos.traderx.positionservice.service.TradeService
+INFO  [12/12]   Tests created: 4
+INFO  
+INFO  Test creation summary for module: position-service
+INFO  --------------------------------------------------
+INFO  Total:                                             112 methods
+INFO  48 tests created for:                               66 methods
+INFO  
+INFO  Tested indirectly via other methods:                 7 methods
+INFO      7 T005: Trivial constructor
+INFO  Not unit-testable:                                   1 method
+INFO      1 T006: Main method
+INFO  No tests created for:                               38 methods
+INFO     32 R028: Incomplete repository information
+INFO      2 R002: Missing observers
+INFO      1 R013: No inputs found that don't throw a trivial exception
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 48 created tests were successfully validated.
+INFO  Refactorings have been generated - run `dcover refactor` to apply them
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/finos-traderX/position-service/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/finos-traderX/position-service/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 81 of 84 lines to cover (96.4%)
+INFO  Manual tests cover 0 of 84 lines to cover (0.0%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/finos-traderX/position-service/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 48
+      Diffblue test coverage: 81 of 84 lines to cover
+      Manual test coverage: 0 of 84 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/traderx/position-service?runId=1000020
+INFO  
+INFO  [4/4] Creating tests for module: account-service
+INFO  ================================================
+INFO  
+INFO  Detecting environment:
+INFO  ----------------------
+INFO  Detected Java version 21.0.9
+INFO  Selected build system: Gradle
+INFO  Selected classpath from build system gradle
+INFO  Selected test framework: JUnit Jupiter API
+INFO  Selected Java language compliance level: 21
+INFO  Selected test validation: enabled
+INFO  Prefixes for filtering classes/methods:
+INFO  - finos.traderx.accountservice
+INFO  - finos.traderx.accountservice.controller
+INFO  - finos.traderx.accountservice.exceptions
+INFO  - finos.traderx.accountservice.model
+INFO  - finos.traderx.accountservice.repository
+INFO  - finos.traderx.accountservice.service
+INFO  Gathering methods to test...
+INFO  Found 77 callable methods in 14 classes
+INFO  
+INFO  Creating tests:
+INFO  ---------------
+INFO   [1/14] finos.traderx.accountservice.AccountServiceApplication
+INFO   [1/14]   Tests created: 0
+INFO   [2/14] finos.traderx.accountservice.OpenApiConfig
+INFO   [2/14]   Tests created: 1
+INFO   [3/14] finos.traderx.accountservice.controller.AccountController
+INFO   [3/14]   Tests created: 13
+INFO   [4/14] finos.traderx.accountservice.controller.AccountUserController
+INFO   [4/14]   Tests created: 10
+INFO   [5/14] finos.traderx.accountservice.controller.DocsController
+INFO   [5/14]   Tests created: 1
+INFO   [6/14] finos.traderx.accountservice.exceptions.ResourceNotFoundException
+INFO   [6/14]   Tests created: 1
+INFO   [7/14] finos.traderx.accountservice.model.Account
+INFO   [7/14]   Tests created: 1
+INFO   [8/14] finos.traderx.accountservice.model.AccountUser
+INFO   [8/14]   Tests created: 1
+INFO   [9/14] finos.traderx.accountservice.model.AccountUserID
+INFO   [9/14]   Tests created: 0
+INFO  [10/14] finos.traderx.accountservice.model.Person
+INFO  [10/14]   Tests created: 1
+INFO  [11/14] finos.traderx.accountservice.repository.AccountRepository
+INFO  [11/14]   Tests created: 13
+INFO  [12/14] finos.traderx.accountservice.repository.AccountUserRepository
+INFO  [12/14]   Tests created: 7
+INFO  [13/14] finos.traderx.accountservice.service.AccountService
+INFO  [13/14]   Tests created: 9
+INFO  [14/14] finos.traderx.accountservice.service.AccountUserService
+INFO  [14/14]   Tests created: 11
+INFO  
+INFO  Test creation summary for module: account-service
+INFO  -------------------------------------------------
+INFO  Total:                                              77 methods
+INFO  69 tests created for:                               60 methods
+INFO  
+INFO  Tested indirectly via other methods:                 7 methods
+INFO      7 T005: Trivial constructor
+INFO  Not unit-testable:                                   1 method
+INFO      1 T006: Main method
+INFO  No tests created for:                                9 methods
+INFO      5 R013: No inputs found that don't throw a trivial exception
+INFO      2 R002: Missing observers
+INFO  
+INFO  Running validation command.
+INFO  This can take a couple of minutes.
+INFO  All 69 created tests were successfully validated.
+INFO  Refactorings have been generated - run `dcover refactor` to apply them
+INFO  Calculating coverage from Diffblue tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/finos-traderX/account-service/.diffblue/reports/diffblue-tests-jacoco-report.xml
+INFO  Calculating coverage from manual tests.
+INFO  JaCoCo report file created in /home/jbergqvist/diffblue/finos-traderX/account-service/.diffblue/reports/manual-tests-jacoco-report.xml
+INFO  
+INFO  Diffblue tests cover 92 of 110 lines to cover (83.6%)
+INFO  Manual tests cover 31 of 110 lines to cover (28.2%)
+INFO  Writing JSON report to /home/jbergqvist/diffblue/finos-traderX/account-service/.diffblue/reports/report.json
+INFO  Coverage reports upload successful
+      Total count of Diffblue tests: 69
+      Diffblue test coverage: 92 of 110 lines to cover
+      Manual test coverage: 31 of 110 lines to cover
+      View this run on the dashboard at http://localhost:8080/ui/project/Projects/traderx/account-service?runId=1000021
+INFO  
+INFO  Run summary:
+INFO  ------------
+INFO  create                                                      SUCCESS
+INFO  
+INFO  Log file: /home/jbergqvist/diffblue/finos-traderX/.diffblue/log/user-20260113T104547.log
+INFO  Finished in 17m 54s
+Hibernate: drop table if exists ACCOUNTS cascade 
+Hibernate: drop table if exists POSITIONS cascade 
+Hibernate: drop table if exists Accountusers cascade 
+Hibernate: drop sequence if exists ACCOUNTS_SEQ
+Hibernate: drop table if exists TRADES cascade 
+Hibernate: drop table if exists ACCOUNTS cascade 
+Hibernate: drop table if exists Accountusers cascade 
+Hibernate: drop sequence if exists ACCOUNTS_SEQ
+JVM log written to: /tmp/diffblue/log/dcover.jvm-20260113T104546.log
